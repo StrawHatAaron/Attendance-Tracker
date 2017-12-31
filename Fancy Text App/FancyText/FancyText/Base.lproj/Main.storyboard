@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+        <array key="LemonMilk.otf">
+            <string>LemonMilk</string>
+        </array>
+        <array key="Noteworthy.ttc">
+            <string>Noteworthy-Light</string>
+        </array>
+        <array key="SugarstyleMillenial-Regular.ttf">
+            <string>SugarstyleMillenial-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="492-Sd-apQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="QsX-Ws-8mL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="otx-MN-2LF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="mGc-0Y-f1T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2E-pO-XgH">
+                                <rect key="frame" x="16" y="20" width="343" height="301"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-lG-6Gm">
+                                <rect key="frame" x="26" y="309" width="323" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="submitText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="vqz-Qr-sHv"/>
+                                </connections>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NUD-Wi-E1h">
+                                <rect key="frame" x="16" y="347" width="343" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Q2-ie-EL6">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0s-2u-cMW">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Red"/>
+                                                <connections>
+                                                    <action selector="red:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K6P-FA-4mM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-47-YYD">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Blue"/>
+                                                <connections>
+                                                    <action selector="blue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H1A-sw-xC0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osK-Vr-wxb">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Green"/>
+                                                <connections>
+                                                    <action selector="green:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSW-vl-y9H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wcg-HJ-UVD">
+                                        <rect key="frame" x="0.0" y="61.5" width="343" height="53.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWS-RV-vmH">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
+                                                <state key="normal" title="Font 1"/>
+                                                <connections>
+                                                    <action selector="font1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSz-yn-kC5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-eC-02v">
+                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="24"/>
+                                                <state key="normal" title="Font 2"/>
+                                                <connections>
+                                                    <action selector="font2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jr5-rD-3K3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ESU-oM-k1J">
+                                        <rect key="frame" x="0.0" y="123" width="343" height="54"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkV-0M-IRA">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="54"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="SugarstyleMillenial-Regular" family="Sugarstyle Millenial" pointSize="32"/>
+                                                <state key="normal" title="Font 3"/>
+                                                <connections>
+                                                    <action selector="font3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5lU-dk-HRd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2z-jq-Faz">
+                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="54"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="26"/>
+                                                <state key="normal" title="Font 4"/>
+                                                <connections>
+                                                    <action selector="font4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zad-vL-RyD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9uC-dF-J8Y">
+                                        <rect key="frame" x="0.0" y="185" width="343" height="53.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-um-N2C">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Shadow"/>
+                                                <connections>
+                                                    <action selector="shawdow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fB4-dU-Rqo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LKS-tF-bhf">
+                                        <rect key="frame" x="0.0" y="246.5" width="343" height="53.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-g7-FVI">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Small"/>
+                                                <connections>
+                                                    <action selector="small:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtR-cq-fSw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9as-S2-F4C">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Medium"/>
+                                                <connections>
+                                                    <action selector="medium:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6xM-oA-C2X"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L9-mf-49n">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="53.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <state key="normal" title="Large"/>
+                                                <connections>
+                                                    <action selector="large:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oI8-ap-3uR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="HEd-g9-ka8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mGc-0Y-f1T" secondAttribute="trailing" id="2Ix-Eu-pkZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NUD-Wi-E1h" secondAttribute="bottom" constant="20" id="Byy-DT-6JD"/>
+                            <constraint firstItem="mGc-0Y-f1T" firstAttribute="top" secondItem="otx-MN-2LF" secondAttribute="top" id="FQr-EP-Lud"/>
+                            <constraint firstItem="L2E-pO-XgH" firstAttribute="leading" secondItem="otx-MN-2LF" secondAttribute="leadingMargin" id="FyD-bq-Q1D"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="L2E-pO-XgH" secondAttribute="bottom" constant="346" id="Ltx-mm-cpY"/>
+                            <constraint firstAttribute="bottom" secondItem="mGc-0Y-f1T" secondAttribute="bottom" id="VJE-lv-Boe"/>
+                            <constraint firstItem="mGc-0Y-f1T" firstAttribute="leading" secondItem="otx-MN-2LF" secondAttribute="leading" id="YOE-4Z-O0G"/>
+                            <constraint firstItem="L2E-pO-XgH" firstAttribute="trailing" secondItem="otx-MN-2LF" secondAttribute="trailingMargin" id="eer-DV-4QK"/>
+                            <constraint firstItem="DCu-lG-6Gm" firstAttribute="leading" secondItem="otx-MN-2LF" secondAttribute="leadingMargin" constant="10" id="h4g-ts-hpR"/>
+                            <constraint firstItem="NUD-Wi-E1h" firstAttribute="leading" secondItem="otx-MN-2LF" secondAttribute="leadingMargin" id="hbo-lr-3wa"/>
+                            <constraint firstItem="L2E-pO-XgH" firstAttribute="top" secondItem="492-Sd-apQ" secondAttribute="bottom" id="mod-06-Db9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NUD-Wi-E1h" secondAttribute="trailing" id="w7w-nf-hEd"/>
+                            <constraint firstItem="NUD-Wi-E1h" firstAttribute="top" secondItem="DCu-lG-6Gm" secondAttribute="bottom" constant="8" id="whQ-XV-yLI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DCu-lG-6Gm" secondAttribute="trailing" constant="10" id="yYO-MB-N8n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="L2E-pO-XgH" id="OZ9-iT-M2C"/>
+                        <outlet property="textField" destination="DCu-lG-6Gm" id="2bD-IR-nlb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="1920" height="1080"/>
+    </resources>
+</document>
