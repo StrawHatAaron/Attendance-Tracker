@@ -40,8 +40,12 @@
 }
 
 - (IBAction)pause:(id)sender {
+    [timer invalidate];
 }
 
 - (IBAction)restart:(id)sender {
+    [timer invalidate];
+    countInt = 0;
+    self.label.text = [NSString stringWithFormat:@"%i", countInt];
 }
 @end
