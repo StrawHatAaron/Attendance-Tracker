@@ -18,15 +18,19 @@
     [super viewDidLoad];
     
 
-    NSString *post = @"varPOST={ access_token: 'EAAM87eushSYBAP6dfxC0ZC4JzNiTt4R8pxnn4Qq4YRBprGrJpcnWEK0fDynAHeZBY0u8HcGZCTbJvQ7ATkZASfONSreV2nsZB1oCdj8WACU7W39TdTqkU5zYqACMJQEuSOXBtfkMrT1P9u0DnZCutFZBpC3Cbv8XETBIIjOGutM3eHJtqyWIHcs3sZBa4qshFbN2ScvZBDXttFZCQIdLX7bwSPojwZBdgccmnvZAcRaZAac0hMQZDZD' }";
+    //NSString *post = @"{access_token: 'EAAM87eushSYBAP6dfxC0ZC4JzNiTt4R8pxnn4Qq4YRBprGrJpcnWEK0fDynAHeZBY0u8HcGZCTbJvQ7ATkZASfONSreV2nsZB1oCdj8WACU7W39TdTqkU5zYqACMJQEuSOXBtfkMrT1P9u0DnZCutFZBpC3Cbv8XETBIIjOGutM3eHJtqyWIHcs3sZBa4qshFbN2ScvZBDXttFZCQIdLX7bwSPojwZBdgccmnvZAcRaZAac0hMQZDZD' }";
+    NSString *post = @"varPOST=hello";
+    
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    
     
     NSString *postLength = [NSString stringWithFormat:@"%lu", ( unsigned long )[postData length]];//long unsinged int = @"%lu"
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     // insert whatever URL you would like to connect to
-    //[request setURL:[NSURL URLWithString:@"http://sonarsystems.co.uk/DeveloperTools/Tutorials/iOS_SDK/SendData.php?varGET=hello"]];
-    [request setURL:[NSURL URLWithString:@"https://prod1.mytcheck.com/auth/facebook"]];
+    [request setURL:[NSURL URLWithString:@"http://sonarsystems.co.uk/DeveloperTools/Tutorials/iOS_SDK/SendData.php?varGET=hello"]];
+    //[request setURL:[NSURL URLWithString:@"https://prod1.mytcheck.com/auth/facebook"]];
     
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -48,12 +52,8 @@
 - ( NSURLSession * )getURLSession{
     static NSURLSession *session = nil;
     static dispatch_once_t onceToken;
-    dispatch_once( &onceToken,
-                  ^{
-                      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-                      session = [NSURLSession sessionWithConfiguration:configuration];
-                  } );
-    
+    dispatch_once( &onceToken, ^{ NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+                      session = [NSURLSession sessionWithConfiguration:configuration];});
     return session;
 }
 
