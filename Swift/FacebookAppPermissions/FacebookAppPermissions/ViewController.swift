@@ -9,36 +9,45 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController,
-FBSDKLoginButtonDelegate {
-    
+class ViewController: UIViewController{
     
     @IBOutlet weak var facebookBtn: UIButton!
     
-    let loginButton: FBSDKLoginButton = {
-        let button = FBSDKLoginButton()
-        button.readPermissions = ["email"]
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(loginButton)
-        loginButton.center = view.center
-        loginButton.delegate = self
-        if let token = FBSDKAccessToken.current(){
-            fetchProfile()
+        
+        }
+    
+    @IBAction func facebookBtnPressed(_ sender: Any) {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email", "public_profile"], from: self)
+        {(result, err) in
+            if err != nil {
+                print("Custom FB login failed", err)
+                return
+            }
+            else{
+                print(FBSDKAccessToken.current().tokenString)
+                fetchProfile()
+                post()
+                //don't forget to move to the next view
+            }
         }
     }
     
+}
+    //
     func fetchProfile(){
         print("fetch profile-- ViewController.swift")
+        
+        
+        
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).start{
             (connection, result, error) -> Void in
             if error != nil {
                 print(error)
-                return
+                //return
             }
             guard let unwrappedResult = result as? [String: Any] else {return}
             print(unwrappedResult)
@@ -52,35 +61,8 @@ FBSDKLoginButtonDelegate {
             }
         }
     }
-    
-    @IBAction func facebookBtnPressed(_ sender: Any) {
-//        let fbLoginManager = FBSDKLoginManager()
-//        fbLoginManager.logInWithReadPermissions(["email"], fromViewController )
-        
-    }
-    
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error){
-        print("Complete Login--ViewController.swift")
-//        if FBSDKAccessToken.current() != nil {
-//            fetchProfile()
-//            post()
-//        }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-    }
-    
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        return true
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    //post JSON to the server
     func post(){
         let parameters: [String: String] = ["access_token" : FBSDKAccessToken.current().tokenString ]
         //https://prod1.mytcheck.com/auth/facebook
@@ -108,6 +90,9 @@ FBSDKLoginButtonDelegate {
             }
             }.resume()
     }
+
+
+
     
-}
+
 
