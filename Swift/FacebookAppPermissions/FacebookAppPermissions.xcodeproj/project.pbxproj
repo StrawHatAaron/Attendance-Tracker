@@ -14,6 +14,7 @@
 		118E777F20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 118E777D20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld */; };
 		118E778120130D630052EB8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118E778020130D630052EB8C /* Assets.xcassets */; };
 		118E778420130D630052EB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118E778220130D630052EB8C /* LaunchScreen.storyboard */; };
+		11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */; };
 		70D05A078CDC933FEDAF19CC /* Pods_FacebookAppPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B91E3117329690ED08A3ADE /* Pods_FacebookAppPermissions.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		118E778020130D630052EB8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		118E778320130D630052EB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118E778520130D630052EB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		8B91E3117329690ED08A3ADE /* Pods_FacebookAppPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookAppPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB919288A644AE69A75E86C /* Pods-FacebookAppPermissions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookAppPermissions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookAppPermissions/Pods-FacebookAppPermissions.debug.xcconfig"; sourceTree = "<group>"; };
 		F3762D2344933E4F6BE27D90 /* Pods-FacebookAppPermissions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookAppPermissions.release.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookAppPermissions/Pods-FacebookAppPermissions.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				118E777620130D630052EB8C /* AppDelegate.swift */,
 				118E777820130D630052EB8C /* ViewController.swift */,
+				11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */,
 				118E777A20130D630052EB8C /* Main.storyboard */,
 				118E778020130D630052EB8C /* Assets.xcassets */,
 				118E778220130D630052EB8C /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 				118E777F20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld in Sources */,
 				113227BA2013C30200BB1940 /* test.m in Sources */,
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
+				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
 				118E777720130D630052EB8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

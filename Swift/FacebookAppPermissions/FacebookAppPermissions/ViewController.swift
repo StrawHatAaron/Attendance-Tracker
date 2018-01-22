@@ -39,9 +39,6 @@ class ViewController: UIViewController{
     //
     func fetchProfile(){
         print("fetch profile-- ViewController.swift")
-        
-        
-        
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).start{
             (connection, result, error) -> Void in
