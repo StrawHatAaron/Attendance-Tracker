@@ -165,7 +165,6 @@ class GetVC: UIViewController {
         print("getMissingFields - GetVC.swift")
     }
     
-    
     //try to decode here
     @IBAction func getWrappedArray(_ sender: Any) {
         unwrapData(link: "https://jsonplaceholder.typicode.com/users")
