@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,62 +85,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-KH-5MU">
-                                <rect key="frame" x="16" y="62" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="GET - (Serialization)"/>
-                                <connections>
-                                    <action selector="getTheInfo:" destination="El9-wE-0WO" eventType="touchUpInside" id="ApX-yF-Ysh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrC-PW-dJQ">
-                                <rect key="frame" x="16" y="225" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Array Simple JSON Object - (Decode)"/>
-                                <connections>
-                                    <action selector="getArraySimpleDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="r7V-Bl-5W9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0do-xf-uZJ">
-                                <rect key="frame" x="16" y="403" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Missing fields object - (Decode)"/>
-                                <connections>
-                                    <action selector="getMissingFields:" destination="El9-wE-0WO" eventType="touchUpInside" id="uNN-Re-tGj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z77-EF-me4">
-                                <rect key="frame" x="16" y="498" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Wrapped Arrays  - (Decode) - incomplete"/>
-                                <connections>
-                                    <action selector="getWrappedArray:" destination="El9-wE-0WO" eventType="touchUpInside" id="kwo-rq-pVc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXO-4x-QwX">
-                                <rect key="frame" x="16" y="313" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Array JSON Unwrap Object- (Decode)"/>
-                                <connections>
-                                    <action selector="getArrayUnwrapDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="WNG-HL-DWv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACi-z1-M2G">
-                                <rect key="frame" x="16" y="145" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Simple JSON Object - (Decode)"/>
-                                <connections>
-                                    <action selector="getSimpleDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="Vsc-hY-0yu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wna-nG-bK4">
+                                <rect key="frame" x="56" y="206" width="263" height="255"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-KH-5MU">
+                                        <rect key="frame" x="0.0" y="0.0" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="GET - (Serialization) - Problematic"/>
+                                        <connections>
+                                            <action selector="getTheInfo:" destination="El9-wE-0WO" eventType="touchUpInside" id="ApX-yF-Ysh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACi-z1-M2G">
+                                        <rect key="frame" x="0.0" y="45" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Simple JSON Object - (Decode)"/>
+                                        <connections>
+                                            <action selector="getSimpleDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="Vsc-hY-0yu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrC-PW-dJQ">
+                                        <rect key="frame" x="0.0" y="90" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Array Simple JSON Object - (Decode)"/>
+                                        <connections>
+                                            <action selector="getArraySimpleDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="r7V-Bl-5W9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXO-4x-QwX">
+                                        <rect key="frame" x="0.0" y="135" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Array JSON Unwrap Object- (Decode)"/>
+                                        <connections>
+                                            <action selector="getArrayUnwrapDecode:" destination="El9-wE-0WO" eventType="touchUpInside" id="WNG-HL-DWv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0do-xf-uZJ">
+                                        <rect key="frame" x="0.0" y="180" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Missing fields object - (Decode)"/>
+                                        <connections>
+                                            <action selector="getMissingFields:" destination="El9-wE-0WO" eventType="touchUpInside" id="uNN-Re-tGj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z77-EF-me4">
+                                        <rect key="frame" x="0.0" y="225" width="263" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Wrapped Arrays  - (Decode)"/>
+                                        <connections>
+                                            <action selector="getWrappedArray:" destination="El9-wE-0WO" eventType="touchUpInside" id="kwo-rq-pVc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Wna-nG-bK4" secondAttribute="bottom" constant="206" id="UUD-eo-aTE"/>
+                            <constraint firstItem="Wna-nG-bK4" firstAttribute="leading" secondItem="35U-v0-6LC" secondAttribute="leading" constant="56" id="dHB-SK-ohb"/>
+                            <constraint firstItem="35U-v0-6LC" firstAttribute="trailing" secondItem="Wna-nG-bK4" secondAttribute="trailing" constant="56" id="msi-wE-M0p"/>
+                            <constraint firstItem="Wna-nG-bK4" firstAttribute="top" secondItem="kqU-td-FjH" secondAttribute="topMargin" constant="186" id="p1V-v2-ikt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="35U-v0-6LC"/>
                     </view>
                 </viewController>

@@ -22,6 +22,37 @@ struct Course: Decodable {
     let imageUrl: String?
 }
 
+//****** from the link "https://jsonplaceholder.typicode.com/users"
+struct User: Decodable{
+    let id: Int?
+    let name: String?
+    let username: String?
+    let email: String?
+    let address: Adress?
+    let phone: String?
+    let website: String?
+    let company: Company?
+}
+
+struct Adress: Decodable {
+    let street: String?
+    let suite: String?
+    let city: String?
+    let zipcode: String?
+    let geo: Geo?
+}
+
+struct Geo: Decodable{
+    let lat: String?
+    let lng: String?
+}
+
+struct Company: Decodable {
+    let name: String?
+    let catchPhrase: String?
+    let bs: String?
+}
+
 class GetVC: UIViewController {
 
     var fistName: String?
@@ -53,10 +84,10 @@ class GetVC: UIViewController {
                     //**************
                     switch link{
                         //getTheInfo
-                        case "https://jsonplaceholder.typicode.com/users":
-                            let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            print(json, "json")
-                        break
+//                        case "https://jsonplaceholder.typicode.com/users":
+//                            let json = try JSONSerialization.jsonObject(with: data, options: [])
+//                            print(json, "json")
+//                        break
                         
                         //getSimpleDecode
                         case "https://api.letsbuildthatapp.com/jsondecodable/course":
@@ -89,6 +120,13 @@ class GetVC: UIViewController {
                             }
                         break
                         
+                        //getWrappedArray -- All A
+                        case "https://jsonplaceholder.typicode.com/users":
+                            let users = try JSONDecoder().decode([User].self, from: data)
+                            print("latitude for user 1: \(users[0].address!.geo!.lat!)")
+                            print(users[0].id!)
+                        break
+                        
                     default:
                         print("A unspecified link was inputed")
                     }
@@ -99,7 +137,8 @@ class GetVC: UIViewController {
             }
             }.resume()
     }
-    
+
+    //this is about to be out of order
     @IBAction func getTheInfo(_ sender: Any) {
         unwrapData(link: "https://jsonplaceholder.typicode.com/users")
         print("getArrayDecode - GetVC.swift")
@@ -129,6 +168,7 @@ class GetVC: UIViewController {
     
     //try to decode here
     @IBAction func getWrappedArray(_ sender: Any) {
-        print("incomplete")
+        unwrapData(link: "https://jsonplaceholder.typicode.com/users")
+        print("getWrappedArray - GetVC.swift")
     }
 }
