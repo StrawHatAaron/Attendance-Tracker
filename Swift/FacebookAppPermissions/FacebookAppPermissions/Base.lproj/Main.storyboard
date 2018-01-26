@@ -51,6 +51,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
                                 <rect key="frame" x="16" y="178" width="343" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="facebookBtn"/>
                                 <connections>
                                     <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xvd-we-ypd"/>
@@ -68,7 +69,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.2009286582" green="0.71888405079999995" blue="0.42096954580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -288,6 +289,13 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="LdZ-ax-WH9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-2z-kf4">
+                                <rect key="frame" x="166" y="378" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -296,6 +304,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xX3-27-YRd"/>
                     </view>
+                    <connections>
+                        <outlet property="labelCount" destination="J0K-2z-kf4" id="fUG-0p-bu3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWR-pq-tFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		113227BA2013C30200BB1940 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 113227B92013C30200BB1940 /* test.m */; };
+		1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */; };
 		118E777720130D630052EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777620130D630052EB8C /* AppDelegate.swift */; };
 		118E777920130D630052EB8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777820130D630052EB8C /* ViewController.swift */; };
 		118E777C20130D630052EB8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118E777A20130D630052EB8C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		113227B82013C30100BB1940 /* FacebookAppPermissions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAppPermissions-Bridging-Header.h"; sourceTree = "<group>"; };
 		113227B92013C30200BB1940 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPeripheral.swift; sourceTree = "<group>"; };
 		118E777320130D630052EB8C /* FacebookAppPermissions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAppPermissions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E777620130D630052EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118E777820130D630052EB8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				11BE044D2019419C002FB21E /* BluetoothVC.swift */,
+				1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -154,6 +157,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -259,6 +267,7 @@
 				11BE044E2019419C002FB21E /* BluetoothVC.swift in Sources */,
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
+				1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */,
 				118E777720130D630052EB8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
