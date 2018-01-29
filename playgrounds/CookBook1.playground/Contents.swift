@@ -37,6 +37,7 @@ class QueryService {
                 self.updateSearchResults(data)
                 self.tracks
                 self.errorMessage
+                print(data)
             }
         }
     }
