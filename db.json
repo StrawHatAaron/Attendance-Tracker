@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Using post Router",
+      "author": "Aaron's PUT request",
+      "id": 1
     },
     {
       "title": "\"Aaron is the Swift God\"",
       "author": "value",
       "id": 2
+    },
+    {
+      "author": "swift jesus",
+      "title": "swift savior",
+      "id": 3
     }
   ],
   "comments": [

@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-fp-txg">
-                                <rect key="frame" x="16" y="113" width="343" height="57"/>
+                                <rect key="frame" x="16" y="202" width="343" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.073142372070000003" green="0.5271855593" blue="0.68153584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="29"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-5b-bZA">
-                                <rect key="frame" x="16" y="42" width="343" height="63"/>
+                                <rect key="frame" x="16" y="131" width="343" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
-                                <rect key="frame" x="16" y="178" width="343" height="64"/>
+                                <rect key="frame" x="16" y="267" width="343" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="facebookBtn"/>
@@ -58,14 +58,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uz-bp-Xrm">
-                                <rect key="frame" x="16" y="250" width="343" height="61"/>
+                                <rect key="frame" x="16" y="339" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Bluetooth Low Energy">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gHG-5o-pif" kind="show" id="r65-Qr-3Vl"/>
+                                    <segue destination="XMZ-3D-Pal" kind="presentation" id="iS2-sV-J4C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-9T-Ltl">
+                                <rect key="frame" x="16" y="72" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44059667749536435" green="0.04099503578139041" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="PUT user Info - Not finished">
+                                    <color key="titleColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Sl4-zC-Tnw" kind="show" id="qdF-D0-KGU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,7 +90,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2439" y="81"/>
+            <point key="canvasLocation" x="-2439.1999999999998" y="80.50974512743629"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dy7-5E-M3A">
+            <objects>
+                <viewController id="Sl4-zC-Tnw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlf-wD-vsE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-1n-5cR">
+                                <rect key="frame" x="16" y="20" width="92" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2009286582" green="0.71888405079999995" blue="0.42096954580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="3cz-s3-fTe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U7y-K2-mIj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jw5-um-PQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631.2" y="-1324.5877061469266"/>
         </scene>
         <!--GetVC-->
         <scene sceneID="oda-Dg-55w">
@@ -267,53 +307,123 @@
             </objects>
             <point key="canvasLocation" x="-1631" y="81"/>
         </scene>
-        <!--BluetoothVC-->
-        <scene sceneID="hPd-2I-NZJ">
+        <!--Navigation Controller-->
+        <scene sceneID="Mu0-N4-hdJ">
             <objects>
-                <viewController id="gHG-5o-pif" customClass="BluetoothVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Rl-hP-BAR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbk-fq-bob">
-                                <rect key="frame" x="137" y="318" width="101" height="30"/>
-                                <color key="backgroundColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Send Message"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLy-um-UkI">
-                                <rect key="frame" x="16" y="20" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="LdZ-ax-WH9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-2z-kf4">
-                                <rect key="frame" x="166" y="378" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="nbk-fq-bob" firstAttribute="centerY" secondItem="3Rl-hP-BAR" secondAttribute="centerY" id="98K-BA-n7q"/>
-                            <constraint firstItem="nbk-fq-bob" firstAttribute="centerX" secondItem="3Rl-hP-BAR" secondAttribute="centerX" id="lDm-YH-ngZ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xX3-27-YRd"/>
-                    </view>
+                <navigationController id="XMZ-3D-Pal" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AXi-XS-kIG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="labelCount" destination="J0K-2z-kf4" id="fUG-0p-bu3"/>
+                        <segue destination="rgF-eQ-Ig6" kind="relationship" relationship="rootViewController" id="FTn-J8-gqN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qD-lZ-OKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631" y="867"/>
+        </scene>
+        <!--Select Device-->
+        <scene sceneID="Gby-wX-XcQ">
+            <objects>
+                <viewController id="rgF-eQ-Ig6" customClass="BlueScannerVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4s9-QO-op2"/>
+                        <viewControllerLayoutGuide type="bottom" id="N3G-Dm-T1u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EQt-dc-scD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl5-Gp-NAf" userLabel="Empty View">
+                                <rect key="frame" x="120" y="258.5" width="135" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No devices found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-1S-pFa">
+                                        <rect key="frame" x="0.0" y="65" width="135" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scanning" translatesAutoresizingMaskIntoConstraints="NO" id="EYK-hN-7TU" userLabel="Bluetooth Icon">
+                                        <rect key="frame" x="35" y="0.0" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="v6x-gc-ZG8"/>
+                                    <constraint firstAttribute="width" constant="135" id="vE7-S5-4sp"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rlX-ly-7bH" userLabel="Devices Table">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="vTo-77-D7U" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="tcb-ok-sKj" imageView="04G-Kv-HSt" rowHeight="50" style="IBUITableViewCellStyleDefault" id="Sy0-7x-Ysb">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sy0-7x-Ysb" id="LBT-s4-HaX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tcb-ok-sKj">
+                                                    <rect key="frame" x="60" y="0.0" width="300" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Signal_3" id="04G-Kv-HSt">
+                                                    <rect key="frame" x="15" y="13" width="30" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tl5-Gp-NAf" firstAttribute="centerX" secondItem="EQt-dc-scD" secondAttribute="centerX" id="55R-lJ-ya6"/>
+                            <constraint firstItem="rlX-ly-7bH" firstAttribute="leading" secondItem="EQt-dc-scD" secondAttribute="leading" id="FFo-73-eeQ"/>
+                            <constraint firstAttribute="trailing" secondItem="rlX-ly-7bH" secondAttribute="trailing" id="Xc1-5A-MIO"/>
+                            <constraint firstItem="tl5-Gp-NAf" firstAttribute="centerY" secondItem="EQt-dc-scD" secondAttribute="centerY" id="h38-rP-mVI"/>
+                            <constraint firstItem="N3G-Dm-T1u" firstAttribute="top" secondItem="rlX-ly-7bH" secondAttribute="bottom" id="kRc-GT-1dy"/>
+                            <constraint firstItem="rlX-ly-7bH" firstAttribute="top" secondItem="4s9-QO-op2" secondAttribute="bottom" id="q0o-vq-juk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UOp-1w-IGt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Device" id="oqq-zW-nFA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="d0B-td-3XC">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="rgF-eQ-Ig6" id="Lbf-t1-oV7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="devicesTable" destination="rlX-ly-7bH" id="YBI-4S-xd7"/>
+                        <outlet property="emptyView" destination="tl5-Gp-NAf" id="E5o-Ab-wCW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lWR-pq-tFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L88-jm-sSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1631" y="843"/>
+            <point key="canvasLocation" x="-463" y="867"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Signal_3" width="30" height="22"/>
         <image name="facebookBtn" width="988" height="160"/>
+        <image name="scanning" width="16" height="16"/>
     </resources>
 </document>
