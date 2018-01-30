@@ -15,6 +15,7 @@
 		118E777F20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 118E777D20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld */; };
 		118E778120130D630052EB8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118E778020130D630052EB8C /* Assets.xcassets */; };
 		118E778420130D630052EB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118E778220130D630052EB8C /* LaunchScreen.storyboard */; };
+		11A150AE202028D600B57545 /* PopupScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A150AD202028D600B57545 /* PopupScannerVC.swift */; };
 		11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */; };
 		11A6D0D82016942F002E6AB1 /* GetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D0D72016942F002E6AB1 /* GetVC.swift */; };
 		11BE044E2019419C002FB21E /* BlueScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE044D2019419C002FB21E /* BlueScannerVC.swift */; };
@@ -36,6 +37,7 @@
 		118E778020130D630052EB8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		118E778320130D630052EB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118E778520130D630052EB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A150AD202028D600B57545 /* PopupScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupScannerVC.swift; sourceTree = "<group>"; };
 		11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		11A6D0D72016942F002E6AB1 /* GetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVC.swift; sourceTree = "<group>"; };
 		11BE044D2019419C002FB21E /* BlueScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScannerVC.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				11BE044D2019419C002FB21E /* BlueScannerVC.swift */,
 				1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */,
 				11D2FC07201FDC3F007C41AA /* ScannerDelegate.swift */,
+				11A150AD202028D600B57545 /* PopupScannerVC.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
 				1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */,
+				11A150AE202028D600B57545 /* PopupScannerVC.swift in Sources */,
 				118E777720130D630052EB8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,15 +1,21 @@
 //
-//  BlueScannerVC.swift
+//  PopupScannerVC.swift
 //  FacebookAppPermissions
 //
-//  Created by Aaron Miller on 1/24/18.
+//  Created by Aaron Miller on 1/29/18.
+//  Copyright © 2018 Aaron Miller. All rights reserved.
+//
+//  PopupVC.swift
+//  FacebookAppPermissions
+//
+//  Created by Aaron Miller on 1/29/18.
 //  Copyright © 2018 Aaron Miller. All rights reserved.
 //
 
 import UIKit
 import CoreBluetooth
 
-class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class PopupScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let tCheck_NAME = "Nordic_UART"
     let tCheck_SCRATCH_UUID         = CBUUID(string: "a495ff21-c5b1-4b44-b512-1370f02d74de")
@@ -27,16 +33,16 @@ class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDele
     var peripherals      : [ScannedPeripheral] = []
     var timer            : Timer?
     
-    
     var peripheral:CBPeripheral?
     
     @IBOutlet weak var devicesTable: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @objc func timerFire() {
+    @objc
+    func timerFire() {
         if peripherals.count > 0 {
             emptyView.isHidden = true
             devicesTable.reloadData()
@@ -118,7 +124,7 @@ class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDele
         let centralQueue = DispatchQueue(label: "no.nordicsemi.nRFToolBox--Aaron Miller", attributes: [])
         bluetoothManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: true)
@@ -158,7 +164,7 @@ class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDele
             return aCell
         }
         else{
-            return tableView.dequeueReusableCell(withIdentifier: "EmptyCell")!
+            return tableView.dequeueReusableCell(withIdentifier: "Cell")!
         }
     }
     
@@ -173,7 +179,7 @@ class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDele
         self.delegate?.centralManagerDidSelectPeripheral(withManager: bluetoothManager!, andPeripheral: peripheral)
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     //after manager is made in view did load this is automagically called
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         guard central.state == .poweredOn else{
@@ -207,5 +213,7 @@ class BlueScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDele
             }
         })
     }
+    
+}
 
-   }
+

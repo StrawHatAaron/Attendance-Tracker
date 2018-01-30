@@ -61,7 +61,7 @@
                                 <rect key="frame" x="16" y="339" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Bluetooth Low Energy">
+                                <state key="normal" title="Bluetooth Low Energy - Scroll View">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -78,6 +78,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="Sl4-zC-Tnw" kind="show" id="qdF-D0-KGU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-z1-hsO">
+                                <rect key="frame" x="16" y="408" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.40739924634027558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Bluetooth Low Energy - Popup">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jhd-Xp-ZCa" kind="presentation" id="BGt-zo-3t9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -327,6 +338,79 @@
             </objects>
             <point key="canvasLocation" x="-1631" y="867"/>
         </scene>
+        <!--PopupScannerVC-->
+        <scene sceneID="G4v-RL-0GD">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Jhd-Xp-ZCa" userLabel="PopupScannerVC" customClass="PopupScannerVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mgI-OO-3EO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-WH-UeM">
+                                <rect key="frame" x="16" y="77" width="343" height="362"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efY-IU-gGa">
+                                        <rect key="frame" x="0.0" y="31" width="343" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="IpU-14-re2" imageView="iqq-8M-8a4" rowHeight="50" style="IBUITableViewCellStyleDefault" id="RVa-dW-Ryg">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RVa-dW-Ryg" id="by3-6X-Hmq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IpU-14-re2">
+                                                            <rect key="frame" x="60" y="0.0" width="268" height="49.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Signal_3" id="iqq-8M-8a4">
+                                                            <rect key="frame" x="15" y="13" width="30" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.25319102112676056" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-OY-6xC">
+                                <rect key="frame" x="16" y="408" width="343" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.79345183945139575" green="1" blue="0.89855704908307854" alpha="0.75398877640845074" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="Jhd-Xp-ZCa" eventType="touchUpInside" id="COa-Qk-Vs0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.75398877640845074" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MWD-WH-UeM" firstAttribute="top" secondItem="mgI-OO-3EO" secondAttribute="topMargin" constant="57" id="Fdc-sC-Lun"/>
+                            <constraint firstItem="GXe-oR-fVB" firstAttribute="trailing" secondItem="MWD-WH-UeM" secondAttribute="trailing" constant="16" id="SsI-zw-ejJ"/>
+                            <constraint firstItem="MWD-WH-UeM" firstAttribute="leading" secondItem="GXe-oR-fVB" secondAttribute="leading" constant="16" id="fV8-lo-Lla"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="MWD-WH-UeM" secondAttribute="bottom" constant="228" id="gWc-Yb-m5z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GXe-oR-fVB"/>
+                    </view>
+                    <connections>
+                        <outlet property="devicesTable" destination="efY-IU-gGa" id="p6N-2X-mjZ"/>
+                        <outlet property="emptyView" destination="MWD-WH-UeM" id="q5q-jY-mBw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VW-cf-x3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631" y="1666"/>
+        </scene>
         <!--Select Device-->
         <scene sceneID="Gby-wX-XcQ">
             <objects>
@@ -367,6 +451,7 @@
                                     <rect key="frame" x="0.0" y="72" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="tcb-ok-sKj" imageView="04G-Kv-HSt" rowHeight="50" style="IBUITableViewCellStyleDefault" id="Sy0-7x-Ysb">
@@ -389,6 +474,17 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell hidden="YES" contentMode="bottom" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="0.0" id="efe-oS-d9n" userLabel="EmptyCell">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="efe-oS-d9n" id="vkx-mC-1Mo">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="0.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                        </tableViewCellContentView>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -418,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L88-jm-sSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-463" y="867"/>
+            <point key="canvasLocation" x="-463.19999999999999" y="866.71664167916049"/>
         </scene>
     </scenes>
     <resources>

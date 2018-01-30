@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
+            timestampString = "538979366.480244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "BlueScannerVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of FacebookAppPermissions.BlueScannerVC.ANCSServiceUUIDString : Swift.String"
+                  moduleName = "FacebookAppPermissions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
+                  timestampString = "538979366.671864"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FacebookAppPermissions.BlueScannerVC.ANCSServiceUUIDString.getter : Swift.String"
+                  moduleName = "FacebookAppPermissions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
+                  timestampString = "538979366.674634"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FacebookAppPermissions.BlueScannerVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; FacebookAppPermissions.BlueScannerVC"
+                  moduleName = "FacebookAppPermissions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
+                  timestampString = "538979366.67743"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FacebookAppPermissions.BlueScannerVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;FacebookAppPermissions.BlueScannerVC&gt;"
+                  moduleName = "FacebookAppPermissions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
+                  timestampString = "538979366.680079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "744">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
