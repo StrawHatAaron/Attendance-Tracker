@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PutVC: UIViewController {
+class RouterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,5 +38,5 @@ class PutVC: UIViewController {
         }
         putTask.resume()
     }
-
+    
 }

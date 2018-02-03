@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="-2439.1999999999998" y="80.50974512743629"/>
         </scene>
-        <!--PutVC-->
+        <!--RouterVC-->
         <scene sceneID="Dy7-5E-M3A">
             <objects>
-                <viewController id="Sl4-zC-Tnw" customClass="PutVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sl4-zC-Tnw" customClass="RouterVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qlf-wD-vsE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +172,14 @@
                                 <connections>
                                     <action selector="put_id_title_author:" destination="Sl4-zC-Tnw" eventType="touchUpInside" id="fbC-FY-TKz"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W5-1k-wj4">
+                                <rect key="frame" x="16" y="185" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Upload Task">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
