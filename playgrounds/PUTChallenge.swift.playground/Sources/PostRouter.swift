@@ -34,7 +34,7 @@ public enum PostRouter {
     case delete(Int)
     
     // Base endpoint
-    static let baseURLString = "https://localhost:3000/employees/"
+    static let baseURLString = "http://localhost:3000/posts/"
     
     // Set the method
     var method: String {
@@ -54,9 +54,10 @@ public enum PostRouter {
             let relativePath: String?
             // DONE: Set relativePath to use id, as appropriate
             switch self {
-                case .getAll, .create: relativePath = ""
-                case .get(let id), .update(let id, _), .delete(let id): relativePath = "\(id)"
+            case .getAll, .create: relativePath = ""
+            case .get(let id), .update(let id, _), .delete(let id): relativePath = "\(id)"
             }
+            
             var url = URL(string: PostRouter.baseURLString)!
             if let path = relativePath {
                 url = url.appendingPathComponent(path)
@@ -67,8 +68,8 @@ public enum PostRouter {
         // Set up request parameters
         let parameters: Post? = {
             switch self {
-                case .getAll, .get, .delete: return nil
-                case .create(let post), .update(_, let post): return post
+            case .getAll, .get, .delete: return nil
+            case .create(let post), .update(_, let post): return post
             }
         }()
         
@@ -87,6 +88,7 @@ public enum PostRouter {
         } catch let encodeError as NSError {
             print("Encoder error: \(encodeError.localizedDescription)\n")
         }
+        
         return request
     }
 }

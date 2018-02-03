@@ -21,89 +21,120 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wdZ-3u-INL">
-                                <rect key="frame" x="16" y="72" width="343" height="456"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iav-Ok-QUi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-9T-Ltl">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
-                                        <color key="backgroundColor" red="0.44059667749536435" green="0.04099503578139041" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="PUT user Info - Not finished">
-                                            <color key="titleColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Sl4-zC-Tnw" kind="show" id="qdF-D0-KGU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-5b-bZA">
-                                        <rect key="frame" x="0.0" y="64" width="343" height="46"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="GET user info">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="El9-wE-0WO" kind="show" id="VBe-4i-Siz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-fp-txg">
-                                        <rect key="frame" x="0.0" y="130" width="343" height="46"/>
-                                        <color key="backgroundColor" red="0.073142372070000003" green="0.5271855593" blue="0.68153584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="29"/>
-                                        <state key="normal" title="Create New Account">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="jqN-9k-1sB" kind="presentation" id="Nca-5R-jFm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
-                                        <rect key="frame" x="0.0" y="196" width="343" height="160"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" backgroundImage="facebookBtn"/>
-                                        <connections>
-                                            <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xvd-we-ypd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uz-bp-Xrm">
-                                        <rect key="frame" x="0.0" y="376" width="343" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Bluetooth Low Energy - Scroll View">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="XMZ-3D-Pal" kind="presentation" id="iS2-sV-J4C"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-z1-hsO">
-                                        <rect key="frame" x="0.0" y="426" width="343" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.40739924634027558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Bluetooth Low Energy - Popup">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Jhd-Xp-ZCa" kind="presentation" id="BGt-zo-3t9"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujL-nG-DeH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ds8-LC-rot">
+                                                <rect key="frame" x="16" y="79" width="343" height="1120"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-BB-1xl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="143"/>
+                                                        <state key="normal" title="Authentication">
+                                                            <color key="titleShadowColor" red="0.44059667749999998" green="0.040995035780000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-9T-Ltl">
+                                                        <rect key="frame" x="0.0" y="163" width="343" height="142.5"/>
+                                                        <color key="backgroundColor" red="0.44059667749536435" green="0.04099503578139041" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                        <state key="normal" title="PUT with PostRouter">
+                                                            <color key="titleColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Sl4-zC-Tnw" kind="show" id="qdF-D0-KGU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
+                                                        <rect key="frame" x="0.0" y="325.5" width="343" height="143"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                        </accessibility>
+                                                        <state key="normal" image="facebookBtn"/>
+                                                        <connections>
+                                                            <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xvd-we-ypd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-z1-hsO">
+                                                        <rect key="frame" x="0.0" y="488.5" width="343" height="143"/>
+                                                        <color key="backgroundColor" red="1" green="0.40739924634027558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Bluetooth Low Energy - Popup">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Jhd-Xp-ZCa" kind="presentation" id="BGt-zo-3t9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uz-bp-Xrm">
+                                                        <rect key="frame" x="0.0" y="651.5" width="343" height="143"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Bluetooth Low Energy - Scroll View">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="XMZ-3D-Pal" kind="presentation" id="iS2-sV-J4C"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-fp-txg">
+                                                        <rect key="frame" x="0.0" y="814.5" width="343" height="142.5"/>
+                                                        <color key="backgroundColor" red="0.073142372070000003" green="0.5271855593" blue="0.68153584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="29"/>
+                                                        <state key="normal" title="Create New Account">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="jqN-9k-1sB" kind="presentation" id="Nca-5R-jFm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-5b-bZA">
+                                                        <rect key="frame" x="0.0" y="977" width="343" height="143"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <state key="normal" title="GET user info">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="El9-wE-0WO" kind="show" id="VBe-4i-Siz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ds8-LC-rot" firstAttribute="leading" secondItem="ujL-nG-DeH" secondAttribute="leading" constant="16" id="0a7-bb-XYZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ds8-LC-rot" secondAttribute="trailing" constant="16" id="Cp7-I1-E59"/>
+                                            <constraint firstItem="ds8-LC-rot" firstAttribute="top" secondItem="ujL-nG-DeH" secondAttribute="top" constant="79" id="NeJ-BD-06D"/>
+                                            <constraint firstAttribute="height" constant="1300" id="YxK-7D-rQm"/>
+                                            <constraint firstAttribute="bottom" secondItem="ds8-LC-rot" secondAttribute="bottom" constant="101" id="uZL-TG-OQ2"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-BB-1xl">
-                                <rect key="frame" x="16" y="555" width="343" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="ujL-nG-DeH" firstAttribute="leading" secondItem="iav-Ok-QUi" secondAttribute="leading" id="2lQ-qP-dod"/>
+                                    <constraint firstItem="ujL-nG-DeH" firstAttribute="top" secondItem="iav-Ok-QUi" secondAttribute="top" id="A0O-CG-ysj"/>
+                                    <constraint firstAttribute="trailing" secondItem="ujL-nG-DeH" secondAttribute="trailing" id="blp-bU-ZNH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ujL-nG-DeH" secondAttribute="bottom" id="oCr-0N-ho4"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wdZ-3u-INL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4oZ-l0-gbd"/>
-                            <constraint firstItem="wdZ-3u-INL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="72" id="cLP-oP-FNa"/>
-                            <constraint firstAttribute="trailing" secondItem="wdZ-3u-INL" secondAttribute="trailing" constant="16" id="poS-fC-QTb"/>
+                            <constraint firstItem="iav-Ok-QUi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Ug-mH-G0a"/>
+                            <constraint firstItem="ujL-nG-DeH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="DR3-Fb-3ww"/>
+                            <constraint firstItem="iav-Ok-QUi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nDF-9A-C5V"/>
+                            <constraint firstItem="iav-Ok-QUi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vDz-pQ-aKQ"/>
+                            <constraint firstItem="iav-Ok-QUi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wgF-sN-kb7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="facebookBtn" destination="Rvx-FC-8n4" id="K9t-af-1zC"/>
                     </connections>
@@ -135,7 +166,7 @@
                                 <rect key="frame" x="16" y="129" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.88685042380000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Rested PUT (id, title, author)">
+                                <state key="normal" title="Rested PUT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

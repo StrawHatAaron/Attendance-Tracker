@@ -10,38 +10,31 @@ import Foundation
 
 // Encode this no-id struct for POST, PUT requests
 public struct Post: Codable {
+    let userId: Int?
     let id: Int?
-    let first_name: String?
-    let last_name: String?
-    let email: String?
+    let title: String?
+    let body: String?
     
-    public init(id:Int, first_name:String, last_name:String, email:String) {
+    public init(userId:Int, id:Int, title:String, body:String) {
+        self.userId = userId
         self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-    }
-    
-    public init(first_name:String, last_name:String, email:String){
-        self.id = 1
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
+        self.title = title
+        self.body = body
     }
 }
 
 // Decode responses with this struct
 public struct PostWithId: Codable {
+    let userId: Int
     let id: Int
-    let first_name: String
-    let last_name: String
-    let email: String
+    let title: String
+    let body: String
     
-    public init(id: Int, first_name: String, last_name: String, email: String) {
+    public init(userId: Int, id: Int, title: String, body: String) {
+        self.userId = userId
         self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
+        self.title = title
+        self.body = body
     }
 }
 
@@ -53,8 +46,8 @@ public enum PostRouter {
     case update(Int, Post)
     case delete(Int)
     // Base endpoint
-    static let baseURLString = "https://jsonplaceholder.typicode.com/"
-    //static let baseURLString = "https://localhost:3000/employees/"
+    static let baseURLString = "https://jsonplaceholder.typicode.com/posts/"
+    //static let baseURLString = "http://localhost:3000/employees/"
     // Set the method
     var method: String {
         // DONE: Return "GET", "POST", "PUT" or "DELETE", as appropriate
