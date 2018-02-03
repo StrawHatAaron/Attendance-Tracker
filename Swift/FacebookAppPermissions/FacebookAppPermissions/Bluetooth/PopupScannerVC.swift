@@ -37,9 +37,6 @@ class PopupScannerVC: UIViewController, CBCentralManagerDelegate, UITableViewDel
     
     @IBOutlet weak var devicesTable: UITableView!
     @IBOutlet weak var emptyView: UIView!
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     @objc
     func timerFire() {

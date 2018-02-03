@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-            timestampString = "538979366.480244"
+            timestampString = "539312809.205184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -26,12 +26,12 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "538979366.671864"
+                  timestampString = "539323901.126415"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "8">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "538979366.674634"
+                  timestampString = "539323901.129738"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "116">
+                  offsetFromSymbolStart = "128">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,12 +56,12 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "538979366.67743"
+                  timestampString = "539323901.132892"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "788">
+                  offsetFromSymbolStart = "1026">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,12 +71,12 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "538979366.680079"
+                  timestampString = "539323901.135879"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "744">
+                  offsetFromSymbolStart = "989">
                </Location>
             </Locations>
          </BreakpointContent>

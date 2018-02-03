@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		113227BA2013C30200BB1940 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 113227B92013C30200BB1940 /* test.m */; };
 		1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */; };
+		1181A3CE20255EBA0081A950 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181A3CD20255EBA0081A950 /* PostRouter.swift */; };
 		118E777720130D630052EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777620130D630052EB8C /* AppDelegate.swift */; };
 		118E777920130D630052EB8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777820130D630052EB8C /* ViewController.swift */; };
 		118E777C20130D630052EB8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118E777A20130D630052EB8C /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		113227B82013C30100BB1940 /* FacebookAppPermissions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAppPermissions-Bridging-Header.h"; sourceTree = "<group>"; };
 		113227B92013C30200BB1940 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPeripheral.swift; sourceTree = "<group>"; };
+		1181A3CD20255EBA0081A950 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
 		118E777320130D630052EB8C /* FacebookAppPermissions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAppPermissions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E777620130D630052EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118E777820130D630052EB8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,14 +99,15 @@
 				11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */,
 				11D2FC05201FBD89007C41AA /* PutVC.swift */,
 				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
+				1181A3CD20255EBA0081A950 /* PostRouter.swift */,
 				118E777A20130D630052EB8C /* Main.storyboard */,
 				11BE044C20194179002FB21E /* Bluetooth */,
 				118E778020130D630052EB8C /* Assets.xcassets */,
 				118E778220130D630052EB8C /* LaunchScreen.storyboard */,
 				118E778520130D630052EB8C /* Info.plist */,
-				118E777D20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld */,
 				113227B92013C30200BB1940 /* test.m */,
 				113227B82013C30100BB1940 /* FacebookAppPermissions-Bridging-Header.h */,
+				118E777D20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld */,
 			);
 			path = FacebookAppPermissions;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
 				1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */,
 				11A150AE202028D600B57545 /* PopupScannerVC.swift in Sources */,
+				1181A3CE20255EBA0081A950 /* PostRouter.swift in Sources */,
 				118E777720130D630052EB8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

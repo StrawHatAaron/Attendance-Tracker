@@ -65,7 +65,7 @@ class CreateAccountVC: UIViewController {
                                             "lastName"  : lastName!,
                                             "email"     : email!,
                                             "password"  : password!]
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {return}
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/employees") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
