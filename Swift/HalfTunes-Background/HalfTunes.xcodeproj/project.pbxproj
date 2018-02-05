@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115AB8692027CAE500E460AF /* SearchVC+URLSessionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115AB8682027CAE500E460AF /* SearchVC+URLSessionDelegates.swift */; };
 		18C0C62A1DF4858D00393D33 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C6291DF4858D00393D33 /* StoryboardSupport.swift */; };
 		18C0C62C1DF485CA00393D33 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C62B1DF485CA00393D33 /* Download.swift */; };
 		40420F6F1F6BE785005E2A22 /* ProgressUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40420F6E1F6BE785005E2A22 /* ProgressUpdateDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115AB8682027CAE500E460AF /* SearchVC+URLSessionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+URLSessionDelegates.swift"; sourceTree = "<group>"; };
 		18C0C6291DF4858D00393D33 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		18C0C62B1DF485CA00393D33 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		40420F6E1F6BE785005E2A22 /* ProgressUpdateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressUpdateDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				D9EF8FCC1B53FD2100EFC4B6 /* Main.storyboard */,
 				40420F6E1F6BE785005E2A22 /* ProgressUpdateDelegate.swift */,
 				D9EF8FC41B53FD2100EFC4B6 /* Supporting Files */,
+				115AB8682027CAE500E460AF /* SearchVC+URLSessionDelegates.swift */,
 			);
 			path = HalfTunes;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9EF8FEA1B53FD6900EFC4B6 /* SearchViewController.swift in Sources */,
+				115AB8692027CAE500E460AF /* SearchVC+URLSessionDelegates.swift in Sources */,
 				40D430D91F1893B50042301B /* QueryService.swift in Sources */,
 				D9EF8FC71B53FD2100EFC4B6 /* AppDelegate.swift in Sources */,
 				18C0C62A1DF4858D00393D33 /* StoryboardSupport.swift in Sources */,

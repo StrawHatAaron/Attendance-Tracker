@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		113227BA2013C30200BB1940 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 113227B92013C30200BB1940 /* test.m */; };
 		1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */; };
+		1166788B20282E0F00805B9A /* DLFilesBackgroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166788A20282E0F00805B9A /* DLFilesBackgroundVC.swift */; };
 		1181A3CE20255EBA0081A950 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181A3CD20255EBA0081A950 /* PostRouter.swift */; };
 		118E777720130D630052EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777620130D630052EB8C /* AppDelegate.swift */; };
 		118E777920130D630052EB8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777820130D630052EB8C /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		113227B82013C30100BB1940 /* FacebookAppPermissions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAppPermissions-Bridging-Header.h"; sourceTree = "<group>"; };
 		113227B92013C30200BB1940 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPeripheral.swift; sourceTree = "<group>"; };
+		1166788A20282E0F00805B9A /* DLFilesBackgroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLFilesBackgroundVC.swift; sourceTree = "<group>"; };
 		1181A3CD20255EBA0081A950 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
 		118E777320130D630052EB8C /* FacebookAppPermissions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAppPermissions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E777620130D630052EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1166788720282B7E00805B9A /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				1166788A20282E0F00805B9A /* DLFilesBackgroundVC.swift */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
 		118E776A20130D630052EB8C = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
 				1181A3CD20255EBA0081A950 /* PostRouter.swift */,
 				118E777A20130D630052EB8C /* Main.storyboard */,
+				1166788720282B7E00805B9A /* Downloads */,
 				11BE044C20194179002FB21E /* Bluetooth */,
 				118E778020130D630052EB8C /* Assets.xcassets */,
 				118E778220130D630052EB8C /* LaunchScreen.storyboard */,
@@ -281,6 +292,7 @@
 				11D2FC08201FDC3F007C41AA /* ScannerDelegate.swift in Sources */,
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
+				1166788B20282E0F00805B9A /* DLFilesBackgroundVC.swift in Sources */,
 				1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */,
 				11A150AE202028D600B57545 /* PopupScannerVC.swift in Sources */,
 				1181A3CE20255EBA0081A950 /* PostRouter.swift in Sources */,

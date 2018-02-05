@@ -107,7 +107,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOC-C7-liQ">
                                                         <rect key="frame" x="0.0" y="997.5" width="343" height="122.5"/>
                                                         <color key="backgroundColor" red="1" green="0.82774075701604377" blue="0.15012646451051903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Background Sessions">
+                                                        <state key="normal" title="DownLoad Sessions">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -468,10 +468,10 @@
             </objects>
             <point key="canvasLocation" x="-1631" y="1666"/>
         </scene>
-        <!--View Controller-->
+        <!--Files BackgroundVC-->
         <scene sceneID="zip-O9-x8W">
             <objects>
-                <viewController id="jMj-lN-jDg" sceneMemberID="viewController">
+                <viewController id="jMj-lN-jDg" customClass="DLFilesBackgroundVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QqO-H7-Hdd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -481,6 +481,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-pG-YKD">
+                                <rect key="frame" x="16" y="145" width="343" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.43019072600537489" green="0.57371275906735753" blue="0.4617469429548931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="0.5" y="0.5" width="1" height="1"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PHY-MA-Fnx"/>
@@ -488,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL3-Re-wKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1631" y="2417"/>
+            <point key="canvasLocation" x="-1631.2" y="2416.6416791604202"/>
         </scene>
         <!--Select Device-->
         <scene sceneID="Gby-wX-XcQ">

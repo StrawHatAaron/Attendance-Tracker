@@ -45,39 +45,13 @@ class SearchViewController: UIViewController {
   var searchResults: [Track] = []
   let queryService = QueryService()
   let downloadService = DownloadService()
-  let downloadsSession = URLSession(configuration: .default)
+  let downloadsSession: URLSession = {
+    let configuration = URLSessionConfiguration.background(withIdentifier: "bgSessionConfiguration")
+    return URLSession(configuration: configuration, delegate: self, delegateQueue: nil )
+  }()
 
-  // MARK: - Future URLSessionDelegate code
 
-  func saveDownload(download : Download, location : URL?, response : URLResponse?, error : Error?) {
-    let sourceURL = download.url
-    if error != nil { return }
-
-    downloadService.activeDownloads[sourceURL] = nil
-
-    let destinationURL = localFilePath(for: sourceURL)
-
-    let fileManager = FileManager.default
-    try? fileManager.removeItem(at: destinationURL)
-    do {
-      try fileManager.copyItem(at: location!, to: destinationURL)
-    } catch let error {
-      print("Could not copy file to disk: \(error.localizedDescription)")
-    }
-
-    if let index = trackIndex(for: download.task!) {
-      DispatchQueue.main.async {
-        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-      }
-    }
-  }
-
-  fileprivate func trackIndex(for task: URLSessionDownloadTask) -> Int? {
-    guard let url = task.originalRequest?.url else { return nil }
-    let indexedTracks = searchResults.enumerated().filter() { $0.1.url == url }
-    return indexedTracks.first?.0
-  }
-
+  
   // MARK: - Document directory helpers
   // Get local file path: download task stores tune here; AV player plays it.
   let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
