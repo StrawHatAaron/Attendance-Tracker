@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -33,15 +32,22 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ds8-LC-rot">
                                                 <rect key="frame" x="16" y="79" width="343" height="1120"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-iR-Tmr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="106.5"/>
+                                                        <state key="normal" title="Rotate pdfs - incomplete"/>
+                                                        <connections>
+                                                            <segue destination="gLa-vA-0vs" kind="show" id="iAg-LI-3jM"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-BB-1xl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="126.5" width="343" height="107"/>
                                                         <color key="backgroundColor" red="0.37601346378411393" green="1" blue="0.54296950459053983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Authentication">
+                                                        <state key="normal" title="Authentication - incomplete">
                                                             <color key="titleShadowColor" red="0.4958729285590705" green="0.56060230156146484" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-9T-Ltl">
-                                                        <rect key="frame" x="0.0" y="142.5" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="253.5" width="343" height="106.5"/>
                                                         <color key="backgroundColor" red="0.44059667749536435" green="0.04099503578139041" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="PUT with PostRouter">
@@ -52,7 +58,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
-                                                        <rect key="frame" x="0.0" y="285" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="380" width="343" height="106.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
@@ -63,7 +69,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-z1-hsO">
-                                                        <rect key="frame" x="0.0" y="427.5" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="506.5" width="343" height="107"/>
                                                         <color key="backgroundColor" red="1" green="0.40739924634027558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Bluetooth Low Energy - Popup">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,9 +79,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uz-bp-Xrm">
-                                                        <rect key="frame" x="0.0" y="570" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="633.5" width="343" height="106.5"/>
                                                         <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Bluetooth Low Energy - Scroll View">
+                                                        <state key="normal" title="Bluetooth Low Energy - Scroll View - incomplete">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -83,7 +89,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-fp-txg">
-                                                        <rect key="frame" x="0.0" y="712.5" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="760" width="343" height="106.5"/>
                                                         <color key="backgroundColor" red="0.073142372070000003" green="0.5271855593" blue="0.68153584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="29"/>
                                                         <state key="normal" title="Create New Account">
@@ -94,7 +100,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-5b-bZA">
-                                                        <rect key="frame" x="0.0" y="855" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="886.5" width="343" height="107"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="GET user info">
@@ -105,9 +111,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOC-C7-liQ">
-                                                        <rect key="frame" x="0.0" y="997.5" width="343" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="1013.5" width="343" height="106.5"/>
                                                         <color key="backgroundColor" red="1" green="0.82774075701604377" blue="0.15012646451051903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="DownLoad Sessions">
+                                                        <state key="normal" title="DownLoad Sessions - incomplete">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -153,6 +159,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2439.1999999999998" y="80.50974512743629"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CcC-HT-Jgy">
+            <objects>
+                <viewController id="gLa-vA-0vs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eRF-vW-Ex8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="cea-I0-Tav">
+                                <rect key="frame" x="178.5" y="323.5" width="17" height="19"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-7L-FcU">
+                                <rect key="frame" x="202" y="274" width="38" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cea-I0-Tav" firstAttribute="centerX" secondItem="eRF-vW-Ex8" secondAttribute="centerX" id="OHv-uX-fEa"/>
+                            <constraint firstItem="cea-I0-Tav" firstAttribute="centerY" secondItem="eRF-vW-Ex8" secondAttribute="centerY" id="yKa-Re-pCb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5or-tS-KS7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kiw-l9-hFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631.2" y="-2049.6251874062968"/>
         </scene>
         <!--RouterVC-->
         <scene sceneID="Dy7-5E-M3A">
@@ -608,6 +642,7 @@
     <resources>
         <image name="Signal_3" width="30" height="22"/>
         <image name="facebookBtn" width="988" height="160"/>
+        <image name="ic_coconut" width="17" height="19"/>
         <image name="scanning" width="16" height="16"/>
     </resources>
 </document>
