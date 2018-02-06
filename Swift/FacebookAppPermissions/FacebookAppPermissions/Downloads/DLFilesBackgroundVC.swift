@@ -24,11 +24,18 @@ class DLFilesBackgroundVC: UIViewController, URLSessionDelegate {
     }
 
     func checkDFU(){
-        let backgroundTask = urlSession.downloadTask(with: url)
-        backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)//set the download time to some point in the future
-        backgroundTask.countOfBytesClientExpectsToSend = 200//best guess upper and lower bounds
-        backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024//same as above
-        backgroundTask.resume()//start the task
+        var url = URL(string: "google.com")
+        let backgroundTask = urlSession.downloadTask(with: url!)
+        if #available(iOS 11.0, *) {
+            backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
+            backgroundTask.countOfBytesClientExpectsToSend = 200//best guess upper and lower bounds
+            backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024//same as above
+            backgroundTask.resume()//start the task
+        } //set the download time to some point in the future
+        
+        else {
+            // Fallback on earlier versions
+        }
         if FBSDKAccessToken.current() != nil{
             print("Logged in Facebook")
         }

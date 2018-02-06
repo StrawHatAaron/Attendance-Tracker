@@ -27,9 +27,11 @@ class ViewController: UIViewController{
                 return
             }
             else{
-                print(FBSDKAccessToken.current().tokenString)
+                //print(FBSDKAccessToken.current().tokenString)
                 fetchProfile()
-                post()
+                if FBSDKAccessToken.current() != nil {
+                    post()
+                }
                 //don't forget to move to the next view
             }
         }
@@ -44,7 +46,6 @@ class ViewController: UIViewController{
             (connection, result, error) -> Void in
             if error != nil {
                 print(error)
-                //return
             }
             guard let unwrappedResult = result as? [String: Any] else {return}
             print(unwrappedResult)
