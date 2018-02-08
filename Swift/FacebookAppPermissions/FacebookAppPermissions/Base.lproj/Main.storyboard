@@ -589,7 +589,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get Device Info"/>
                                 <connections>
-                                    <action selector="getInfo:" destination="TxD-Sq-1bF" eventType="touchUpInside" id="cLR-BC-3CB"/>
                                     <action selector="postInfo:" destination="TxD-Sq-1bF" eventType="touchUpInside" id="hIy-1O-8MV"/>
                                 </connections>
                             </button>

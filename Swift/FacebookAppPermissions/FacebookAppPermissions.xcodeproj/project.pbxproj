@@ -24,7 +24,7 @@
 		11A6D0D82016942F002E6AB1 /* GetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D0D72016942F002E6AB1 /* GetVC.swift */; };
 		11BE044E2019419C002FB21E /* BlueScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE044D2019419C002FB21E /* BlueScannerVC.swift */; };
 		11BE0450201946BD002FB21E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BE044F201946BD002FB21E /* CoreBluetooth.framework */; };
-		11C02558202BD80A00BABD78 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C02557202BD80A00BABD78 /* Device.swift */; };
+		11C02558202BD80A00BABD78 /* DeviceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C02557202BD80A00BABD78 /* DeviceRouter.swift */; };
 		11C0255A202BD8F100BABD78 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C02559202BD8F100BABD78 /* User.swift */; };
 		11D2FC06201FBD89007C41AA /* RouterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2FC05201FBD89007C41AA /* RouterVC.swift */; };
 		11D2FC08201FDC3F007C41AA /* ScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2FC07201FDC3F007C41AA /* ScannerDelegate.swift */; };
@@ -52,7 +52,7 @@
 		11A6D0D72016942F002E6AB1 /* GetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVC.swift; sourceTree = "<group>"; };
 		11BE044D2019419C002FB21E /* BlueScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScannerVC.swift; sourceTree = "<group>"; };
 		11BE044F201946BD002FB21E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		11C02557202BD80A00BABD78 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		11C02557202BD80A00BABD78 /* DeviceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRouter.swift; sourceTree = "<group>"; };
 		11C02559202BD8F100BABD78 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11D2FC05201FBD89007C41AA /* RouterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterVC.swift; sourceTree = "<group>"; };
 		11D2FC07201FDC3F007C41AA /* ScannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1181A3CD20255EBA0081A950 /* PostRouter.swift */,
-				11C02557202BD80A00BABD78 /* Device.swift */,
+				11C02557202BD80A00BABD78 /* DeviceRouter.swift */,
 				11C02559202BD8F100BABD78 /* User.swift */,
 			);
 			path = Schemas;
@@ -164,8 +164,8 @@
 				118E777820130D630052EB8C /* ViewController.swift */,
 				11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */,
 				11D2FC05201FBD89007C41AA /* RouterVC.swift */,
-				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
 				116BC58C202BAC18002FE0DC /* DeviceInfoVC.swift */,
+				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 				11BE044E2019419C002FB21E /* BlueScannerVC.swift in Sources */,
 				11D2FC06201FBD89007C41AA /* RouterVC.swift in Sources */,
 				11C0255A202BD8F100BABD78 /* User.swift in Sources */,
-				11C02558202BD80A00BABD78 /* Device.swift in Sources */,
+				11C02558202BD80A00BABD78 /* DeviceRouter.swift in Sources */,
 				11D2FC08201FDC3F007C41AA /* ScannerDelegate.swift in Sources */,
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,

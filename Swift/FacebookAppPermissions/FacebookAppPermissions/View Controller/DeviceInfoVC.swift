@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 public enum Model : String {
     case simulator   = "simulator/sandbox",
@@ -137,39 +138,25 @@ class DeviceInfoVC: UIViewController {
     
     
     @IBAction func postInfo(_ sender: Any) {
-        let parameters: Device? = Device(BaseOS:"iOS", Manufacturer:"Apple", Model:UIDevice().type.rawValue, ReleaseVersion:String((UIDevice.current.systemVersion as NSString).floatValue))
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/employees") else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let myHttpBody = try? JSONSerialization.data(withJSONObject: parameters!, options: []) else {return}
-        request.httpBody = myHttpBody
-        
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
+        let session = URLSession(configuration: .default)
+        //let theDevice: Device? = Device(BaseOS:"iOS", Manufacturer:"Apple", Model:UIDevice().type.rawValue, ReleaseVersion:String((UIDevice.current.systemVersion as NSString).floatValue), id:2)
+        //let putRequest = DeviceRouter.create(theDevice!).asURLRequest()
+        let putRequest = DeviceRouter.getAll.asURLRequest()//GET
+        let putTask = session.dataTask(with: putRequest) { data, response, error in
+            guard let data = data, let response = response as? HTTPURLResponse,
+                response.statusCode == 200 else {
+                    print("\(error) this the error")
+                    return
             }
-            if let data = data {
-                do{
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                }catch {
-                    print(error)
-                }
+            do {
+                print(data)
+                let post = try JSONDecoder().decode(DeviceWithId.self, from: data)
+                print(post)
+            } catch let decodeError as NSError {
+                print("Decoder error: \(decodeError.localizedDescription) \n")
+                return
             }
-            }.resume()
+        }
+        putTask.resume()
     }
-    
-
-    
-    func post(){
-//        let BaseOS: String  = "iOS"
-//        let ReleaseVersion: String = String((UIDevice.current.systemVersion as NSString).floatValue)
-//        let Manufacturer: String = "Apple"
-//        let Model: String = UIDevice().type.rawValue
-//        print("\(BaseOS)    \(ReleaseVersion)   \(Manufacturer)     \(Model)")
-        
-    }
-    
 }

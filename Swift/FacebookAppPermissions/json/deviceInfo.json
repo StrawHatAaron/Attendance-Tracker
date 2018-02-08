@@ -4,13 +4,15 @@
       "BaseOS": "",
       "ReleaseVersion": "",
       "Manufacturer": "",
-      "Model": ""
+      "Model": "",
+      "id":1
     },
     {
       "BaseOS": "Android",
       "Manufacturer": "Samsung",
       "Model": "s7",
-      "ReleaseVersion": "7.1.1"
-    }
+      "ReleaseVersion": "7.1.1",
+      "id":2
+    },
   ]
 }
