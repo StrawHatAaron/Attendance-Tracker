@@ -1,0 +1,16 @@
+{
+  "devices": [
+    {
+      "BaseOS": "",
+      "ReleaseVersion": "",
+      "Manufacturer": "",
+      "Model": ""
+    },
+    {
+      "BaseOS": "Android",
+      "Manufacturer": "Samsung",
+      "Model": "s7",
+      "ReleaseVersion": "7.1.1"
+    }
+  ]
+}

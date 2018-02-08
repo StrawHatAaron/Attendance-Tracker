@@ -43,7 +43,7 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func pwdEdited(_ sender: Any) {
-        print("huh")
+        
         password = passwordField.text!
     }
     

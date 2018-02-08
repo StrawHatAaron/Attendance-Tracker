@@ -33,21 +33,31 @@
                                                 <rect key="frame" x="16" y="79" width="343" height="1120"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-iR-Tmr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="94"/>
                                                         <state key="normal" title="Rotate pdfs - incomplete"/>
                                                         <connections>
                                                             <segue destination="gLa-vA-0vs" kind="show" id="iAg-LI-3jM"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-Km-fnS">
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="94"/>
+                                                        <color key="backgroundColor" red="0.61178351683937826" green="0.13652300099825804" blue="0.2011828721929351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Device Info">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="TxD-Sq-1bF" kind="show" id="kJg-8v-QH9"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-BB-1xl">
-                                                        <rect key="frame" x="0.0" y="126.5" width="343" height="107"/>
+                                                        <rect key="frame" x="0.0" y="228" width="343" height="94"/>
                                                         <color key="backgroundColor" red="0.37601346378411393" green="1" blue="0.54296950459053983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Authentication - incomplete">
                                                             <color key="titleShadowColor" red="0.4958729285590705" green="0.56060230156146484" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-9T-Ltl">
-                                                        <rect key="frame" x="0.0" y="253.5" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="342" width="343" height="94"/>
                                                         <color key="backgroundColor" red="0.44059667749536435" green="0.04099503578139041" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="PUT with PostRouter">
@@ -58,7 +68,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-FC-8n4">
-                                                        <rect key="frame" x="0.0" y="380" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="456" width="343" height="94"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
@@ -69,7 +79,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-z1-hsO">
-                                                        <rect key="frame" x="0.0" y="506.5" width="343" height="107"/>
+                                                        <rect key="frame" x="0.0" y="570" width="343" height="94"/>
                                                         <color key="backgroundColor" red="1" green="0.40739924634027558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Bluetooth Low Energy - Popup">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +89,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uz-bp-Xrm">
-                                                        <rect key="frame" x="0.0" y="633.5" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="684" width="343" height="94"/>
                                                         <color key="backgroundColor" red="0.0" green="0.88685042375935375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Bluetooth Low Energy - Scroll View - incomplete">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +99,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-fp-txg">
-                                                        <rect key="frame" x="0.0" y="760" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="798" width="343" height="94"/>
                                                         <color key="backgroundColor" red="0.073142372070000003" green="0.5271855593" blue="0.68153584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="29"/>
                                                         <state key="normal" title="Create New Account">
@@ -100,7 +110,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-5b-bZA">
-                                                        <rect key="frame" x="0.0" y="886.5" width="343" height="107"/>
+                                                        <rect key="frame" x="0.0" y="912" width="343" height="94"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="GET user info">
@@ -111,7 +121,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOC-C7-liQ">
-                                                        <rect key="frame" x="0.0" y="1013.5" width="343" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="1026" width="343" height="94"/>
                                                         <color key="backgroundColor" red="1" green="0.82774075701604377" blue="0.15012646451051903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="DownLoad Sessions - incomplete">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -160,31 +170,55 @@
             </objects>
             <point key="canvasLocation" x="-2439.1999999999998" y="80.50974512743629"/>
         </scene>
-        <!--View Controller-->
+        <!--AnimateVC-->
         <scene sceneID="CcC-HT-Jgy">
             <objects>
-                <viewController id="gLa-vA-0vs" sceneMemberID="viewController">
+                <viewController id="gLa-vA-0vs" customClass="AnimateVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eRF-vW-Ex8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="cea-I0-Tav">
-                                <rect key="frame" x="178.5" y="323.5" width="17" height="19"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-7L-FcU">
-                                <rect key="frame" x="202" y="274" width="38" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6z-aj-dS3">
+                                <rect key="frame" x="0.0" y="0.0" width="98" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="qI2-v5-4oX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cea-I0-Tav" firstAttribute="centerX" secondItem="eRF-vW-Ex8" secondAttribute="centerX" id="OHv-uX-fEa"/>
-                            <constraint firstItem="cea-I0-Tav" firstAttribute="centerY" secondItem="eRF-vW-Ex8" secondAttribute="centerY" id="yKa-Re-pCb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5or-tS-KS7"/>
                     </view>
+                    <connections>
+                        <outlet property="featureView" destination="UEv-q3-FkL" id="2jr-Ao-lP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kiw-l9-hFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="UEv-q3-FkL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQI-Mo-cn6">
+                            <rect key="frame" x="114" y="76" width="119" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Rotate"/>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="cea-I0-Tav">
+                            <rect key="frame" x="44" y="70" width="17" height="19"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_coconut" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-7L-FcU">
+                            <rect key="frame" x="68" y="20" width="38" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cea-I0-Tav" firstAttribute="centerY" secondItem="UEv-q3-FkL" secondAttribute="centerY" constant="34.5" id="JSL-Ya-x39"/>
+                        <constraint firstItem="cea-I0-Tav" firstAttribute="centerX" secondItem="UEv-q3-FkL" secondAttribute="centerX" constant="-22.5" id="hLa-q0-Yg5"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="HlO-tb-GR1"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-1631.2" y="-2049.6251874062968"/>
         </scene>
@@ -533,6 +567,41 @@
             </objects>
             <point key="canvasLocation" x="-1631.2" y="2416.6416791604202"/>
         </scene>
+        <!--Device InfoVC-->
+        <scene sceneID="tZq-x6-CUL">
+            <objects>
+                <viewController id="TxD-Sq-1bF" customClass="DeviceInfoVC" customModule="FacebookAppPermissions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OZS-HU-cag">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-Gd-7hb">
+                                <rect key="frame" x="76" y="61" width="46" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.91319754460000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PUQ-ah-5uC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-Cg-urS">
+                                <rect key="frame" x="16" y="256" width="343" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get Device Info"/>
+                                <connections>
+                                    <action selector="getInfo:" destination="TxD-Sq-1bF" eventType="touchUpInside" id="cLR-BC-3CB"/>
+                                    <action selector="postInfo:" destination="TxD-Sq-1bF" eventType="touchUpInside" id="hIy-1O-8MV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SDR-gp-CWV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqO-8X-WYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631.2" y="3216.3418290854574"/>
+        </scene>
         <!--Select Device-->
         <scene sceneID="Gby-wX-XcQ">
             <objects>
@@ -645,4 +714,7 @@
         <image name="ic_coconut" width="17" height="19"/>
         <image name="scanning" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PUQ-ah-5uC"/>
+    </inferredMetricsTieBreakers>
 </document>

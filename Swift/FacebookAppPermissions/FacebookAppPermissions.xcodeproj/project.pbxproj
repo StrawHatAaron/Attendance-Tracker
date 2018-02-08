@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		113227BA2013C30200BB1940 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 113227B92013C30200BB1940 /* test.m */; };
 		1140BBC7201BD558008FE8AB /* ScannedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */; };
+		115979EA202B70440098FD51 /* AnimateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115979E9202B70440098FD51 /* AnimateVC.swift */; };
 		1166788B20282E0F00805B9A /* DLFilesBackgroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166788A20282E0F00805B9A /* DLFilesBackgroundVC.swift */; };
+		116BC58D202BAC19002FE0DC /* DeviceInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC58C202BAC18002FE0DC /* DeviceInfoVC.swift */; };
 		1181A3CE20255EBA0081A950 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181A3CD20255EBA0081A950 /* PostRouter.swift */; };
 		118E777720130D630052EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777620130D630052EB8C /* AppDelegate.swift */; };
 		118E777920130D630052EB8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E777820130D630052EB8C /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 		11A6D0D82016942F002E6AB1 /* GetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D0D72016942F002E6AB1 /* GetVC.swift */; };
 		11BE044E2019419C002FB21E /* BlueScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE044D2019419C002FB21E /* BlueScannerVC.swift */; };
 		11BE0450201946BD002FB21E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BE044F201946BD002FB21E /* CoreBluetooth.framework */; };
+		11C02558202BD80A00BABD78 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C02557202BD80A00BABD78 /* Device.swift */; };
+		11C0255A202BD8F100BABD78 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C02559202BD8F100BABD78 /* User.swift */; };
 		11D2FC06201FBD89007C41AA /* RouterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2FC05201FBD89007C41AA /* RouterVC.swift */; };
 		11D2FC08201FDC3F007C41AA /* ScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2FC07201FDC3F007C41AA /* ScannerDelegate.swift */; };
 		70D05A078CDC933FEDAF19CC /* Pods_FacebookAppPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B91E3117329690ED08A3ADE /* Pods_FacebookAppPermissions.framework */; };
@@ -31,7 +35,9 @@
 		113227B82013C30100BB1940 /* FacebookAppPermissions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAppPermissions-Bridging-Header.h"; sourceTree = "<group>"; };
 		113227B92013C30200BB1940 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		1140BBC6201BD558008FE8AB /* ScannedPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPeripheral.swift; sourceTree = "<group>"; };
+		115979E9202B70440098FD51 /* AnimateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateVC.swift; sourceTree = "<group>"; };
 		1166788A20282E0F00805B9A /* DLFilesBackgroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLFilesBackgroundVC.swift; sourceTree = "<group>"; };
+		116BC58C202BAC18002FE0DC /* DeviceInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoVC.swift; sourceTree = "<group>"; };
 		1181A3CD20255EBA0081A950 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
 		118E777320130D630052EB8C /* FacebookAppPermissions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAppPermissions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E777620130D630052EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		11A6D0D72016942F002E6AB1 /* GetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVC.swift; sourceTree = "<group>"; };
 		11BE044D2019419C002FB21E /* BlueScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScannerVC.swift; sourceTree = "<group>"; };
 		11BE044F201946BD002FB21E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		11C02557202BD80A00BABD78 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		11C02559202BD8F100BABD78 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11D2FC05201FBD89007C41AA /* RouterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterVC.swift; sourceTree = "<group>"; };
 		11D2FC07201FDC3F007C41AA /* ScannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDelegate.swift; sourceTree = "<group>"; };
 		8B91E3117329690ED08A3ADE /* Pods_FacebookAppPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookAppPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +81,14 @@
 				F3762D2344933E4F6BE27D90 /* Pods-FacebookAppPermissions.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		115979E8202B6D1E0098FD51 /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				115979E9202B70440098FD51 /* AnimateVC.swift */,
+			);
+			path = Animate;
 			sourceTree = "<group>";
 		};
 		1166788720282B7E00805B9A /* Downloads */ = {
@@ -105,15 +121,13 @@
 			isa = PBXGroup;
 			children = (
 				118E777620130D630052EB8C /* AppDelegate.swift */,
-				118E777820130D630052EB8C /* ViewController.swift */,
-				11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */,
-				11D2FC05201FBD89007C41AA /* RouterVC.swift */,
-				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
-				1181A3CD20255EBA0081A950 /* PostRouter.swift */,
-				118E777A20130D630052EB8C /* Main.storyboard */,
+				11C0255B202BE1E800BABD78 /* View Controller */,
+				11C02556202BD7EE00BABD78 /* Schemas */,
+				115979E8202B6D1E0098FD51 /* Animate */,
 				1166788720282B7E00805B9A /* Downloads */,
 				11BE044C20194179002FB21E /* Bluetooth */,
 				118E778020130D630052EB8C /* Assets.xcassets */,
+				118E777A20130D630052EB8C /* Main.storyboard */,
 				118E778220130D630052EB8C /* LaunchScreen.storyboard */,
 				118E778520130D630052EB8C /* Info.plist */,
 				113227B92013C30200BB1940 /* test.m */,
@@ -132,6 +146,28 @@
 				11A150AD202028D600B57545 /* PopupScannerVC.swift */,
 			);
 			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		11C02556202BD7EE00BABD78 /* Schemas */ = {
+			isa = PBXGroup;
+			children = (
+				1181A3CD20255EBA0081A950 /* PostRouter.swift */,
+				11C02557202BD80A00BABD78 /* Device.swift */,
+				11C02559202BD8F100BABD78 /* User.swift */,
+			);
+			path = Schemas;
+			sourceTree = "<group>";
+		};
+		11C0255B202BE1E800BABD78 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				118E777820130D630052EB8C /* ViewController.swift */,
+				11A6D0D520167E38002E6AB1 /* CreateAccountVC.swift */,
+				11D2FC05201FBD89007C41AA /* RouterVC.swift */,
+				11A6D0D72016942F002E6AB1 /* GetVC.swift */,
+				116BC58C202BAC18002FE0DC /* DeviceInfoVC.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		27758DBF6391EC0A03AE43C7 /* Frameworks */ = {
@@ -285,10 +321,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				118E777F20130D630052EB8C /* FacebookAppPermissions.xcdatamodeld in Sources */,
+				116BC58D202BAC19002FE0DC /* DeviceInfoVC.swift in Sources */,
 				11A6D0D82016942F002E6AB1 /* GetVC.swift in Sources */,
+				115979EA202B70440098FD51 /* AnimateVC.swift in Sources */,
 				113227BA2013C30200BB1940 /* test.m in Sources */,
 				11BE044E2019419C002FB21E /* BlueScannerVC.swift in Sources */,
 				11D2FC06201FBD89007C41AA /* RouterVC.swift in Sources */,
+				11C0255A202BD8F100BABD78 /* User.swift in Sources */,
+				11C02558202BD80A00BABD78 /* Device.swift in Sources */,
 				11D2FC08201FDC3F007C41AA /* ScannerDelegate.swift in Sources */,
 				118E777920130D630052EB8C /* ViewController.swift in Sources */,
 				11A6D0D620167E38002E6AB1 /* CreateAccountVC.swift in Sources */,
