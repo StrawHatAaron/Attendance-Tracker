@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id":1,
+      "firstName": "Aaron",
+      "lastName": "Miller",
+      "email": "miller_boy82@gmail.com",
+      "staySignedIn": true,
+      "subscription": false
+    }
+  ]
+}

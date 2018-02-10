@@ -26,7 +26,7 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "539752372.052575"
+                  timestampString = "539914762.513754"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -41,7 +41,7 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "539752372.05634"
+                  timestampString = "539914762.5177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -56,7 +56,7 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "539752372.0597709"
+                  timestampString = "539914762.5206341"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -71,7 +71,7 @@
                   moduleName = "FacebookAppPermissions"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajm/Documents/iOS/Swift/FacebookAppPermissions/FacebookAppPermissions/Bluetooth/BlueScannerVC.swift"
-                  timestampString = "539752372.0650949"
+                  timestampString = "539914762.523582"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -79,6 +79,22 @@
                   offsetFromSymbolStart = "989">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FacebookAppPermissions/Schemas/DeviceRouter.swift"
+            timestampString = "539914761.463766"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

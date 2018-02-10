@@ -78,7 +78,7 @@ public struct Device: Codable {
             let parameters: Device? = {
                 switch self {
                 case .getAll, .get, .delete: return nil
-                case .create(let post), .update(_, let post): return post
+                case .create(let device), .update(_, let device): return device
                 }
             }()
             // Create request
@@ -88,10 +88,10 @@ public struct Device: Codable {
             // DONE: Set HTTP header field content-type to application/json
             request.addValue("application/json", forHTTPHeaderField: "content-type")
             // DONE: If there are parameters, and they can be converted to data, set httpBody
-            guard let post = parameters else { return request }
+            guard let device = parameters else { return request }
             let encoder = JSONEncoder()
             do {
-                let data = try encoder.encode(post)
+                let data = try encoder.encode(device)
                 request.httpBody = data
             } catch let encodeError as NSError {
                 print("Encoder error: \(encodeError.localizedDescription)\n")
