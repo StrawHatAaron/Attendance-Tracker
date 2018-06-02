@@ -71,8 +71,8 @@ function getNewToken(oAuth2Client, callback) {
 function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
-    spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-    range: 'Class Data!A2:E',
+    spreadsheetId: '1OAYN2uC9gaGSYWcG3FaSzZhRnPUxfPrU8QVcaFufWQ8',
+    range: 'Sheet1!A1:B2',
   }, (err, {data}) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = data.values;
