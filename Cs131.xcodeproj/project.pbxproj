@@ -18,6 +18,8 @@
 		115400EE20C1AF8F008F6AB2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400ED20C1AF8F008F6AB2 /* SignInViewController.swift */; };
 		115D65B820C59635009F9BBE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65B720C59635009F9BBE /* GradientView.swift */; };
 		115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65BA20C59719009F9BBE /* MapTracker.swift */; };
+		11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7120C839DA0068416D /* NetworkRequest.swift */; };
+		11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7320C83E4B0068416D /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		115400ED20C1AF8F008F6AB2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		115D65B720C59635009F9BBE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		115D65BA20C59719009F9BBE /* MapTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTracker.swift; sourceTree = "<group>"; };
+		11D7DC7120C839DA0068416D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		11D7DC7320C83E4B0068416D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				115D65B720C59635009F9BBE /* GradientView.swift */,
+				11D7DC7320C83E4B0068416D /* RoundButton.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				115D65BA20C59719009F9BBE /* MapTracker.swift */,
+				11D7DC7120C839DA0068416D /* NetworkRequest.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,6 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */,
+				11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */,
 				115400EE20C1AF8F008F6AB2 /* SignInViewController.swift in Sources */,
 				115400BF20C1A669008F6AB2 /* ViewController.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,
@@ -470,15 +478,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
 				INFOPLIST_FILE = Cs131/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxPractice.Cs131;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cs131;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,15 +499,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
 				INFOPLIST_FILE = Cs131/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxPractice.Cs131;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cs131;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -13,9 +13,12 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
 
 
     let locationManager = CLLocationManager()
+    var canTrackStudent:Bool = false
 
     //return true if student is in the correct place
     public func trackStudent() -> Bool{
+        
+        
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
@@ -25,14 +28,15 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            return true
         }
         
-        return false
+        print("canTrackStudent: \(canTrackStudent)")
+        return canTrackStudent
         
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        canTrackStudent = true
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
