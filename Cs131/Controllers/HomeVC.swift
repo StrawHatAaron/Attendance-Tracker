@@ -8,17 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeVC: UIViewController {
 
+    @IBOutlet weak var infoView: UIView!
+    
     lazy var mapper = MapTracker()
     var allowCheckin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        allowCheckin = mapper.trackStudent()
+        infoView.dropShadow()
+        self.allowCheckin = mapper.trackStudent()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
         allowCheckin = mapper.trackStudent()
         
         if allowCheckin {
-            self.performSegue(withIdentifier: "homeToCheckIn", sender: nil)
+            self.performSegue(withIdentifier: "homeToStudentCheckIn", sender: nil)
         } else {
             // create the alert
             let alert = UIAlertController(title: "Can't see location", message: "Please allow this app to use your location", preferredStyle: UIAlertControllerStyle.alert)
@@ -39,6 +41,12 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBAction func professorCheckIn(_ sender: Any) {
+        self.performSegue(withIdentifier: "homeToProfessorCheckIn", sender: nil)
+    }
+    
+    
 }
+
+
 

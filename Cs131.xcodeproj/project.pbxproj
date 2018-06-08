@@ -8,16 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		115400BD20C1A669008F6AB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400BC20C1A669008F6AB2 /* AppDelegate.swift */; };
-		115400BF20C1A669008F6AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400BE20C1A669008F6AB2 /* ViewController.swift */; };
+		115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400BE20C1A669008F6AB2 /* HomeVC.swift */; };
 		115400C220C1A669008F6AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115400C020C1A669008F6AB2 /* Main.storyboard */; };
 		115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 115400C320C1A669008F6AB2 /* Cs131.xcdatamodeld */; };
 		115400C720C1A66B008F6AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115400C620C1A66B008F6AB2 /* Assets.xcassets */; };
 		115400CA20C1A66B008F6AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115400C820C1A66B008F6AB2 /* LaunchScreen.storyboard */; };
 		115400D520C1A66B008F6AB2 /* Cs131Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400D420C1A66B008F6AB2 /* Cs131Tests.swift */; };
 		115400E020C1A66B008F6AB2 /* Cs131UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400DF20C1A66B008F6AB2 /* Cs131UITests.swift */; };
-		115400EE20C1AF8F008F6AB2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400ED20C1AF8F008F6AB2 /* SignInViewController.swift */; };
+		115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400ED20C1AF8F008F6AB2 /* StudentSignInVC.swift */; };
+		115D5F9820CB02CB00360D94 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D5F9720CB02CB00360D94 /* View.swift */; };
+		115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D5F9920CB034B00360D94 /* ViewController.swift */; };
 		115D65B820C59635009F9BBE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65B720C59635009F9BBE /* GradientView.swift */; };
 		115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65BA20C59719009F9BBE /* MapTracker.swift */; };
+		119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D852E20CAF460009F9460 /* StudentReceiptVC.swift */; };
+		119D853220CAF6D0009F9460 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853020CAF6D0009F9460 /* Student.storyboard */; };
+		119D853520CAF71E009F9460 /* Professor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853320CAF71E009F9460 /* Professor.storyboard */; };
 		11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7120C839DA0068416D /* NetworkRequest.swift */; };
 		11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7320C83E4B0068416D /* RoundButton.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +47,7 @@
 /* Begin PBXFileReference section */
 		115400B920C1A669008F6AB2 /* Cs131.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cs131.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115400BC20C1A669008F6AB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		115400BE20C1A669008F6AB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		115400BE20C1A669008F6AB2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		115400C120C1A669008F6AB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		115400C420C1A669008F6AB2 /* Cs131.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cs131.xcdatamodel; sourceTree = "<group>"; };
 		115400C620C1A66B008F6AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,9 +59,14 @@
 		115400DB20C1A66B008F6AB2 /* Cs131UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cs131UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		115400DF20C1A66B008F6AB2 /* Cs131UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cs131UITests.swift; sourceTree = "<group>"; };
 		115400E120C1A66B008F6AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		115400ED20C1AF8F008F6AB2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		115400ED20C1AF8F008F6AB2 /* StudentSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignInVC.swift; sourceTree = "<group>"; };
+		115D5F9720CB02CB00360D94 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		115D5F9920CB034B00360D94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		115D65B720C59635009F9BBE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		115D65BA20C59719009F9BBE /* MapTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTracker.swift; sourceTree = "<group>"; };
+		119D852E20CAF460009F9460 /* StudentReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentReceiptVC.swift; sourceTree = "<group>"; };
+		119D853120CAF6D0009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Student.storyboard; sourceTree = "<group>"; };
+		119D853420CAF71E009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Professor.storyboard; sourceTree = "<group>"; };
 		11D7DC7120C839DA0068416D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		11D7DC7320C83E4B0068416D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,14 +120,14 @@
 			isa = PBXGroup;
 			children = (
 				115400BC20C1A669008F6AB2 /* AppDelegate.swift */,
+				115400CB20C1A66B008F6AB2 /* Info.plist */,
+				115400C320C1A669008F6AB2 /* Cs131.xcdatamodeld */,
+				115400C620C1A66B008F6AB2 /* Assets.xcassets */,
 				115D65B920C59707009F9BBE /* Helpers */,
 				115400F020C1B705008F6AB2 /* Styles */,
 				115400EF20C1B6DF008F6AB2 /* Controllers */,
-				115400C620C1A66B008F6AB2 /* Assets.xcassets */,
-				115400C020C1A669008F6AB2 /* Main.storyboard */,
-				115400C820C1A66B008F6AB2 /* LaunchScreen.storyboard */,
-				115400CB20C1A66B008F6AB2 /* Info.plist */,
-				115400C320C1A669008F6AB2 /* Cs131.xcdatamodeld */,
+				115D5F9520CB020200360D94 /* Extensions */,
+				115D5F9620CB021900360D94 /* Storyboards */,
 			);
 			path = Cs131;
 			sourceTree = "<group>";
@@ -143,8 +153,9 @@
 		115400EF20C1B6DF008F6AB2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				115400ED20C1AF8F008F6AB2 /* SignInViewController.swift */,
-				115400BE20C1A669008F6AB2 /* ViewController.swift */,
+				115400BE20C1A669008F6AB2 /* HomeVC.swift */,
+				115400ED20C1AF8F008F6AB2 /* StudentSignInVC.swift */,
+				119D852E20CAF460009F9460 /* StudentReceiptVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +167,26 @@
 				11D7DC7320C83E4B0068416D /* RoundButton.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		115D5F9520CB020200360D94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				115D5F9720CB02CB00360D94 /* View.swift */,
+				115D5F9920CB034B00360D94 /* ViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		115D5F9620CB021900360D94 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				115400C020C1A669008F6AB2 /* Main.storyboard */,
+				115400C820C1A66B008F6AB2 /* LaunchScreen.storyboard */,
+				119D853020CAF6D0009F9460 /* Student.storyboard */,
+				119D853320CAF71E009F9460 /* Professor.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		115D65B920C59707009F9BBE /* Helpers */ = {
@@ -271,8 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119D853220CAF6D0009F9460 /* Student.storyboard in Resources */,
 				115400CA20C1A66B008F6AB2 /* LaunchScreen.storyboard in Resources */,
 				115400C720C1A66B008F6AB2 /* Assets.xcassets in Resources */,
+				119D853520CAF71E009F9460 /* Professor.storyboard in Resources */,
 				115400C220C1A669008F6AB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,9 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */,
+				119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */,
+				115D5F9820CB02CB00360D94 /* View.swift in Sources */,
 				11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */,
-				115400EE20C1AF8F008F6AB2 /* SignInViewController.swift in Sources */,
-				115400BF20C1A669008F6AB2 /* ViewController.swift in Sources */,
+				115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */,
+				115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */,
+				115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,
 				115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */,
 				115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */,
@@ -355,6 +391,22 @@
 				115400C920C1A66B008F6AB2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		119D853020CAF6D0009F9460 /* Student.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				119D853120CAF6D0009F9460 /* Base */,
+			);
+			name = Student.storyboard;
+			sourceTree = "<group>";
+		};
+		119D853320CAF71E009F9460 /* Professor.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				119D853420CAF71E009F9460 /* Base */,
+			);
+			name = Professor.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

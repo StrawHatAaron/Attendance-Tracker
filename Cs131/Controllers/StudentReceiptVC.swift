@@ -1,23 +1,20 @@
 //
-//  SignInViewController.swift
+//  ReceiptVC.swift
 //  Cs131
 //
-//  Created by Aaron Miller on 6/1/18.
+//  Created by Aaron Miller on 6/8/18.
 //  Copyright © 2018 Aaron Miller. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
-
+class StudentReceiptVC: UIViewController {
     
-    @IBOutlet weak var studentIdField: UITextField!
-    @IBOutlet weak var studentIdKey: UITextField!
-    
+    @IBOutlet weak var recieptView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        recieptView.dropShadow()
         // Do any additional setup after loading the view.
     }
 
@@ -26,8 +23,6 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func checkStudentIn(_ sender: Any) {
-        print("check student in")
-    }
-
+    
+    
 }

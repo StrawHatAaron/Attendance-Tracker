@@ -10,6 +10,7 @@ import Foundation
 
 public class NetworkRequest{
 
+    //student
     func get(){
         
     }
@@ -17,6 +18,9 @@ public class NetworkRequest{
     func post(studentID:String, key:String){
         
     }
+    
+    
+    //professor
     
 }
 
