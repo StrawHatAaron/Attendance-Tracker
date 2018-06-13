@@ -8,11 +8,13 @@
 	<br/><br/>
 	
 	<form action="QuickServlet" method="post">
-		Width: <input type="text" size="5" name="width"/> 
+	<!-- was width -->
+		key <input type="text" size="5" name="key"/> 
 		&nbsp;&nbsp;
-		Height <input type="text" size="5" name="height"/>
+	<!-- was height -->
+		id <input type="text" size="5" name="id"/>
 		&nbsp;&nbsp;
-		<input type="submit" value="Calculate" />
+		<input type="submit" value="Submit" />
 	</form>
 </body>
 </html>

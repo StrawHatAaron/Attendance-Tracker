@@ -27,8 +27,8 @@ public class QuickServlet extends HttpServlet {
 			throws IOException {
 
 		PrintWriter writer = response.getWriter();
-		SheetsQuickstart.updateSheet();
-		writer.println("<html>Hello, I am a Java servlet!</html>");
+		//SheetsQuickstart.updateSheet();
+		writer.println("<html>A New key has been issued.</html>");
 		writer.flush();
 	}
 
@@ -36,17 +36,20 @@ public class QuickServlet extends HttpServlet {
 	 * handles HTTP POST request
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws IOException {
-		String paramWidth = request.getParameter("width");
-		int width = Integer.parseInt(paramWidth);
+			throws IOException {		
+		
+		String paramKey = request.getParameter("key");
+		int key = Integer.parseInt(paramKey);
 
-		String paramHeight = request.getParameter("height");
-		int height = Integer.parseInt(paramHeight);
+		String paramID = request.getParameter("id");
+		int id = Integer.parseInt(paramID);
 
-		long area = width * height;
-
+		SheetsQuickstart.updateSheet();
+		//long area = width * height;
+		SheetsQuickstart.getKey();
 		PrintWriter writer = response.getWriter();
-		writer.println("<html>Area of the rectangle is: " + area + "</html>");
+		writer.println("<html>Student ID " + id + "</html><br>");
+		writer.println("<html>Key " + key + "</html>");
 		writer.flush();
 
 	}
