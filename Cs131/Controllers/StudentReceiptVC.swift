@@ -10,11 +10,10 @@ import UIKit
 
 class StudentReceiptVC: UIViewController {
     
-    @IBOutlet weak var recieptView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recieptView.dropShadow()
         // Do any additional setup after loading the view.
     }
 

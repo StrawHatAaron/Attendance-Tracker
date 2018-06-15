@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114CE52420D37856008F1147 /* ProfessorSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CE52320D37856008F1147 /* ProfessorSignInVC.swift */; };
+		114CE52620D37870008F1147 /* ProfessorReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CE52520D37870008F1147 /* ProfessorReceiptVC.swift */; };
 		115400BD20C1A669008F6AB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400BC20C1A669008F6AB2 /* AppDelegate.swift */; };
 		115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115400BE20C1A669008F6AB2 /* HomeVC.swift */; };
 		115400C220C1A669008F6AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115400C020C1A669008F6AB2 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114CE52320D37856008F1147 /* ProfessorSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSignInVC.swift; sourceTree = "<group>"; };
+		114CE52520D37870008F1147 /* ProfessorReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorReceiptVC.swift; sourceTree = "<group>"; };
 		115400B920C1A669008F6AB2 /* Cs131.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cs131.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115400BC20C1A669008F6AB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115400BE20C1A669008F6AB2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				115400BE20C1A669008F6AB2 /* HomeVC.swift */,
 				115400ED20C1AF8F008F6AB2 /* StudentSignInVC.swift */,
 				119D852E20CAF460009F9460 /* StudentReceiptVC.swift */,
+				114CE52320D37856008F1147 /* ProfessorSignInVC.swift */,
+				114CE52520D37870008F1147 /* ProfessorReceiptVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,7 +343,9 @@
 				11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */,
 				115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */,
 				115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */,
+				114CE52620D37870008F1147 /* ProfessorReceiptVC.swift in Sources */,
 				115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */,
+				114CE52420D37856008F1147 /* ProfessorSignInVC.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,
 				115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */,
 				115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */,
@@ -534,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
 				INFOPLIST_FILE = Cs131/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
 				INFOPLIST_FILE = Cs131/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
