@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, ShowAlert {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -19,6 +19,7 @@ class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        classNumberLabel.text = classes[0]
         self.hideKeyboardWhenTappedAround()
         self.usernameField.delegate = self
         self.passwordField.delegate = self
@@ -31,7 +32,16 @@ class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDele
     }
     
     @IBAction func checkIn(_ sender: Any) {
-        self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+        if usernameField.text! == "" || passwordField.text! == "" {
+            showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
+        } else if false {
+            //check with the server if the ID, class section, and key all line up
+            showAlert("Please try again", message: "The information entered does not match the server", action: "Ok")
+        } else {
+            UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
+            UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
+            self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+        }
     }
     
     //delegate for UITextField
@@ -57,5 +67,5 @@ class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         classNumberLabel.text! = classes[row]
     }
-
+    
 }

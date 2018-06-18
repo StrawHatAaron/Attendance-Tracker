@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -178,7 +179,7 @@
         <!--Student ReceiptVC-->
         <scene sceneID="1W4-KH-lG2">
             <objects>
-                <viewController id="Jcm-G8-VRI" customClass="StudentReceiptVC" sceneMemberID="viewController">
+                <viewController id="Jcm-G8-VRI" customClass="StudentReceiptVC" customModule="Cs131" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tcx-cG-OzN" customClass="GradientView" customModule="Cs131" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,6 +268,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="classSection" destination="M88-Rf-iwH" id="XWE-ru-1pL"/>
+                        <outlet property="studentIDLabel" destination="LEj-6g-nuw" id="bIg-zw-Omp"/>
+                        <outlet property="timeSubmittedLabel" destination="Tie-i6-Ori" id="FOM-YB-Unx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgZ-8m-vvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

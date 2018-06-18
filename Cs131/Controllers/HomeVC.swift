@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, ShowAlert {
 
     @IBOutlet weak var infoView: UIView!
     
@@ -33,11 +33,7 @@ class HomeVC: UIViewController {
             self.performSegue(withIdentifier: "homeToStudentCheckIn", sender: nil)
         } else {
             // create the alert
-            let alert = UIAlertController(title: "Can't see location", message: "Please allow this app to use your location", preferredStyle: UIAlertControllerStyle.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+            showAlert("Can't see location", message: "Please allow this app to use your location", action:"Ok")
         }
     }
     

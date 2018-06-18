@@ -19,9 +19,15 @@ class ProfessorReceiptVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let todayString = formatter.string(from: Date()) // string purpose I add here
         let key = Int(arc4random_uniform(899999) + 100000)
+        
+        usernameLabel.text = UserDefaults.standard.string(forKey: "professorUsername")
         keyCodeLabel.text! = String(key)
+        classSectionLabel.text = UserDefaults.standard.string(forKey: "classSection")
+        timeAndDate.text = todayString
     }
 
     override func didReceiveMemoryWarning() {

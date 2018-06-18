@@ -10,11 +10,22 @@ import UIKit
 
 class StudentReceiptVC: UIViewController {
     
+    @IBOutlet weak var studentIDLabel: UILabel!
+    @IBOutlet weak var timeSubmittedLabel: UILabel!
+    @IBOutlet weak var classSection: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let todayString = formatter.string(from: Date()) // string purpose I add here
+        
+        studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
+        timeSubmittedLabel.text = todayString
+        classSection.text = UserDefaults.standard.string(forKey: "classSection")
+        
     }
 
     override func didReceiveMemoryWarning() {
