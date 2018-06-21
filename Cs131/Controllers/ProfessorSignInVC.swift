@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfessorSignInVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, ShowAlert {
+class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, ShowAlert {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
