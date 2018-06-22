@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, ShowAlert {
+class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     @IBOutlet weak var studentIdText: UITextField!
@@ -16,7 +16,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     @IBOutlet weak var classPicker: UIPickerView!
     @IBOutlet weak var classNumberLabel: UILabel!
     lazy var classes:[String] = ["Section 1", "Section 2", "Section 3", "Section 4" ]
-    var keys = ""
+    var keys:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         self.studentKeyText.delegate = self
         self.classPicker.delegate = self
         
-        keys = googleModule()
-        print(keys)
+        keys = studentModuleGET()
+        print("these are the keys! \(keys)")
     }
     
     override func didReceiveMemoryWarning() {

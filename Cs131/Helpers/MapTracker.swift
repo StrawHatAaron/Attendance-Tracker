@@ -14,6 +14,9 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     var canTrackStudent:Bool = false
+    var studentInRightLocation:Bool = false
+    var latitude:Double = 0.0
+    var longitude:Double = 0.0
 
     //return true if student is in the correct place
     public func trackStudent() -> Bool{
@@ -38,7 +41,12 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         canTrackStudent = true
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        latitude = locValue.latitude
+        longitude = locValue.longitude
+        print("locations = \(latitude) \(longitude)")
+        if latitude == 38.558916 && longitude == -121.423010 {
+            
+        }
     }
 }
 
