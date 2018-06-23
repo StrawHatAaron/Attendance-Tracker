@@ -44,7 +44,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -70,7 +70,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -298,6 +298,7 @@
                     <connections>
                         <outlet property="classSectionLabel" destination="Jv1-Cq-Xii" id="lIM-2N-Tun"/>
                         <outlet property="keyCodeLabel" destination="OcH-WT-aBX" id="QKd-R5-sFj"/>
+                        <outlet property="recieptView" destination="eNV-qv-lth" id="jZt-Wb-pct"/>
                         <outlet property="timeAndDate" destination="XZi-Un-gG0" id="lGy-7F-JPU"/>
                         <outlet property="timeLeft" destination="iDF-Y4-AU7" id="6Zb-iO-x2c"/>
                         <outlet property="usernameLabel" destination="61d-wg-Dr1" id="lVn-fx-iI7"/>

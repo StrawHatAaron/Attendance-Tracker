@@ -15,7 +15,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     @IBOutlet weak var studentKeyText: UITextField!
     @IBOutlet weak var classPicker: UIPickerView!
     @IBOutlet weak var classNumberLabel: UILabel!
-    lazy var classes:[String] = ["Section 1", "Section 2", "Section 3", "Section 4" ]
+    lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
     var keys:String?
     
     override func viewDidLoad() {
@@ -24,9 +24,6 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         self.hideKeyboardWhenTappedAround()
         self.studentKeyText.delegate = self
         self.classPicker.delegate = self
-        
-        keys = studentModuleGET()
-        print("these are the keys! \(keys)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +31,10 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     }
     
     @IBAction func checkStudentIn(_ sender: Any) {
+        keys = studentGET(classSection:classNumberLabel.text!)
+        print("these are the keys! \(keys)")
+
+        
         if studentIdText.text! == "" || studentKeyText.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
         } else if false {
@@ -45,6 +46,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
             self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
         }
     }
+    
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

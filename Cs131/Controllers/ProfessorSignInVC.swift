@@ -15,7 +15,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     @IBOutlet weak var classNumberLabel: UILabel!
     @IBOutlet weak var classPicker: UIPickerView!
     
-    lazy var classes:[String] = ["Section 1", "Section 2", "Section 3", "Section 4" ]
+    lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         self.hideKeyboardWhenTappedAround()
         self.usernameField.delegate = self
         self.passwordField.delegate = self
+        self.classPicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,17 +33,21 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     }
     
     @IBAction func checkIn(_ sender: Any) {
+        //check if the fields are empty
         if usernameField.text! == "" || passwordField.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
-        } else if false {
-            //check with the server if the ID, class section, and key all line up
-            showAlert("Please try again", message: "The information entered does not match the server", action: "Ok")
+        }
+        //check with the server if the ID, class section, and key all line up
+        else if usernameField.text! != "username" || passwordField.text! != "password" {
+            showAlert("Please try again", message: "The information entered does not match the credentials in the system", action: "Ok")
         } else {
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
             self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
         }
     }
+    
+    
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

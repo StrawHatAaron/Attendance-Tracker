@@ -128,8 +128,8 @@
                     </view>
                     <connections>
                         <outlet property="infoView" destination="MaO-Pd-799" id="Sag-sn-IG1"/>
-                        <segue destination="gXb-Bv-NUb" kind="presentation" identifier="homeToStudentCheckIn" modalTransitionStyle="crossDissolve" id="0gQ-uI-Bhq"/>
-                        <segue destination="7hP-bD-LFl" kind="presentation" identifier="homeToProfessorCheckIn" id="QWc-RL-Jos"/>
+                        <segue destination="gXb-Bv-NUb" kind="show" identifier="homeToStudentCheckIn" id="0gQ-uI-Bhq"/>
+                        <segue destination="7hP-bD-LFl" kind="show" identifier="homeToProfessorCheckIn" id="QWc-RL-Jos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
