@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Cs131" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="Cs131" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="6WR-bp-0cM">
+                                <rect key="frame" x="40" y="85" width="295" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="etR-vY-Whl"/>
+                                </constraints>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-Pd-799">
+                                <rect key="frame" x="40" y="273" width="295" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-1l-W5n">
+                                        <rect key="frame" x="90" y="28" width="115" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.0040015908889472485" green="0.24871507287025452" blue="0.17085200548171997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your class is waiting for you to check in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTd-Ka-rAL">
+                                        <rect key="frame" x="30" y="83.5" width="235" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0040015908889472485" green="0.24871507287025452" blue="0.17085200548171997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure to check your location settings so we know your in class." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-x4-oNX">
+                                        <rect key="frame" x="0.0" y="151" width="295" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0044684065505862236" green="0.24473455548286438" blue="0.17102348804473877" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="WTd-Ka-rAL" firstAttribute="leading" secondItem="MaO-Pd-799" secondAttribute="leading" constant="30" id="7IR-Su-CYc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uca-x4-oNX" secondAttribute="trailing" id="9SL-Qs-FRC"/>
+                                    <constraint firstAttribute="trailing" secondItem="WTd-Ka-rAL" secondAttribute="trailing" constant="30" id="9ti-Vx-NOM"/>
+                                    <constraint firstItem="WTd-Ka-rAL" firstAttribute="top" secondItem="Fcf-1l-W5n" secondAttribute="bottom" constant="30" id="DO9-R2-nrO"/>
+                                    <constraint firstItem="Fcf-1l-W5n" firstAttribute="top" secondItem="MaO-Pd-799" secondAttribute="top" constant="28" id="Wqq-9f-OlN"/>
+                                    <constraint firstItem="Fcf-1l-W5n" firstAttribute="leading" secondItem="MaO-Pd-799" secondAttribute="leading" constant="90" id="aYY-zc-0Li"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fcf-1l-W5n" secondAttribute="trailing" constant="90" id="aYl-4d-TPy"/>
+                                    <constraint firstAttribute="height" constant="200" id="d5r-iv-c4L"/>
+                                    <constraint firstItem="Uca-x4-oNX" firstAttribute="leading" secondItem="MaO-Pd-799" secondAttribute="leading" id="fB7-Wx-l8x"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uca-x4-oNX" secondAttribute="bottom" constant="8" id="rBe-Qj-Ldf"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kn-Qn-9ER" customClass="RoundButton" customModule="Cs131" customModuleProvider="target">
+                                <rect key="frame" x="40" y="529" width="295" height="53"/>
+                                <color key="backgroundColor" red="0.0" green="0.30787968635559082" blue="0.21361526846885681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="R4P-Co-fzc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Student check in">
+                                    <color key="titleColor" red="0.77047282457351685" green="0.71255892515182495" blue="0.50648564100265503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eqi-W5-pyu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swt-ui-BG2" customClass="RoundButton" customModule="Cs131" customModuleProvider="target">
+                                <rect key="frame" x="40" y="594" width="295" height="53"/>
+                                <color key="backgroundColor" red="0.0" green="0.31185933947563171" blue="0.21343961358070374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="8fb-yh-bBZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Professor check in">
+                                    <color key="titleColor" red="0.77047282457351685" green="0.71255892515182495" blue="0.50648564100265503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="professorCheckIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9E2-Qi-hWY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.014883930794894695" green="0.22502130270004272" blue="0.1553594172000885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6WR-bp-0cM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="24d-UO-dOw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Swt-ui-BG2" secondAttribute="trailing" constant="40" id="9Ka-fr-YnX"/>
+                            <constraint firstItem="Swt-ui-BG2" firstAttribute="top" secondItem="6Kn-Qn-9ER" secondAttribute="bottom" constant="12" id="DL9-oQ-sQy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MaO-Pd-799" secondAttribute="trailing" constant="40" id="Gfg-IQ-man"/>
+                            <constraint firstItem="MaO-Pd-799" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="IHe-6p-Zte"/>
+                            <constraint firstItem="MaO-Pd-799" firstAttribute="top" secondItem="6WR-bp-0cM" secondAttribute="bottom" constant="60" id="KXb-bn-PE4"/>
+                            <constraint firstItem="6WR-bp-0cM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="LVz-G5-Y9e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6WR-bp-0cM" secondAttribute="trailing" constant="40" id="SYu-jR-VT6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Swt-ui-BG2" secondAttribute="bottom" constant="20" id="bDs-6j-Yuz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Kn-Qn-9ER" secondAttribute="trailing" constant="40" id="dHm-mG-F68"/>
+                            <constraint firstItem="Swt-ui-BG2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="oOq-tN-z95"/>
+                            <constraint firstItem="6Kn-Qn-9ER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="tJc-eJ-qQf"/>
+                            <constraint firstItem="6Kn-Qn-9ER" firstAttribute="top" secondItem="MaO-Pd-799" secondAttribute="bottom" constant="56" id="z0b-WX-fZE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.014883930794894695" green="0.22502130270004272" blue="0.1553594172000885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.77047282457351685" green="0.71255892515182495" blue="0.50648564100265503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="infoView" destination="MaO-Pd-799" id="Sag-sn-IG1"/>
+                        <segue destination="gXb-Bv-NUb" kind="show" identifier="homeToStudentCheckIn" id="0gQ-uI-Bhq"/>
+                        <segue destination="7hP-bD-LFl" kind="show" identifier="homeToProfessorCheckIn" id="QWc-RL-Jos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+        </scene>
+        <!--Student-->
+        <scene sceneID="0Ly-hD-wmh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Student" id="gXb-Bv-NUb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uW-nh-95g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="63"/>
+        </scene>
+        <!--Professor-->
+        <scene sceneID="h0Y-zY-bgI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Professor" id="7hP-bD-LFl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfg-Ex-Q0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="172"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="400" height="355"/>
+    </resources>
+</document>
