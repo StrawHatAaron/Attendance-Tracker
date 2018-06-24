@@ -23,7 +23,8 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         super.viewDidLoad()
         reminderView.dropShadow()
         
-        professorGET()
+//        professorGET()
+        professorPOST(randomKey:key)
         
         classNumberLabel.text = classes[0]
         self.hideKeyboardWhenTappedAround()
@@ -53,7 +54,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
             //make sure the post for the new key went well
-            if professorPOST(randomKey:key) {
+            if true {
                 UserDefaults.standard.set(key, forKey: "randomKey")
                 self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
             } else {
