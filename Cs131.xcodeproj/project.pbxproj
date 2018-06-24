@@ -23,6 +23,7 @@
 		115D65B820C59635009F9BBE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65B720C59635009F9BBE /* GradientView.swift */; };
 		115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65BA20C59719009F9BBE /* MapTracker.swift */; };
 		1162726520D80A8A003D62BF /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1162726420D80A8A003D62BF /* credentials.plist */; };
+		117BC79120DF46C500D1D98D /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BC79020DF46C500D1D98D /* CustomObject.m */; };
 		119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D852E20CAF460009F9460 /* StudentReceiptVC.swift */; };
 		119D853220CAF6D0009F9460 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853020CAF6D0009F9460 /* Student.storyboard */; };
 		119D853520CAF71E009F9460 /* Professor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853320CAF71E009F9460 /* Professor.storyboard */; };
@@ -75,6 +76,9 @@
 		115D65B720C59635009F9BBE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		115D65BA20C59719009F9BBE /* MapTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTracker.swift; sourceTree = "<group>"; };
 		1162726420D80A8A003D62BF /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		117BC78F20DF46C500D1D98D /* Cs131-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cs131-Bridging-Header.h"; sourceTree = "<group>"; };
+		117BC79020DF46C500D1D98D /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomObject.m; path = Cs131/CustomObject.m; sourceTree = "<group>"; };
+		117BC79220DF46F600D1D98D /* CustomObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomObject.h; sourceTree = "<group>"; };
 		119D852E20CAF460009F9460 /* StudentReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentReceiptVC.swift; sourceTree = "<group>"; };
 		119D853120CAF6D0009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Student.storyboard; sourceTree = "<group>"; };
 		119D853420CAF71E009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Professor.storyboard; sourceTree = "<group>"; };
@@ -122,6 +126,9 @@
 		115400B020C1A669008F6AB2 = {
 			isa = PBXGroup;
 			children = (
+				117BC79020DF46C500D1D98D /* CustomObject.m */,
+				117BC79220DF46F600D1D98D /* CustomObject.h */,
+				117BC78F20DF46C500D1D98D /* Cs131-Bridging-Header.h */,
 				115400BB20C1A669008F6AB2 /* Cs131 */,
 				115400D320C1A66B008F6AB2 /* Cs131Tests */,
 				115400DE20C1A66B008F6AB2 /* Cs131UITests */,
@@ -323,6 +330,7 @@
 				TargetAttributes = {
 					115400B820C1A669008F6AB2 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0940;
 					};
 					115400CF20C1A66B008F6AB2 = {
 						CreatedOnToolsVersion = 9.3;
@@ -464,7 +472,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cs131/Pods-Cs131-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
@@ -473,7 +480,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
@@ -505,6 +511,7 @@
 				115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */,
 				11F8002F20D422C600F4131D /* ShowAlert.swift in Sources */,
 				115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */,
+				117BC79120DF46C500D1D98D /* CustomObject.m in Sources */,
 				115400BD20C1A669008F6AB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +702,7 @@
 			baseConfigurationReference = 973F5211D5EAA821636EFC27 /* Pods-Cs131.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
@@ -707,6 +715,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cs131.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cs131-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,6 +727,7 @@
 			baseConfigurationReference = 00B6A3C5A26C6087880B982B /* Pods-Cs131.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3H66N9WY2;
@@ -729,6 +740,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cs131.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cs131-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

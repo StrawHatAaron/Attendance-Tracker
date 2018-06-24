@@ -17,6 +17,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     @IBOutlet weak var classPicker: UIPickerView!
     
     lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
+    let key = Int(arc4random_uniform(8999) + 1000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +40,25 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     
     @IBAction func checkIn(_ sender: Any) {
         //check if the fields are empty
-        if usernameField.text! == "" || passwordField.text! == "" {
+        if usernameField.text! == "" ||
+            passwordField.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
         }
         //check with the server if the ID, class section, and key all line up
-        else if usernameField.text! != "username" || passwordField.text! != "password" {
+        else if usernameField.text! != "DNguyen" ||
+            passwordField.text!.sha256().uppercased() != UserDefaults.standard.string(forKey: "sheetSHA256") {
             showAlert("Please try again", message: "The information entered does not match the credentials in the system", action: "Ok")
         } else {
+            print(passwordField.text!.sha256().uppercased())
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
-            self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+            //make sure the post for the new key went well
+            if professorPOST(randomKey:key) {
+                UserDefaults.standard.set(key, forKey: "randomKey")
+                self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+            } else {
+                showAlert("Check your internet", message: "Network problem occured.", action: "Ok")
+            }
         }
     }
     
@@ -78,6 +88,35 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         classNumberLabel.text! = classes[row]
     }
 
+}
+
+extension String {
+    
+    func sha256() -> String{
+        if let stringData = self.data(using: String.Encoding.utf8) {
+            return hexStringFromData(input: digest(input: stringData as NSData))
+        }
+        return ""
+    }
+    
+    private func digest(input : NSData) -> NSData {
+        let digestLength = Int(CC_SHA256_DIGEST_LENGTH)
+        var hash = [UInt8](repeating: 0, count: digestLength)
+        CC_SHA256(input.bytes, UInt32(input.length), &hash)
+        return NSData(bytes: hash, length: digestLength)
+    }
+    
+    private  func hexStringFromData(input: NSData) -> String {
+        var bytes = [UInt8](repeating: 0, count: input.length)
+        input.getBytes(&bytes, length: input.length)
+        
+        var hexString = ""
+        for byte in bytes {
+            hexString += String(format:"%02x", UInt8(byte))
+        }
+        
+        return hexString
+    }
     
 }
 

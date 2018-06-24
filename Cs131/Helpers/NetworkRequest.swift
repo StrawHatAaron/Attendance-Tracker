@@ -51,9 +51,12 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         gIDPrepare()
     }
 
-    func professorPOST(){
+    //POST request to put in a date in the next column and
+    //
+    func professorPOST(randomKey:Int) -> Bool {
         UserDefaults.standard.set("PP", forKey: "requestType")
         gIDPrepare()
+        return true
     }
     
     

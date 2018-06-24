@@ -28,10 +28,10 @@ class ProfessorReceiptVC: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let todayString = formatter.string(from: Date()) // string purpose I add here
-        let key = Int(arc4random_uniform(899999) + 100000)
+        
         
         usernameLabel.text = UserDefaults.standard.string(forKey: "professorUsername")
-        keyCodeLabel.text! = String(key)
+        keyCodeLabel.text! = String(UserDefaults.standard.integer(forKey: "randomKey"))
         classSectionLabel.text = UserDefaults.standard.string(forKey: "classSection")
         timeAndDate.text = "Check in time was at\n \(todayString)"
         timeLeft.text! = "Time left to check in\n15:00"

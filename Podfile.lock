@@ -1,5 +1,4 @@
 PODS:
-  - CryptoSwift (0.10.0)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Sheets (1.2.1):
@@ -28,14 +27,12 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - CryptoSwift
   - GoogleAPIClientForREST/Sheets (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CryptoSwift
     - GoogleAPIClientForREST
     - GoogleSignIn
     - GoogleToolboxForMac
@@ -44,7 +41,6 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
@@ -52,6 +48,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0975cbe9a3a0a4476151b49c3e0686948e95097d
+PODFILE CHECKSUM: a5882764c47e0b851a82d1fd093fe284feaf925f
 
 COCOAPODS: 1.5.3
