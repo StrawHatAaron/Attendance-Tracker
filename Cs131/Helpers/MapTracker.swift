@@ -39,13 +39,14 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        canTrackStudent = true
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         latitude = locValue.latitude
         longitude = locValue.longitude
         print("locations = \(latitude) \(longitude)")
-        if latitude == 38.558916 && longitude == -121.423010 {
-            
+        //TODO - find a nice radius for this(:
+        if  latitude  >= -100.0 || latitude  <= 100.0 &&
+            longitude >= -100.0 || longitude <= 100.0 {
+                canTrackStudent = true
         }
     }
 }

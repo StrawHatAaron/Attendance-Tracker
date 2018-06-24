@@ -19,23 +19,22 @@ class ProfessorReceiptVC: UIViewController {
     @IBOutlet weak var timeLeft: UILabel!
     var totalTime = 900
     var timeRemaining = 900
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerRunning), userInfo: nil, repeats: true)
         recieptView.dropShadow()
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let todayString = formatter.string(from: Date()) // string purpose I add here
         let key = Int(arc4random_uniform(899999) + 100000)
         
-        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,      selector: #selector(timerRunning), userInfo: nil, repeats: true)
-        
         usernameLabel.text = UserDefaults.standard.string(forKey: "professorUsername")
         keyCodeLabel.text! = String(key)
         classSectionLabel.text = UserDefaults.standard.string(forKey: "classSection")
         timeAndDate.text = "Check in time was at\n \(todayString)"
-        timeLeft.text! = "15:00"
+        timeLeft.text! = "Time left to check in\n15:00"
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,16 +49,23 @@ class ProfessorReceiptVC: UIViewController {
 //        progressLabel.text = "\(completionPercentage)% done"
         let minutesLeft = Int(timeRemaining) / 60 % 60
         let secondsLeft = Int(timeRemaining) % 60
-        if secondsLeft <= 9 && minutesLeft <= 9 {
-            timeLeft.text = "0\(minutesLeft):0\(secondsLeft)"
-        } else if minutesLeft <= 9 {
-            timeLeft.text = "0\(minutesLeft):\(secondsLeft)"
-        } else if secondsLeft <= 9{
-            timeLeft.text = "\(minutesLeft): 0\(secondsLeft)"
+        
+        print(timeRemaining)
+        if  secondsLeft <= 9 &&
+            minutesLeft <= 9 &&
+            timeRemaining >= 0 {
+            timeLeft.text = "Time left to check in\n0\(minutesLeft):0\(secondsLeft)"
+        } else if minutesLeft <= 9 &&
+            timeRemaining >= 0 {
+            timeLeft.text = "Time left to check in\n0\(minutesLeft):\(secondsLeft)"
+        } else if secondsLeft <= 9 &&
+            timeRemaining >= 0 {
+            timeLeft.text = "Time left to check in\n\(minutesLeft): 0\(secondsLeft)"
         } else if timeRemaining >= 0 {
-            timeLeft.text = "\(minutesLeft):\(secondsLeft)"
+            timeLeft.text = "Time left to check in\n\(minutesLeft):\(secondsLeft)"
         } else {
             timeLeft.text = "Late students will have to be added manually at this point"
+            timer.invalidate()
         }
         
 //        manageTimerEnd(seconds: timeRemaining)

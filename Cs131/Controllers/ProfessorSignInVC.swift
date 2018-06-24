@@ -21,6 +21,9 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         reminderView.dropShadow()
+        
+        professorGET()
+        
         classNumberLabel.text = classes[0]
         self.hideKeyboardWhenTappedAround()
         self.usernameField.delegate = self
@@ -74,5 +77,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         classNumberLabel.text! = classes[row]
     }
+
     
 }
+

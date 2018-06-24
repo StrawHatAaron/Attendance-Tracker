@@ -18,10 +18,9 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     private let service = GTLRSheetsService()
     let signInButton = GIDSignInButton()
     let output = UITextView()
+
     
-    
-    //GET the key and the time that is valid
-    func studentGET(classSection:String) -> String? {
+    func gIDPrepare(){
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -29,16 +28,32 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         GIDSignIn.sharedInstance().signInSilently()
         // Add the sign-in button.
         view.addSubview(signInButton)
-        print("this is returning before the selector is finishing I think")
+
+    }
+    
+    //GET the key and the time that is valid
+    func studentGET() -> String? {
+        UserDefaults.standard.set("SG", forKey: "requestType")
+        gIDPrepare()
         return UserDefaults.standard.string(forKey: "studentContent")
     }
     
-    func studentPOST(){}
+    //POST an X for the people that made it on time
+    func studentPOST(){
+        UserDefaults.standard.set("SP", forKey: "requestType")
+        gIDPrepare()
+    }
     
-    func professorGET(){}
+    //GET request for specific tab
+    //grab the hash and store it
+    func professorGET(){
+        UserDefaults.standard.set("PG", forKey: "requestType")
+        gIDPrepare()
+    }
 
     func professorPOST(){
-        
+        UserDefaults.standard.set("PP", forKey: "requestType")
+        gIDPrepare()
     }
     
     
@@ -51,7 +66,14 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.signInButton.isHidden = true
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
-            grabCells(cellRange: "")
+            switch UserDefaults.standard.string(forKey: "requestType") {
+                case "SG":
+                    grabCells(cellRange: "A1:B")
+                case "PG":
+                    grabCells(cellRange: "SHA!B3:B3")
+                default:
+                    print("something wrong happened")
+            }
         }
     }
     
@@ -62,7 +84,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     func grabCells(cellRange:String) {
         output.text = "Getting sheet data..."
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
-        let range = "A38:D"
+        let range = cellRange
         let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range:range)
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
         )
@@ -76,25 +98,32 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 return
             }
             let rows = result.values!
-            if rows.isEmpty {
-                self.output.text = "No data found."
-                return
-            }
-            var majorsString:String = ""
-            var i = 0
-            for row in rows {
-                if row.isEmpty == false {
-                    print("for zero: \(row[0])")
-                    print("for one : \(row[1])")
-                    print("for four: \(row[3])")
-                    let name = row[0]
-                    let major = row[1]
-                    majorsString += "\(name), \(major) \n"
+            print(rows)
+            
+            //student GET - check if the key is the same as the key entered
+            if UserDefaults.standard.string(forKey: "requestType") == "SG" {
+                if rows.isEmpty {
+                    self.output.text = "No data found."
+                    return
                 }
-                print("row     : \(i)")
-                i += 1
+                var majorsString:String = ""
+                var i = 0
+                for row in rows {
+                    if row.isEmpty == false {
+                        let name = row[0]
+                        let major = row[1]
+                        majorsString += "\(name), \(major) \n"
+                    }
+                    print("row     : \(i)")
+                    i += 1
+                }
+                UserDefaults.standard.set(majorsString, forKey: "studentContent")
             }
-            UserDefaults.standard.set(majorsString, forKey: "studentContent")
+            //professor GET - get the SHA encryption and store it
+            else {
+                print(rows[0][0])
+                UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
+            }
         }
     }
     

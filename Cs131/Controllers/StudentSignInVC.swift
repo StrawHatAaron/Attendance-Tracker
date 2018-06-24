@@ -31,7 +31,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     }
     
     @IBAction func checkStudentIn(_ sender: Any) {
-        keys = studentGET(classSection:classNumberLabel.text!)
+        keys = studentGET()
         print("these are the keys! \(keys)")
 
         
