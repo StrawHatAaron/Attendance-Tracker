@@ -10,6 +10,7 @@ import UIKit
 import GoogleAPIClientForREST
 import GoogleSignIn
 import GoogleToolboxForMac
+import GTMOAuth2
 import SVProgressHUD
 
 public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, ShowAlert{
@@ -77,72 +78,29 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 case "PG":
                     getCells(cellRange: "SHA!B3:B3")
                 case "PP":
-                    postCells(range: "Test!A1:D5")
+                    postCells(range: "Test!A1:A2")
                 default:
                     print("something wrong happened")
             }
         }
     }
     
+
+    
     func postCells(range:String){
-        SVProgressHUD.show()
-        
-        let values = [
-            ["Item", "Cost", "Stocked", "Ship Date"],
-            ["Wheel", "$20.50", "4", "3/1/2016"],
-            ["Door", "$15", "2", "3/15/2016"],
-            ["Engine", "$100", "1", "30/20/2016"],
-            ["Totals", "=SUM(B2:B4)", "=SUM(C2:C4)", "=MAX(D2:D4)"]
-        ]
-        
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
-        let range = "Test!A3:D3"
-        let params = ["valueInputOption": "RAW"]
-        
-        let descriptions: [AnyHashable: Any] = [AnyHashable("a1"):"X"]
-        let GTLRSheet
-        let q = GTLRSheetsQuery_SpreadsheetsValuesBatchUpdate.query(withObject: <#T##GTLRSheets_BatchUpdateValuesRequest#>, spreadsheetId: spreadsheetId)
-        
-//        let valueRange = GTLRSheets_ValueRange(json: descriptions)
-//        let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
-        query.valueInputOption = "RAW"
+        let descriptions: [String: Any] = ["range" : range,
+                                           "majorDimension" : "ROWS",
+                                            "values" : [
+                                                ["dog"], ["cat"]
+                                            ]
+                                        ]
+        let valueRange = GTLRSheets_ValueRange(json: descriptions)
+        let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
+        query.valueInputOption = "USER_ENTERED"
+        print("here1")
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        print("are we getting here")
-//        guard let url = URL(string: "https://sheets.googleapis.com/v4/spreadsheets/\(spreadsheetId)/values/\(range)?valueInputOption=USER_ENTERED") else {return}
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "PUT"
-//        print(GIDAuthentication().accessToken)
-//        request.addValue("", forHTTPHeaderField: "Authorization")
-//        request.addValue("application/json", forHTTPHeaderField:"Accept")
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        guard let myHttpBody = try? JSONSerialization.data(withJSONObject: values, options: []) else {return}
-//        request.httpBody = myHttpBody
-//        let session = URLSession.shared
-//        print("right before data task")
-//        session.dataTask(with: request) { (data, response, error) in
-//            if let response = response as? HTTPURLResponse  {
-//                print("The response: \(response)")
-//            }
-//            if let data = data {
-//                print(data)
-//                SVProgressHUD.dismiss()
-//            }
-//        }.resume()
-
-        
-        
     }
     
     
@@ -173,7 +131,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             print(rows)
             
             //student GET - check if the key is the same as the key entered
-            if UserDefaults.standard.string(forKey: "requestType") == "SG" {
+            if self.requestType == "SG" {
                 if rows.isEmpty {
                     self.output.text = "No data found."
                     return
@@ -200,8 +158,12 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     
-    func studentGETCells() -> [String] {
-        return []
+    public func chooseSheet(classLabel:String) -> String {
+        return classLabel.trimmingCharacters(in: .whitespaces)
+    }
+    
+    public func checkIfValid(){
+        
     }
     
 }

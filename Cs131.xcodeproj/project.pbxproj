@@ -23,6 +23,7 @@
 		115D65B820C59635009F9BBE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65B720C59635009F9BBE /* GradientView.swift */; };
 		115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65BA20C59719009F9BBE /* MapTracker.swift */; };
 		1162726520D80A8A003D62BF /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1162726420D80A8A003D62BF /* credentials.plist */; };
+		1175B26A20E07C38008580F0 /* SectionChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175B26920E07C38008580F0 /* SectionChooser.swift */; };
 		117BC79120DF46C500D1D98D /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BC79020DF46C500D1D98D /* CustomObject.m */; };
 		119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D852E20CAF460009F9460 /* StudentReceiptVC.swift */; };
 		119D853220CAF6D0009F9460 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853020CAF6D0009F9460 /* Student.storyboard */; };
@@ -76,6 +77,7 @@
 		115D65B720C59635009F9BBE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		115D65BA20C59719009F9BBE /* MapTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTracker.swift; sourceTree = "<group>"; };
 		1162726420D80A8A003D62BF /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		1175B26920E07C38008580F0 /* SectionChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChooser.swift; sourceTree = "<group>"; };
 		117BC78F20DF46C500D1D98D /* Cs131-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cs131-Bridging-Header.h"; sourceTree = "<group>"; };
 		117BC79020DF46C500D1D98D /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomObject.m; path = Cs131/CustomObject.m; sourceTree = "<group>"; };
 		117BC79220DF46F600D1D98D /* CustomObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomObject.h; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				115D65BA20C59719009F9BBE /* MapTracker.swift */,
 				11D7DC7120C839DA0068416D /* NetworkRequest.swift */,
 				11F8002E20D422C600F4131D /* ShowAlert.swift */,
+				1175B26920E07C38008580F0 /* SectionChooser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -472,6 +475,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cs131/Pods-Cs131-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
@@ -480,6 +485,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
@@ -505,6 +512,7 @@
 				115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */,
 				115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */,
 				114CE52620D37870008F1147 /* ProfessorReceiptVC.swift in Sources */,
+				1175B26A20E07C38008580F0 /* SectionChooser.swift in Sources */,
 				115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */,
 				114CE52420D37856008F1147 /* ProfessorSignInVC.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,

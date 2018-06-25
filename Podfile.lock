@@ -1,4 +1,5 @@
 PODS:
+  - AppAuth (0.92.0)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Sheets (1.2.1):
@@ -17,6 +18,9 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMAppAuth (0.7.0):
+    - AppAuth (~> 0.92.0)
+    - GTMSessionFetcher (~> 1.1)
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.15):
@@ -29,25 +33,30 @@ PODS:
 DEPENDENCIES:
   - GoogleAPIClientForREST/Sheets (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
+  - GTMAppAuth
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AppAuth
     - GoogleAPIClientForREST
     - GoogleSignIn
     - GoogleToolboxForMac
+    - GTMAppAuth
     - GTMOAuth2
     - GTMSessionFetcher
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMAppAuth: 8d724be29ab8f2f6d35b2bf929d76340c9d1f1b1
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: a5882764c47e0b851a82d1fd093fe284feaf925f
+PODFILE CHECKSUM: 78d50a4eec704ed2f8880101efc434ab260f8d39
 
 COCOAPODS: 1.5.3
