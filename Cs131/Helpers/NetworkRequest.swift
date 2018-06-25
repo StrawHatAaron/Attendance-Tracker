@@ -20,8 +20,11 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheets, kGTLRAuthScopeSheetsDrive]
     private let service = GTLRSheetsService()
     let signInButton = GIDSignInButton()
-    let output = UITextView()
+    
     var requestType = ""
+    var profPostWasMade = false
+    var profClassNumber = ""
+    var randomKey = 0
     
     func gIDPrepare(){
         // Configure Google Sign-in.
@@ -49,8 +52,14 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     //GET request for specific tab
     //grab the hash and store it
-    func professorGET(){
-        requestType = "PG"
+    func professorGetClass(classNumber:String){
+        requestType = "PGC"
+        profClassNumber = classNumber.trimmingCharacters(in: .whitespaces)
+        gIDPrepare()
+    }
+    
+    func professorGetSHA(){
+        requestType = "PGS"
         gIDPrepare()
     }
 
@@ -58,6 +67,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     //
     func professorPOST(randomKey:Int) -> Bool {
         requestType = "PP"
+        self.randomKey = randomKey
         gIDPrepare()
         return true
     }
@@ -70,12 +80,13 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.service.authorizer = nil
         } else {
             self.signInButton.isHidden = true
-            self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             switch requestType {
                 case "SG":
                     getCells(cellRange: "A1:B")
-                case "PG":
+                case "PGC":
+                    getCells(cellRange: "\(profClassNumber)!A1:Z")
+                case "PGS":
                     getCells(cellRange: "SHA!B3:B3")
                 case "PP":
                     postCells(range: "Test!A1:A2")
@@ -88,31 +99,23 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
 
     
     func postCells(range:String){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let today:String = formatter.string(from: Date())
+        
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         let descriptions: [String: Any] = ["range" : range,
                                            "majorDimension" : "ROWS",
-                                            "values" : [
-                                                ["dog"], ["cat"]
-                                            ]
-                                        ]
+                                           "values" : [ [today], [randomKey] ]
+                                          ]
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"
-        print("here1")
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
-
+        profPostWasMade = true
     }
     
-    
-
-    
-    
-    // Display (in the UITextView) the names and majors of students in a sample
-    // spreadsheet:
-    // our sheet ID: 1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8
-    // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
     func getCells(cellRange:String) {
-        output.text = "Getting sheet data..."
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range:cellRange)
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
@@ -127,44 +130,34 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print(error.localizedDescription)
                 return
             }
-            let rows = result.values!
-            print(rows)
-            
-            //student GET - check if the key is the same as the key entered
-            if self.requestType == "SG" {
-                if rows.isEmpty {
-                    self.output.text = "No data found."
-                    return
+            if !self.profPostWasMade {
+                let rows = result.values!
+                print(rows)
+                
+                //student GET - check if the key is the same as the key entered
+                switch self.requestType {
+                    case "SG":
+                        if rows.isEmpty {return}
+                    case "PGC":
+                        print(rows[0][1])
+                    case "PGS":
+                        print(rows)
+                        UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
+                    default:
+                        print("something wrong happend displayResultWithTicket in NetworkRequest")
                 }
-                var majorsString:String = ""
-                var i = 0
-                for row in rows {
-                    if row.isEmpty == false {
-                        let name = row[0]
-                        let major = row[1]
-                        majorsString += "\(name), \(major) \n"
-                    }
-                    print("row     : \(i)")
-                    i += 1
-                }
-                UserDefaults.standard.set(majorsString, forKey: "studentContent")
-            }
-            //professor GET - get the SHA encryption and store it
-            else {
-                print(rows[0][0])
-                UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
             }
         }
     }
     
     
-    public func chooseSheet(classLabel:String) -> String {
-        return classLabel.trimmingCharacters(in: .whitespaces)
+    func findColumnToPost() -> String {
+        
+        return ""
     }
     
-    public func checkIfValid(){
-        
-    }
+    
+    
     
 }
 

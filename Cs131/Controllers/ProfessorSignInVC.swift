@@ -18,13 +18,20 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     
     lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
     let key = Int(arc4random_uniform(8999) + 1000)
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reminderView.dropShadow()
         
-//        professorGET()
-        professorPOST(randomKey:key)
+        //don't want them tripping over each other
+        let netSHA = NetworkRequest()
+        netSHA.professorGetSHA()
+        
+        //do a completion handler instead
+//        timer = Timer.(timeInterval: 1.0, target: self, selector: #selector(timedGet()), userInfo: nil, repeats: true)
+        
+
         
         classNumberLabel.text = classes[0]
         self.hideKeyboardWhenTappedAround()
@@ -53,16 +60,16 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
             print(passwordField.text!.sha256().uppercased())
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
+            UserDefaults.standard.set(key, forKey: "randomKey")
+            professorPOST(randomKey:key)
             //make sure the post for the new key went well
-            if true {
-                UserDefaults.standard.set(key, forKey: "randomKey")
-                self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
-            } else {
-                showAlert("Check your internet", message: "Network problem occured.", action: "Ok")
-            }
+            self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
         }
     }
     
+    @objc func timedGet(){
+        professorGetClass(classNumber:classNumberLabel.text!)
+    }
     
     
     //delegate for UITextField
