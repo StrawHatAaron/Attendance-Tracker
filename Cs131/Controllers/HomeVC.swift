@@ -14,11 +14,13 @@ class HomeVC: UIViewController, ShowAlert {
     
     lazy var mapper = MapTracker()
     var allowCheckin = false
+    var studentInGoodLocation = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         infoView.dropShadow()
         self.allowCheckin = mapper.trackStudent()
+        studentInGoodLocation = mapper.studentInRightLocation
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,10 +30,15 @@ class HomeVC: UIViewController, ShowAlert {
 
     @IBAction func checkIn(_ sender: Any) {
         allowCheckin = mapper.trackStudent()
+        studentInGoodLocation = mapper.studentInRightLocation
         
-        if allowCheckin {
+        if allowCheckin && studentInGoodLocation {
             self.performSegue(withIdentifier: "homeToStudentCheckIn", sender: nil)
-        } else {
+        }
+        else if allowCheckin {
+            showAlert("Seems like your not in the right place", message: "go to class.", action: "Ok")
+        }
+        else {
             // create the alert
             showAlert("Can't see location", message: "Please allow this app to use your location", action:"Ok")
         }

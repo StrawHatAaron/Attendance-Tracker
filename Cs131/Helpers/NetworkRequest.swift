@@ -21,10 +21,13 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     private let service = GTLRSheetsService()
     let signInButton = GIDSignInButton()
     
+    var profRows:[[Any]] = [[]]
     var requestType = ""
-    var profPostWasMade = false
     var profClassNumber = ""
     var randomKey = 0
+    var profPostWasMade = false
+    var gotSHA = false
+    
     
     func gIDPrepare(){
         // Configure Google Sign-in.
@@ -54,7 +57,8 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     //grab the hash and store it
     func professorGetClass(classNumber:String){
         requestType = "PGC"
-        profClassNumber = classNumber.trimmingCharacters(in: .whitespaces)
+        profClassNumber = classNumber.components(separatedBy: .whitespaces).joined()
+        print(profClassNumber)
         gIDPrepare()
     }
     
@@ -87,9 +91,10 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 case "PGC":
                     getCells(cellRange: "\(profClassNumber)!A1:Z")
                 case "PGS":
+                    print("get the SHA")
                     getCells(cellRange: "SHA!B3:B3")
                 case "PP":
-                    postCells(range: "Test!A1:A2")
+                    postCells(range: "\(profClassNumber)!\(findProfColumnToPost())")
                 default:
                     print("something wrong happened")
             }
@@ -102,12 +107,15 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         let today:String = formatter.string(from: Date())
-        
+        var colArray = [today]
+        for _ in 1...30 {
+            colArray.append("")
+        }
+        colArray.append(String(randomKey))
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         let descriptions: [String: Any] = ["range" : range,
-                                           "majorDimension" : "ROWS",
-                                           "values" : [ [today], [randomKey] ]
-                                          ]
+                                           "majorDimension" : "COLUMNS",
+                                           "values" : [ colArray ] ]
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"
@@ -130,19 +138,25 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print(error.localizedDescription)
                 return
             }
+            print("!self.profPostWasMade: \(!self.profPostWasMade)")
             if !self.profPostWasMade {
                 let rows = result.values!
-                print(rows)
+                //print("the rows in the table: \(rows)")
                 
                 //student GET - check if the key is the same as the key entered
                 switch self.requestType {
                     case "SG":
                         if rows.isEmpty {return}
                     case "PGC":
-                        print(rows[0][1])
+                        print("PGC rows: \(rows)")
+                        self.profRows = rows
                     case "PGS":
                         print(rows)
-                        UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
+                        if rows[0][0] != nil {
+                            UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
+                            self.gotSHA = true
+                        }
+                    
                     default:
                         print("something wrong happend displayResultWithTicket in NetworkRequest")
                 }
@@ -151,13 +165,126 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     
-    func findColumnToPost() -> String {
-        
-        return ""
+    func findProfColumnToPost() -> String {
+        //profRows[rows][cols]
+        //length of first cell is the amount of columns
+        let col = colToPost(num:profRows[0].count)
+        return "\(col)1:\(col)32"
     }
     
-    
-    
+    //return the alphabet column I want to read or post from
+    //num=row.length     |     str=""
+    func colToPost(num:Int) -> String{
+        var newStr = ""
+        switch num {
+        case 0:
+            newStr = "A"
+        case 1:
+            newStr = "B"
+        case 2:
+            newStr = "C"
+        case 3:
+            newStr = "D"
+        case 4:
+            newStr = "E"
+        case 5:
+            newStr = "F"
+        case 6:
+            newStr = "G"
+        case 7:
+            newStr = "H"
+        case 8:
+            newStr = "I"
+        case 9:
+            newStr = "J"
+        case 10:
+            newStr = "K"
+        case 11:
+            newStr = "L"
+        case 12:
+            newStr = "M"
+        case 13:
+            newStr = "N"
+        case 14:
+            newStr = "O"
+        case 15:
+            newStr = "P"
+        case 16:
+            newStr = "Q"
+        case 17:
+            newStr = "R"
+        case 18:
+            newStr = "S"
+        case 19:
+            newStr = "T"
+        case 20:
+            newStr = "U"
+        case 21:
+            newStr = "V"
+        case 22:
+            newStr = "W"
+        case 23:
+            newStr = "X"
+        case 24:
+            newStr = "Y"
+        case 26:
+            newStr = "Z"
+        case 27:
+            newStr = "AA"
+        case 28:
+            newStr = "AB"
+        case 29:
+            newStr = "AC"
+        case 30:
+            newStr = "AD"
+        case 31:
+            newStr = "AE"
+        case 32:
+            newStr = "AF"
+        case 33:
+            newStr = "AG"
+        case 34:
+            newStr = "AH"
+        case 35:
+            newStr = "AI"
+        case 36:
+            newStr = "AJ"
+        case 37:
+            newStr = "AK"
+        case 38:
+            newStr = "AL"
+        case 39:
+            newStr = "AM"
+        case 40:
+            newStr = "AN"
+        case 41:
+            newStr = "AO"
+        case 42:
+            newStr = "AP"
+        case 44:
+            newStr = "AQ"
+        case 45:
+            newStr = "AR"
+        case 46:
+            newStr = "AS"
+        case 47:
+            newStr = "AT"
+        case 48:
+            newStr = "AU"
+        case 49:
+            newStr = "AV"
+        case 50:
+            newStr = "AW"
+        case 51:
+            newStr = "AX"
+        case 52:
+            newStr = "AY"
+        default:
+            newStr = "AZ"
+        }
+        
+        return newStr
+    }
     
 }
 

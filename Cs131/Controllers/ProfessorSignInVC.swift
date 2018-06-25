@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -24,14 +25,23 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         super.viewDidLoad()
         reminderView.dropShadow()
         
-        //don't want them tripping over each other
-        let netSHA = NetworkRequest()
-        netSHA.professorGetSHA()
-        
-        //do a completion handler instead
-//        timer = Timer.(timeInterval: 1.0, target: self, selector: #selector(timedGet()), userInfo: nil, repeats: true)
-        
 
+        //don't want them tripping over each other
+        usernameField.isEnabled = false
+        passwordField.isEnabled = false
+        classPicker.isUserInteractionEnabled = false
+        SVProgressHUD.show()
+        self.professorGetSHA()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+            if self.gotSHA {
+                self.usernameField.isEnabled = true
+                self.passwordField.isEnabled = true
+                self.classPicker.isUserInteractionEnabled = true
+                self.professorGetClass(classNumber: self.classNumberLabel.text!)
+                SVProgressHUD.dismiss()
+            }
+        }
+        
         
         classNumberLabel.text = classes[0]
         self.hideKeyboardWhenTappedAround()
@@ -57,6 +67,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
             passwordField.text!.sha256().uppercased() != UserDefaults.standard.string(forKey: "sheetSHA256") {
             showAlert("Please try again", message: "The information entered does not match the credentials in the system", action: "Ok")
         } else {
+            professorPOST(randomKey:key)
             print(passwordField.text!.sha256().uppercased())
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")

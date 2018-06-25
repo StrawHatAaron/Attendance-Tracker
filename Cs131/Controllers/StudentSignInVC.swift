@@ -33,8 +33,6 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     @IBAction func checkStudentIn(_ sender: Any) {
         keys = studentGET()
         print("these are the keys! \(keys)")
-
-        
         if studentIdText.text! == "" || studentKeyText.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
         } else if false {

@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        SVProgressHUD.setBackgroundColor(.darkGray)
+        let gold = UIColor(red: 0x04/255.0, green: 0x39/255.0, blue: 0x2B/255.0, alpha: 7.0)
+        let darkGreen = UIColor(red: 0xC4/255.0, green: 0xB6/255.0, blue: 0x81/255.0, alpha: 9.0)
+        SVProgressHUD.setForegroundColor(darkGreen)
+        SVProgressHUD.setBackgroundColor(gold)
         
         
         // Initialize Google sign-in.
