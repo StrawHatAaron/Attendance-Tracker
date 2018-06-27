@@ -24,6 +24,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     var requestType = ""
     var profClassNumber = ""
     var studClassNumber = ""
+    var studentId = ""
     var studRows:[[Any]] = [[]]
     var profRows:[[Any]] = [[]]
     var randomKey = 0
@@ -43,8 +44,9 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     //GET the key and the time that is valid
-    func studentGetSheet(classSection:String) {
+    func studentGetSheet(classSection:String, id:String) {
         requestType = "SGS"
+        studentId = id
         studClassNumber = classSection.components(separatedBy: .whitespaces).joined()
         gIDPrepare()
     }

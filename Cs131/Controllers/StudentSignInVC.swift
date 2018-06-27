@@ -58,7 +58,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
             studentIdText.isEnabled = false
             studentKeyText.isEnabled = false
             classPicker.isUserInteractionEnabled = false
-            studentGetSheet(classSection:classNumberLabel.text!)
+            studentGetSheet(classSection:classNumberLabel.text!, id:studentKeyText.text!)
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0){
                 self.studentPostX()
                 self.studentIdText.isEnabled = true
