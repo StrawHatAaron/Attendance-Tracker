@@ -23,11 +23,11 @@
 		115D65B820C59635009F9BBE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65B720C59635009F9BBE /* GradientView.swift */; };
 		115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D65BA20C59719009F9BBE /* MapTracker.swift */; };
 		1162726520D80A8A003D62BF /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1162726420D80A8A003D62BF /* credentials.plist */; };
-		1175B26A20E07C38008580F0 /* SectionChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175B26920E07C38008580F0 /* SectionChooser.swift */; };
 		117BC79120DF46C500D1D98D /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BC79020DF46C500D1D98D /* CustomObject.m */; };
 		119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D852E20CAF460009F9460 /* StudentReceiptVC.swift */; };
 		119D853220CAF6D0009F9460 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853020CAF6D0009F9460 /* Student.storyboard */; };
 		119D853520CAF71E009F9460 /* Professor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853320CAF71E009F9460 /* Professor.storyboard */; };
+		11B3308E20E3431800A20C06 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3308D20E3431800A20C06 /* Reachability.swift */; };
 		11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7120C839DA0068416D /* NetworkRequest.swift */; };
 		11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7320C83E4B0068416D /* RoundButton.swift */; };
 		11F8002F20D422C600F4131D /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8002E20D422C600F4131D /* ShowAlert.swift */; };
@@ -77,13 +77,13 @@
 		115D65B720C59635009F9BBE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		115D65BA20C59719009F9BBE /* MapTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTracker.swift; sourceTree = "<group>"; };
 		1162726420D80A8A003D62BF /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		1175B26920E07C38008580F0 /* SectionChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChooser.swift; sourceTree = "<group>"; };
 		117BC78F20DF46C500D1D98D /* Cs131-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cs131-Bridging-Header.h"; sourceTree = "<group>"; };
 		117BC79020DF46C500D1D98D /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomObject.m; path = Cs131/CustomObject.m; sourceTree = "<group>"; };
 		117BC79220DF46F600D1D98D /* CustomObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomObject.h; sourceTree = "<group>"; };
 		119D852E20CAF460009F9460 /* StudentReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentReceiptVC.swift; sourceTree = "<group>"; };
 		119D853120CAF6D0009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Student.storyboard; sourceTree = "<group>"; };
 		119D853420CAF71E009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Professor.storyboard; sourceTree = "<group>"; };
+		11B3308D20E3431800A20C06 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		11D7DC7120C839DA0068416D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		11D7DC7320C83E4B0068416D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		11F8002E20D422C600F4131D /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				115D65BA20C59719009F9BBE /* MapTracker.swift */,
 				11D7DC7120C839DA0068416D /* NetworkRequest.swift */,
 				11F8002E20D422C600F4131D /* ShowAlert.swift */,
-				1175B26920E07C38008580F0 /* SectionChooser.swift */,
+				11B3308D20E3431800A20C06 /* Reachability.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -512,7 +512,6 @@
 				115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */,
 				115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */,
 				114CE52620D37870008F1147 /* ProfessorReceiptVC.swift in Sources */,
-				1175B26A20E07C38008580F0 /* SectionChooser.swift in Sources */,
 				115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */,
 				114CE52420D37856008F1147 /* ProfessorSignInVC.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,
@@ -520,6 +519,7 @@
 				11F8002F20D422C600F4131D /* ShowAlert.swift in Sources */,
 				115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */,
 				117BC79120DF46C500D1D98D /* CustomObject.m in Sources */,
+				11B3308E20E3431800A20C06 /* Reachability.swift in Sources */,
 				115400BD20C1A669008F6AB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

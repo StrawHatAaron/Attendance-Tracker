@@ -35,6 +35,10 @@ class ProfessorReceiptVC: UIViewController {
         classSectionLabel.text = UserDefaults.standard.string(forKey: "classSection")
         timeAndDate.text = "Check in time was at\n \(todayString)"
         timeLeft.text! = "Time left to check in\n15:00"
+        
+        
+        //TODO:- check AppDelegate for the date and possible keep signing in
+        UserDefaults.standard.set(todayString, forKey: "userSignedOnDay")
     }
 
     override func didReceiveMemoryWarning() {

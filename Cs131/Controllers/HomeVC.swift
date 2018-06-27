@@ -31,6 +31,7 @@ class HomeVC: UIViewController, ShowAlert {
     @IBAction func checkIn(_ sender: Any) {
         allowCheckin = mapper.trackStudent()
         studentInGoodLocation = mapper.studentInRightLocation
+        print(studentInGoodLocation)
         
         if allowCheckin && studentInGoodLocation {
             self.performSegue(withIdentifier: "homeToStudentCheckIn", sender: nil)

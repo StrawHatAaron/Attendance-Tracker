@@ -44,10 +44,10 @@ public class MapTracker:CLLocationManager, CLLocationManagerDelegate {
         longitude = locValue.longitude
         print("locations = \(latitude) \(longitude)")
         canTrackStudent = true
-        if  latitude  >= 38.557 || latitude  <= 38.559 &&
-            longitude >= -121.423 || longitude <= -121.421 {
+//        if  (latitude  >= 38.557   && latitude  <= 38.559) &&
+//            (longitude >= -121.423 && longitude <= -121.421) {
             studentInRightLocation = true
-        }
+//        }
     }
 }
 

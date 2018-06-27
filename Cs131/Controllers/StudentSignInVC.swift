@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -24,6 +25,8 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         self.hideKeyboardWhenTappedAround()
         self.studentKeyText.delegate = self
         self.classPicker.delegate = self
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +34,9 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     }
     
     @IBAction func checkStudentIn(_ sender: Any) {
-        keys = studentGET()
+        if checkinSuccess() {print("lookin good")}
+        
+        
         print("these are the keys! \(keys)")
         if studentIdText.text! == "" || studentKeyText.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
@@ -45,6 +50,26 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         }
     }
     
+    
+    func checkinSuccess() -> Bool {
+        var success = false
+        if Reachability.isConnectedToNetwork() {
+            SVProgressHUD.show()
+            studentIdText.isEnabled = false
+            studentKeyText.isEnabled = false
+            classPicker.isUserInteractionEnabled = false
+            studentGetSheet(classSection:classNumberLabel.text!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0){
+                self.studentPostX()
+                self.studentIdText.isEnabled = true
+                self.studentKeyText.isEnabled = true
+                self.classPicker.isUserInteractionEnabled = true
+                SVProgressHUD.dismiss()
+            }
+            success = true
+        }
+        return success
+    }
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

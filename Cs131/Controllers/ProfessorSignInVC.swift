@@ -27,20 +27,18 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         
 
         //don't want them tripping over each other
+        SVProgressHUD.show()
         usernameField.isEnabled = false
         passwordField.isEnabled = false
         classPicker.isUserInteractionEnabled = false
-        SVProgressHUD.show()
         self.professorGetSHA()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-            if self.gotSHA {
-                self.usernameField.isEnabled = true
-                self.passwordField.isEnabled = true
-                self.classPicker.isUserInteractionEnabled = true
-                self.professorGetClass(classNumber: self.classNumberLabel.text!)
-                SVProgressHUD.dismiss()
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.usernameField.isEnabled = true
+            self.passwordField.isEnabled = true
+            self.classPicker.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
         }
+
         
         
         classNumberLabel.text = classes[0]
@@ -64,17 +62,25 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
         }
         //check with the server if the ID, class section, and key all line up
         else if usernameField.text! != "DNguyen" ||
-            passwordField.text!.sha256().uppercased() != UserDefaults.standard.string(forKey: "sheetSHA256") {
+            passwordField.text!.sha256().lowercased() != UserDefaults.standard.string(forKey: "sheetSHA256")?.lowercased() {
             showAlert("Please try again", message: "The information entered does not match the credentials in the system", action: "Ok")
         } else {
-            professorPOST(randomKey:key)
+            SVProgressHUD.show()
+            if self.gotSHA {
+                self.professorGetClass(classNumber: self.classNumberLabel.text!)
+                
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+                self.professorPOST(randomKey: self.key)
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+            }
             print(passwordField.text!.sha256().uppercased())
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
             UserDefaults.standard.set(key, forKey: "randomKey")
-            professorPOST(randomKey:key)
             //make sure the post for the new key went well
-            self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
+           
         }
     }
     

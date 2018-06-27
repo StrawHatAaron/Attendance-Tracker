@@ -20,10 +20,12 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheets, kGTLRAuthScopeSheetsDrive]
     private let service = GTLRSheetsService()
     let signInButton = GIDSignInButton()
-    
-    var profRows:[[Any]] = [[]]
+
     var requestType = ""
     var profClassNumber = ""
+    var studClassNumber = ""
+    var studRows:[[Any]] = [[]]
+    var profRows:[[Any]] = [[]]
     var randomKey = 0
     var profPostWasMade = false
     var gotSHA = false
@@ -41,14 +43,14 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     //GET the key and the time that is valid
-    func studentGET() -> String? {
-        requestType = "SG"
+    func studentGetSheet(classSection:String) {
+        requestType = "SGS"
+        studClassNumber = classSection.components(separatedBy: .whitespaces).joined()
         gIDPrepare()
-        return UserDefaults.standard.string(forKey: "studentContent")
     }
     
     //POST an X for the people that made it on time
-    func studentPOST(){
+    func studentPostX(){
         requestType = "SP"
         gIDPrepare()
     }
@@ -58,7 +60,6 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     func professorGetClass(classNumber:String){
         requestType = "PGC"
         profClassNumber = classNumber.components(separatedBy: .whitespaces).joined()
-        print(profClassNumber)
         gIDPrepare()
     }
     
@@ -69,14 +70,11 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
 
     //POST request to put in a date in the next column and
     //
-    func professorPOST(randomKey:Int) -> Bool {
+    func professorPOST(randomKey:Int) {
         requestType = "PP"
         self.randomKey = randomKey
         gIDPrepare()
-        return true
     }
-    
-    
     
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
@@ -86,7 +84,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.signInButton.isHidden = true
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             switch requestType {
-                case "SG":
+                case "SGS":
                     getCells(cellRange: "A1:B")
                 case "PGC":
                     getCells(cellRange: "\(profClassNumber)!A1:Z")
@@ -94,7 +92,9 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                     print("get the SHA")
                     getCells(cellRange: "SHA!B3:B3")
                 case "PP":
-                    postCells(range: "\(profClassNumber)!\(findProfColumnToPost())")
+                    postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
+                case "SP":
+                    postCells(range: "\(studClassNumber):\(findColumnToPost(user: "student"))")
                 default:
                     print("something wrong happened")
             }
@@ -111,11 +111,22 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         for _ in 1...30 {
             colArray.append("")
         }
-        colArray.append(String(randomKey))
+            colArray.append(String(randomKey))
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
-        let descriptions: [String: Any] = ["range" : range,
-                                           "majorDimension" : "COLUMNS",
-                                           "values" : [ colArray ] ]
+        var descriptions: [String: Any]
+        
+        //professor
+        if requestType == "PP" {
+            descriptions = ["range" : range,
+                           "majorDimension" : "COLUMNS",
+                           "values" : [ colArray ] ]
+        }
+        //student
+        else {
+            descriptions = ["range" : range,
+                            "majorDimension" : "COLUMNS",
+                            "values" : [ "X" ] ]
+        }
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"
@@ -145,7 +156,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 
                 //student GET - check if the key is the same as the key entered
                 switch self.requestType {
-                    case "SG":
+                    case "SGS":
                         if rows.isEmpty {return}
                     case "PGC":
                         print("PGC rows: \(rows)")
@@ -165,11 +176,18 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     
-    func findProfColumnToPost() -> String {
+    func findColumnToPost(user:String) -> String {
         //profRows[rows][cols]
-        //length of first cell is the amount of columns
-        let col = colToPost(num:profRows[0].count)
-        return "\(col)1:\(col)32"
+        var col = ""
+        var ret = ""
+        if user == "professor" {
+            col = colToPost(num:profRows[0].count)
+            ret = "\(col)1:\(col)32"
+        } else {
+            
+        }
+        
+        return ret
     }
     
     //return the alphabet column I want to read or post from
