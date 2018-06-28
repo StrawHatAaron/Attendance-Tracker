@@ -25,7 +25,8 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     var profClassNumber = ""
     var studClassNumber = ""
     var studentId = ""
-    var studRows:[[Any]] = [[]]
+    var studColPost = ""
+    var studRows:[[String]] = [[]]
     var profRows:[[Any]] = [[]]
     var randomKey = 0
     var profPostWasMade = false
@@ -87,7 +88,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             switch requestType {
                 case "SGS":
-                    getCells(cellRange: "A1:B")
+                    getCells(cellRange: "\(studClassNumber)!A1:Z")
                 case "PGC":
                     getCells(cellRange: "\(profClassNumber)!A1:Z")
                 case "PGS":
@@ -113,7 +114,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         for _ in 1...30 {
             colArray.append("")
         }
-            colArray.append(String(randomKey))
+        colArray.append(String(randomKey))
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         var descriptions: [String: Any]
         
@@ -139,8 +140,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     func getCells(cellRange:String) {
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range:cellRange)
-        service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
-        )
+        service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
     
     // Process the response and display output
@@ -159,7 +159,12 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 //student GET - check if the key is the same as the key entered
                 switch self.requestType {
                     case "SGS":
-                        if rows.isEmpty {return}
+                        if rows.isEmpty {print("rows were empty")}
+                        else {
+                            print(rows)
+                            //Column to post to
+                            self.studRows = rows as! [[String]]
+                        }
                     case "PGC":
                         print("PGC rows: \(rows)")
                         self.profRows = rows
@@ -169,7 +174,6 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                             UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
                             self.gotSHA = true
                         }
-                    
                     default:
                         print("something wrong happend displayResultWithTicket in NetworkRequest")
                 }
@@ -177,6 +181,24 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         }
     }
     
+    func studIdIsCorrect() -> Bool {
+        //find matching string in studRows
+        var isMatch = false
+        for rows in studRows{
+            print("these are the rows: \(rows)")
+            if rows.contains(studentId) {
+                print("there was a match!!!")
+                isMatch = true
+            }
+        }
+        return isMatch
+    }
+    
+    func findRowToPost() -> Int {
+        //find 
+        
+        return 0
+    }
     
     func findColumnToPost(user:String) -> String {
         //profRows[rows][cols]
@@ -186,7 +208,8 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             col = colToPost(num:profRows[0].count)
             ret = "\(col)1:\(col)32"
         } else {
-            
+            col = colToPost(num: studRows[0].count)
+            ret = "\(col)xxx:\(col)xxx"
         }
         
         return ret

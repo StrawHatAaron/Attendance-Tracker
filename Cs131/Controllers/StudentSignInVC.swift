@@ -34,13 +34,14 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     }
     
     @IBAction func checkStudentIn(_ sender: Any) {
-        if checkinSuccess() {print("lookin good")}
+//        if checkinSuccess() {print("lookin good")}
         
         
         print("these are the keys! \(keys)")
         if studentIdText.text! == "" || studentKeyText.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
-        } else if false {
+        } else if checkinSuccess() {
+            print("this should happen")
           //check with the server if the ID, class section, and key all line up
             showAlert("Please try again", message: "The information entered does not match the server", action: "Ok")
         } else {
@@ -55,18 +56,19 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         var success = false
         if Reachability.isConnectedToNetwork() {
             SVProgressHUD.show()
+            let group = DispatchGroup()
+            studentGetSheet(classSection:classNumberLabel.text!, id:studentKeyText.text!)
             studentIdText.isEnabled = false
             studentKeyText.isEnabled = false
             classPicker.isUserInteractionEnabled = false
-            studentGetSheet(classSection:classNumberLabel.text!, id:studentKeyText.text!)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
                 self.studentPostX()
                 self.studentIdText.isEnabled = true
                 self.studentKeyText.isEnabled = true
                 self.classPicker.isUserInteractionEnabled = true
                 SVProgressHUD.dismiss()
             }
-            success = true
+            success = studIdIsCorrect()
         }
         return success
     }

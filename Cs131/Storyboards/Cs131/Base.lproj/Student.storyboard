@@ -270,6 +270,7 @@
                     </view>
                     <connections>
                         <outlet property="classSection" destination="M88-Rf-iwH" id="XWE-ru-1pL"/>
+                        <outlet property="receiptView" destination="9eW-eM-sP1" id="8Hq-jP-X0u"/>
                         <outlet property="studentIDLabel" destination="LEj-6g-nuw" id="bIg-zw-Omp"/>
                         <outlet property="timeSubmittedLabel" destination="Tie-i6-Ori" id="FOM-YB-Unx"/>
                     </connections>
