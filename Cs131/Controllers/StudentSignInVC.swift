@@ -33,37 +33,48 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     
     @IBAction func checkStudentIn(_ sender: Any) {
         SVProgressHUD.show()
-        studentGetSheet(classSection:classNumberLabel.text!, id:studentIdText.text!, key:studentKeyText.text!)
-        studentIdText.isEnabled = false
-        studentKeyText.isEnabled = false
-        classPicker.isUserInteractionEnabled = false
-        
-        if studentIdText.text! == "" || studentKeyText.text! == "" {
-            showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
-            self.studentIdText.isEnabled = true
-            self.studentKeyText.isEnabled = true
-            self.classPicker.isUserInteractionEnabled = true
-            SVProgressHUD.dismiss()
-        } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-                if Reachability.isConnectedToNetwork() && self.studIsCorrect() {
-                    self.studentPostX()
-                    UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
-                    UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
-                    self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
-                    SVProgressHUD.dismiss()
-                } else {
-                    self.studentPostX()
-                    self.studentIdText.isEnabled = true
-                    self.studentKeyText.isEnabled = true
-                    self.classPicker.isUserInteractionEnabled = true
-                    SVProgressHUD.dismiss()
-                    self.showAlert("Wrong Id and Key", message: "please try again", action: "Ok")
+        if Reachability.isConnectedToNetwork() {
+            if studentIdText.text! == "" || studentKeyText.text! == "" {
+                showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
+                enableScreen()
+                SVProgressHUD.dismiss()
+            } else {
+                studentGetSheet(classSection:classNumberLabel.text!, id:studentIdText.text!, key:studentKeyText.text!)
+                studentIdText.isEnabled = false
+                studentKeyText.isEnabled = false
+                classPicker.isUserInteractionEnabled = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+                    if self.studIsCorrect() {
+                        if self.studIsOnTime() {
+                        self.studentPostX()
+                        UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
+                        UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
+                        self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
+                        SVProgressHUD.dismiss()
+                        } else {
+                            self.showAlert("Your late.", message: "Check with your teacher for attendance", action: "Ok")
+                            self.enableScreen()
+                            SVProgressHUD.dismiss()
+                        }
+                    } else {
+                        self.enableScreen()
+                        SVProgressHUD.dismiss()
+                        self.showAlert("Wrong Id and Key", message: "please try again", action: "Ok")
+                    }
                 }
             }
+        } else {
+            showAlert("No Network Connection", message: "Your device is not connected to a network", action: "Ok")
+            SVProgressHUD.dismiss()
         }
     }
     
+    
+    func enableScreen(){
+        self.studentIdText.isEnabled = true
+        self.studentKeyText.isEnabled = true
+        self.classPicker.isUserInteractionEnabled = true
+    }
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

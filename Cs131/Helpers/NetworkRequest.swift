@@ -196,23 +196,63 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         }
     }
     
+    //check if id key
     func studIsCorrect() -> Bool {
         //find matching string in studRows
         var isMatch = false
+        var idMatch = false
+        var keyMatch = false
         var rowNumber = 1
+        //check id
         for rows in studRows{
             if rows.count >= 3 {
                 print("\(rows[2]) ?== \(studentId)")
                 if rows[2] == studentId {
-                    print("there was a match!!!")
-                    isMatch = true
+                    print("there was a id match!!!")
+                    idMatch = true
                     studRowNumber = rowNumber
+                    print("rowNumber: \(studRowNumber)")
                 }
             }
             rowNumber += 1
         }
-        print("rowNumber: \(studRowNumber)")
+        //check key
+        let key = studRows[31][studRows[32].count-1]
+        if key == studentKey {
+            print("there was a key match!!!")
+            keyMatch = true
+        }
+        if keyMatch && idMatch{
+            isMatch = true
+        }
         return isMatch
+    }
+    
+    
+    func studIsOnTime() -> Bool {
+        let dateString = studRows[0][studRows[32].count-1]
+            //.replacingOccurrences(of: "/", with: "-")
+        let timeString = studRows[32][studRows[32].count-1]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/YYYY'T'HH:mm:ss"
+        let sheetDate = dateFormatter.date(from: "\(dateString)T\(timeString)")
+//        let calendarSheet = Calendar.current.dateComponents([.hour, .minute, .second], from: <#T##Date#>)
+        
+        
+        let dateNow = Date()
+        let calendarNow = Calendar.current
+        let hour = calendarNow.component(.hour, from: dateNow)
+        let minutes = calendarNow.component(.minute, from: dateNow)
+        let seconds = calendarNow.component(.second, from: dateNow)
+        
+        print("dateString: \(dateString)")
+        print("sheetDate:  \(sheetDate)")
+        print("time you're signing in: \(hour):\(minutes):\(seconds)")
+        print("latest time to sign in: \(timeString)")
+
+        
+        
+        return true
     }
     
     func findRowToPost() -> Int {
