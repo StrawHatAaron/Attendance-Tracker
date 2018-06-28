@@ -17,7 +17,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     @IBOutlet weak var classNumberLabel: UILabel!
     @IBOutlet weak var classPicker: UIPickerView!
     
-    lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
+    lazy var classes:[String] = ["CSC 20", "CSC 130", "CSC 131", "CSC 133", "CSC 135"]
     let key = Int(arc4random_uniform(8999) + 1000)
     var timer = Timer()
     
@@ -87,6 +87,7 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
     @objc func timedGet(){
         professorGetClass(classNumber:classNumberLabel.text!)
     }
+    
     
     
     //delegate for UITextField

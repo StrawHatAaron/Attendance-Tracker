@@ -100,7 +100,13 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                     print("get the SHA")
                     getCells(cellRange: "SHA!B3:B3")
                 case "PP":
-                    postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
+                    if findColumnToPost(user: "professor") == "dontPost"{
+                        print("dont post get the time and display it on the reciept")
+                        showAlert("Check Google Sheet", message: "You already signed in for this class today.", action: "Ok")
+                        //get the amount of time professor has left and display that
+                    } else {
+                        postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
+                    }
                 case "SP":
                     postCells(range: "\(studClassNumber)!\(findColumnToPost(user: "student"))")
                 default:
@@ -181,7 +187,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                             self.studRows = rows as! [[String]]
                         }
                     case "PGC":
-                        print("PGC rows: \(rows)")
+//                        print("PGC rows: \(rows)")
                         self.profRows = rows
                     case "PGS":
                         print(rows)
@@ -230,45 +236,68 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     
     func studIsOnTime() -> Bool {
+        var timeGood = false
         let dateString = studRows[0][studRows[32].count-1]
-            //.replacingOccurrences(of: "/", with: "-")
         let timeString = studRows[32][studRows[32].count-1]
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/YYYY'T'HH:mm:ss"
+        dateFormatter.dateFormat = "MM/dd/yyyy'T'HH:mm:ss"
         let sheetDate = dateFormatter.date(from: "\(dateString)T\(timeString)")
-//        let calendarSheet = Calendar.current.dateComponents([.hour, .minute, .second], from: <#T##Date#>)
-        
-        
         let dateNow = Date()
-        let calendarNow = Calendar.current
-        let hour = calendarNow.component(.hour, from: dateNow)
-        let minutes = calendarNow.component(.minute, from: dateNow)
-        let seconds = calendarNow.component(.second, from: dateNow)
+        let minsApart = minsBetweenDates(startDate: sheetDate!, endDate: dateNow)
+        if minsApart <= 15 {
+            timeGood = true
+        }
         
-        print("dateString: \(dateString)")
-        print("sheetDate:  \(sheetDate)")
-        print("time you're signing in: \(hour):\(minutes):\(seconds)")
-        print("latest time to sign in: \(timeString)")
-
-        
-        
-        return true
+        return timeGood
     }
     
-    func findRowToPost() -> Int {
-        //find
-        
-        return 0
+    func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
+        return components.minute!
     }
+
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+        return components.day!
+    }
+
     
     func findColumnToPost(user:String) -> String {
         //profRows[rows][cols]
         var col = ""
         var ret = ""
         if user == "professor" {
-            col = colToPost(num:profRows[0].count)
-            ret = "\(col)1:\(col)33"
-        } else {
+            //but wait... what if the sheet already has the same date
+            for row in profRows {
+                print(row)
+            }
+            
+            let dateString = profRows[0][profRows[0].count-1]
+            let timeString = profRows[32][profRows[32].count-1]
+            print("dateString: \(dateString)")
+            print("timeString: \(timeString)")
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy'T'HH:mm:ss"
+            let sheetDate = dateFormatter.date(from: "\(dateString)T\(timeString)")
+            let dateNow = Date()
+            
+            if sheetDate == nil {
+                //date does not exist so make a new one
+                col = colToPost(num:profRows[0].count)
+                ret = "\(col)1:\(col)33"
+            }else {
+                let daysApart = daysBetweenDates(startDate: sheetDate!, endDate: dateNow)
+                if daysApart <= 0 {
+                    //there is no need to make another column
+                    ret = "dontPost"
+                } else {
+                    col = colToPost(num:profRows[0].count)
+                    ret = "\(col)1:\(col)33"
+                }
+            }
+        }else {
             col = colToPost(num: studRows[0].count - 1)
             ret = "\(col)\(studRowNumber):\(col)\(studRowNumber)"
             print("the cell I want to POST to: \(ret)")

@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--HomeVC-->
+        <scene sceneID="M9w-Hn-nS5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HomeVC" storyboardName="Main" referencedIdentifier="HomeVC" id="rw1-PQ-YkP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5U-xM-5FF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="607"/>
+        </scene>
         <!--Student Sign InVC-->
         <scene sceneID="kFw-9H-s3c">
             <objects>
@@ -137,6 +145,22 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iw4-RK-9m5" userLabel="←Back" customClass="RoundButton" customModule="Cs131" customModuleProvider="target">
+                                <rect key="frame" x="10" y="25" width="62" height="33"/>
+                                <color key="backgroundColor" red="0.12297726422548294" green="0.30290216207504272" blue="0.21959459781646729" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title=" ←Back ">
+                                    <color key="titleColor" red="0.60687845945358276" green="0.5742533802986145" blue="0.42348089814186096" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="rw1-PQ-YkP" kind="presentation" id="mxS-lD-27P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.014883930794894695" green="0.22502130270004272" blue="0.1553594172000885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -145,6 +169,7 @@
                             <constraint firstItem="FVg-jf-kFh" firstAttribute="trailing" secondItem="Ikt-ic-Wm3" secondAttribute="trailing" constant="100" id="Ejv-Uw-6jO"/>
                             <constraint firstItem="P59-MB-DJe" firstAttribute="top" secondItem="Ikt-ic-Wm3" secondAttribute="bottom" constant="60" id="Hs2-kU-ZhX"/>
                             <constraint firstItem="q8E-rq-ypQ" firstAttribute="top" secondItem="P59-MB-DJe" secondAttribute="bottom" constant="5" id="K6B-XB-TqO"/>
+                            <constraint firstItem="iw4-RK-9m5" firstAttribute="top" secondItem="Vfp-9C-Whp" secondAttribute="top" constant="25" id="L49-0L-caI"/>
                             <constraint firstItem="Ikt-ic-Wm3" firstAttribute="top" secondItem="FVg-jf-kFh" secondAttribute="top" constant="25" id="NWL-V1-sCR"/>
                             <constraint firstItem="P59-MB-DJe" firstAttribute="leading" secondItem="FVg-jf-kFh" secondAttribute="leading" id="Nf6-eV-Ud6"/>
                             <constraint firstItem="FVg-jf-kFh" firstAttribute="trailing" secondItem="P59-MB-DJe" secondAttribute="trailing" id="Pep-Nn-ME2"/>
@@ -153,6 +178,7 @@
                             <constraint firstItem="FVg-jf-kFh" firstAttribute="trailing" secondItem="5le-Kh-tRj" secondAttribute="trailing" constant="40" id="WK2-71-BGu"/>
                             <constraint firstItem="5le-Kh-tRj" firstAttribute="leading" secondItem="FVg-jf-kFh" secondAttribute="leading" constant="40" id="YZU-HA-xEY"/>
                             <constraint firstItem="q8E-rq-ypQ" firstAttribute="trailing" secondItem="FVg-jf-kFh" secondAttribute="trailing" id="iFO-c6-RZ0"/>
+                            <constraint firstItem="iw4-RK-9m5" firstAttribute="leading" secondItem="FVg-jf-kFh" secondAttribute="leading" constant="10" id="nbT-bv-nQV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FVg-jf-kFh"/>
                         <userDefinedRuntimeAttributes>

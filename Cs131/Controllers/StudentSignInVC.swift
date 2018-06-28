@@ -16,7 +16,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     @IBOutlet weak var studentKeyText: UITextField!
     @IBOutlet weak var classPicker: UIPickerView!
     @IBOutlet weak var classNumberLabel: UILabel!
-    lazy var classes:[String] = ["CSC 20", "CSC 131", "CSC 133", "CSC 135"]
+    lazy var classes:[String] = ["CSC 20", "CSC 130", "CSC 131", "CSC 133", "CSC 135"]
     var keys:String?
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         SVProgressHUD.show()
         if Reachability.isConnectedToNetwork() {
             if studentIdText.text! == "" || studentKeyText.text! == "" {
-                showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
+                showAlert("Empty Field", message: "At least one of the text fields have not been filled out.", action: "Ok")
                 enableScreen()
                 SVProgressHUD.dismiss()
             } else {
@@ -52,19 +52,19 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
                         self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
                         SVProgressHUD.dismiss()
                         } else {
-                            self.showAlert("Your late.", message: "Check with your teacher for attendance", action: "Ok")
+                            self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
                             self.enableScreen()
                             SVProgressHUD.dismiss()
                         }
                     } else {
                         self.enableScreen()
                         SVProgressHUD.dismiss()
-                        self.showAlert("Wrong Id and Key", message: "please try again", action: "Ok")
+                        self.showAlert("Wrong Id and Key", message: "please try again.", action: "Ok")
                     }
                 }
             }
         } else {
-            showAlert("No Network Connection", message: "Your device is not connected to a network", action: "Ok")
+            showAlert("No Network Connection", message: "Your device is not connected to a network.", action: "Ok")
             SVProgressHUD.dismiss()
         }
     }
