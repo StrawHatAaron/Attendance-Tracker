@@ -25,7 +25,9 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     var profClassNumber = ""
     var studClassNumber = ""
     var studentId = ""
+    var studentKey = ""
     var studColPost = ""
+    var studRowNumber = 1
     var studRows:[[String]] = [[]]
     var profRows:[[Any]] = [[]]
     var randomKey = 0
@@ -45,9 +47,10 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     //GET the key and the time that is valid
-    func studentGetSheet(classSection:String, id:String) {
+    func studentGetSheet(classSection:String, id:String, key:String) {
         requestType = "SGS"
         studentId = id
+        studentKey = key
         studClassNumber = classSection.components(separatedBy: .whitespaces).joined()
         gIDPrepare()
     }
@@ -88,7 +91,9 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             switch requestType {
                 case "SGS":
+                    print("student get cells")
                     getCells(cellRange: "\(studClassNumber)!A1:Z")
+                    sleep(2)
                 case "PGC":
                     getCells(cellRange: "\(profClassNumber)!A1:Z")
                 case "PGS":
@@ -97,7 +102,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 case "PP":
                     postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
                 case "SP":
-                    postCells(range: "\(studClassNumber):\(findColumnToPost(user: "student"))")
+                    postCells(range: "\(studClassNumber)!\(findColumnToPost(user: "student"))")
                 default:
                     print("something wrong happened")
             }
@@ -115,6 +120,16 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             colArray.append("")
         }
         colArray.append(String(randomKey))
+        
+        
+        let date = Date().adding(minutes: 15)
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        colArray.append("\(hour):\(minutes):\(seconds)")
+        
+        
         let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
         var descriptions: [String: Any]
         
@@ -128,7 +143,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         else {
             descriptions = ["range" : range,
                             "majorDimension" : "COLUMNS",
-                            "values" : [ "X" ] ]
+                            "values" : [ ["X"] ] ]
         }
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
@@ -161,7 +176,7 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                     case "SGS":
                         if rows.isEmpty {print("rows were empty")}
                         else {
-                            print(rows)
+                            print("student got sheet")
                             //Column to post to
                             self.studRows = rows as! [[String]]
                         }
@@ -181,21 +196,27 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         }
     }
     
-    func studIdIsCorrect() -> Bool {
+    func studIsCorrect() -> Bool {
         //find matching string in studRows
         var isMatch = false
+        var rowNumber = 1
         for rows in studRows{
-            print("these are the rows: \(rows)")
-            if rows.contains(studentId) {
-                print("there was a match!!!")
-                isMatch = true
+            if rows.count >= 3 {
+                print("\(rows[2]) ?== \(studentId)")
+                if rows[2] == studentId {
+                    print("there was a match!!!")
+                    isMatch = true
+                    studRowNumber = rowNumber
+                }
             }
+            rowNumber += 1
         }
+        print("rowNumber: \(studRowNumber)")
         return isMatch
     }
     
     func findRowToPost() -> Int {
-        //find 
+        //find
         
         return 0
     }
@@ -206,10 +227,11 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         var ret = ""
         if user == "professor" {
             col = colToPost(num:profRows[0].count)
-            ret = "\(col)1:\(col)32"
+            ret = "\(col)1:\(col)33"
         } else {
-            col = colToPost(num: studRows[0].count)
-            ret = "\(col)xxx:\(col)xxx"
+            col = colToPost(num: studRows[0].count - 1)
+            ret = "\(col)\(studRowNumber):\(col)\(studRowNumber)"
+            print("the cell I want to POST to: \(ret)")
         }
         
         return ret
@@ -329,6 +351,12 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         return newStr
     }
     
+}
+
+extension Date {
+    func adding(minutes: Int) -> Date {
+        return Calendar.current.date(byAdding: .minute, value: minutes, to: self)!
+    }
 }
 
 

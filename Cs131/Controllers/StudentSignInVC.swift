@@ -25,8 +25,6 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
         self.hideKeyboardWhenTappedAround()
         self.studentKeyText.delegate = self
         self.classPicker.delegate = self
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,44 +32,38 @@ class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate
     }
     
     @IBAction func checkStudentIn(_ sender: Any) {
-//        if checkinSuccess() {print("lookin good")}
+        SVProgressHUD.show()
+        studentGetSheet(classSection:classNumberLabel.text!, id:studentIdText.text!, key:studentKeyText.text!)
+        studentIdText.isEnabled = false
+        studentKeyText.isEnabled = false
+        classPicker.isUserInteractionEnabled = false
         
-        
-        print("these are the keys! \(keys)")
         if studentIdText.text! == "" || studentKeyText.text! == "" {
             showAlert("Empty Field", message: "At least one of the text fields have not been filled out", action: "Ok")
-        } else if checkinSuccess() {
-            print("this should happen")
-          //check with the server if the ID, class section, and key all line up
-            showAlert("Please try again", message: "The information entered does not match the server", action: "Ok")
+            self.studentIdText.isEnabled = true
+            self.studentKeyText.isEnabled = true
+            self.classPicker.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
         } else {
-            UserDefaults.standard.set(studentIdText.text, forKey: "studentID")
-            UserDefaults.standard.set(classNumberLabel.text!, forKey: "classSection")
-            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
-        }
-    }
-    
-    
-    func checkinSuccess() -> Bool {
-        var success = false
-        if Reachability.isConnectedToNetwork() {
-            SVProgressHUD.show()
-            let group = DispatchGroup()
-            studentGetSheet(classSection:classNumberLabel.text!, id:studentKeyText.text!)
-            studentIdText.isEnabled = false
-            studentKeyText.isEnabled = false
-            classPicker.isUserInteractionEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-                self.studentPostX()
-                self.studentIdText.isEnabled = true
-                self.studentKeyText.isEnabled = true
-                self.classPicker.isUserInteractionEnabled = true
-                SVProgressHUD.dismiss()
+                if Reachability.isConnectedToNetwork() && self.studIsCorrect() {
+                    self.studentPostX()
+                    UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
+                    UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
+                    self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
+                    SVProgressHUD.dismiss()
+                } else {
+                    self.studentPostX()
+                    self.studentIdText.isEnabled = true
+                    self.studentKeyText.isEnabled = true
+                    self.classPicker.isUserInteractionEnabled = true
+                    SVProgressHUD.dismiss()
+                    self.showAlert("Wrong Id and Key", message: "please try again", action: "Ok")
+                }
             }
-            success = studIdIsCorrect()
         }
-        return success
     }
+    
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
