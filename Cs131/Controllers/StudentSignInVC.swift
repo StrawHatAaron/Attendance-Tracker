@@ -44,18 +44,20 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
                 studentIdText.isEnabled = false
                 studentKeyText.isEnabled = false
                 classPicker.isUserInteractionEnabled = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
                     if self.studIsCorrect() {
-                        if self.studIsOnTime() {
-                        self.studentPostX()
-                        UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
-                        UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
-                        self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
-                        SVProgressHUD.dismiss()
-                        } else {
-                            self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
-                            self.enableScreen()
+                        if true {//CHECK FOR SHEET CORRUPTION
+                            if self.studIsOnTime() {
+                            self.studentPostX()
+                            UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
+                            UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
+                            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
                             SVProgressHUD.dismiss()
+                            } else {
+                                self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
+                                self.enableScreen()
+                                SVProgressHUD.dismiss()
+                            }
                         }
                     } else {
                         self.enableScreen()

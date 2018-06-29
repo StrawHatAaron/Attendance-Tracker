@@ -59,8 +59,12 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"
-        service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
+        print("legit like WOW")
+        service.executeQuery(query, delegate: self, didFinish: #selector(doNothing))
+        print("fuck this")
     }
+    
+    @objc func doNothing(){}
     
     //check if id key
     func studIsCorrect() -> Bool {
@@ -77,13 +81,12 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                     print("there was a id match!!!")
                     idMatch = true
                     studRowNumber = rowNumber
-                    print("rowNumber: \(studRowNumber)")
                 }
             }
             rowNumber += 1
         }
         //check key
-        let key = studRows[31][studRows[32].count-1]
+        let key = studRows[31][studRows[31].count-1]
         if key == studentKey {
             print("there was a key match!!!")
             keyMatch = true
@@ -97,14 +100,15 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     func studIsOnTime() -> Bool {
         var timeGood = false
-        let dateString = studRows[0][studRows[32].count-1]
+        let dateString = studRows[0][studRows[0].count-1]
         let timeString = studRows[32][studRows[32].count-1]
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy'T'HH:mm:ss"
         let sheetDate = dateFormatter.date(from: "\(dateString)T\(timeString)")
         let dateNow = Date()
         let minsApart = CellHelper.minsBetweenDates(startDate: sheetDate!, endDate: dateNow)
-        if minsApart <= 15 {
+        print("the mins apart: \(minsApart)")
+        if minsApart <= 1 {
             timeGood = true
         }
         
@@ -151,7 +155,6 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             case "SGS":
                 print("student get cells")
                 getCells(cellRange: "\(studClassNumber)!A1:Z")
-                sleep(2)
             case "SP":
                 postCells(range: "\(studClassNumber)!\(findColumnToPost(user: "student"))")
             default:

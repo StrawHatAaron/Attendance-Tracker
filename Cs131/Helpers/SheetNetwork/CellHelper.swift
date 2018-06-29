@@ -10,6 +10,10 @@ import Foundation
 
 public class CellHelper {
     
+    public static func checkSheetValid(){
+        
+    }
+    
     public static func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
@@ -21,7 +25,6 @@ public class CellHelper {
         let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
         return components.day!
     }
-    
     
     //return the alphabet column I want to read or post from
     //num=row.length     |     str=""

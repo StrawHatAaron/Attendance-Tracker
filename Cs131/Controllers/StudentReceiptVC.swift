@@ -19,19 +19,21 @@ class StudentReceiptVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hmmm1")
         receiptView.dropShadow()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let todayString = formatter.string(from: Date()) // string purpose I add here
-        
-        studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
+        print("hmmm2")
+        //studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
         timeSubmittedLabel.text = todayString
-        classSection.text = UserDefaults.standard.string(forKey: "classSection")
-        
+        //classSection.text = UserDefaults.standard.string(forKey: "classSection")
+        print("hmmm3")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("ummm mem warn")
         // Dispose of any resources that can be recreated.
     }
     

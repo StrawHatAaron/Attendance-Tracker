@@ -27,18 +27,7 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
     var randomKey = 0
     var profPostWasMade = false
     var gotSHA = false
-    
-    
-    func gIDPrepare(){
-        // Configure Google Sign-in.
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().scopes = scopes
-        GIDSignIn.sharedInstance().signInSilently()
-        // Add the sign-in button.
-        view.addSubview(signInButton)
-        
-    }
+
     
     //GET request for specific tab
     //grab the hash and store it
@@ -61,33 +50,7 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
         gIDPrepare()
     }
     
-    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            showAlert("problem", message: "Authentication Error", action: error.localizedDescription)
-            self.service.authorizer = nil
-        } else {
-            self.signInButton.isHidden = true
-            self.service.authorizer = user.authentication.fetcherAuthorizer()
-            switch requestType {
-            case "PGC":
-                getCells(cellRange: "\(profClassNumber)!A1:Z")
-            case "PGS":
-                print("get the SHA")
-                getCells(cellRange: "SHA!B3:B3")
-            case "PP":
-                if findColumnToPost(user: "professor") == "dontPost"{
-                    showAlert("Check Google Sheet", message: "You already signed in for this class today.", action: "Ok")
-                } else {
-                    postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
-                }
-            default:
-                print("something wrong happened")
-            }
-        }
-    }
-    
-    
-    
+
     func postCells(range:String){
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
@@ -97,7 +60,6 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
             colArray.append("")
         }
         colArray.append(String(randomKey))
-        
         
         let date = Date().adding(minutes: 15)
         let calendar = Calendar.current
@@ -135,33 +97,7 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
     
-    // Process the response and display output
-    @objc func displayResultWithTicket(ticket: GTLRServiceTicket, finishedWithObject result : GTLRSheets_ValueRange, error : NSError?) {
-        DispatchQueue.main.async {
-            if let error = error {
-                self.showAlert("problem", message: "Error", action: error.localizedDescription)
-                print(error.localizedDescription)
-                return
-            }
-            print("!self.profPostWasMade: \(!self.profPostWasMade)")
-            if !self.profPostWasMade {
-                let rows = result.values!
-                //print("the rows in the table: \(rows)")
-                switch self.requestType {
-                case "PGC":
-                    self.profRows = rows
-                case "PGS":
-                    print(rows)
-                    if rows[0][0] != nil {
-                        UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
-                        self.gotSHA = true
-                    }
-                default:
-                    print("something wrong happend displayResultWithTicket in TeacherNetwork")
-                }
-            }
-        }
-    }
+
     
     func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
         let calendar = Calendar.current
@@ -210,7 +146,69 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
         return ret
     }
 
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            showAlert("problem", message: "Authentication Error", action: error.localizedDescription)
+            self.service.authorizer = nil
+        } else {
+            self.signInButton.isHidden = true
+            self.service.authorizer = user.authentication.fetcherAuthorizer()
+            switch requestType {
+            case "PGS":
+                getCells(cellRange: "SHA!B3:B3")
+            case "PGC":
+                getCells(cellRange: "\(profClassNumber)!A1:Z")
+            case "PP":
+                if findColumnToPost(user: "professor") == "dontPost"{
+                    showAlert("Check Google Sheet", message: "You already signed in for this class within 24 hours.", action: "Ok")
+                } else {
+                    postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
+                }
+            default:
+                print("something wrong happened")
+            }
+        }
+    }
     
+    // Process the response and display output
+    @objc func displayResultWithTicket(ticket: GTLRServiceTicket, finishedWithObject result : GTLRSheets_ValueRange, error : NSError?) {
+        DispatchQueue.main.async {
+            if let error = error {
+                self.showAlert("problem", message: "Error", action: error.localizedDescription)
+                print(error.localizedDescription)
+                return
+            }
+            print("!self.profPostWasMade: \(!self.profPostWasMade)")
+            if !self.profPostWasMade {
+                let rows = result.values!
+                //print("the rows in the table: \(rows)")
+                switch self.requestType {
+                case "PGC":
+                    print("got cells from class section sheet: \(rows)")
+                    self.profRows = rows
+                case "PGS":
+                    print(rows)
+                    if rows[0][0] != nil {
+                        UserDefaults.standard.set("\(rows[0][0])", forKey: "sheetSHA256")
+                        self.gotSHA = true
+                    }
+                default:
+                    print("something wrong happend displayResultWithTicket in TeacherNetwork")
+                }
+            }
+        }
+    }
+    
+    func gIDPrepare(){
+        // Configure Google Sign-in.
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().scopes = scopes
+        GIDSignIn.sharedInstance().signInSilently()
+        // Add the sign-in button.
+        view.addSubview(signInButton)
+        
+    }
 }
 
 
