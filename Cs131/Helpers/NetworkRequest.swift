@@ -103,7 +103,6 @@ public class NetworkRequest:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                     if findColumnToPost(user: "professor") == "dontPost"{
                         print("dont post get the time and display it on the reciept")
                         showAlert("Check Google Sheet", message: "You already signed in for this class today.", action: "Ok")
-                        //get the amount of time professor has left and display that
                     } else {
                         postCells(range: "\(profClassNumber)!\(findColumnToPost(user: "professor"))")
                     }
