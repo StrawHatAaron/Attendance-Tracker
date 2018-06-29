@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ProfessorSignInVC: ProfessorNetwork, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var reminderView: UIView!
     @IBOutlet weak var usernameField: UITextField!
@@ -75,7 +75,6 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
                 SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "professorCheckInToReciept", sender: nil)
             }
-            print(passwordField.text!.sha256().uppercased())
             UserDefaults.standard.set(usernameField.text, forKey: "professorUsername")
             UserDefaults.standard.set(classNumberLabel.text, forKey: "classSection")
             UserDefaults.standard.set(key, forKey: "randomKey")
@@ -83,12 +82,6 @@ class ProfessorSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelega
            
         }
     }
-    
-    @objc func timedGet(){
-        professorGetClass(classNumber:classNumberLabel.text!)
-    }
-    
-    
     
     //delegate for UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

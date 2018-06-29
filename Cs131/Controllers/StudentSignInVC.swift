@@ -9,11 +9,12 @@
 import UIKit
 import SVProgressHUD
 
-class StudentSignInVC: NetworkRequest, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     @IBOutlet weak var studentIdText: UITextField!
     @IBOutlet weak var studentKeyText: UITextField!
+    @IBOutlet weak var studentCommentText: UITextField!
     @IBOutlet weak var classPicker: UIPickerView!
     @IBOutlet weak var classNumberLabel: UILabel!
     lazy var classes:[String] = ["CSC 20", "CSC 130", "CSC 131", "CSC 133", "CSC 135"]

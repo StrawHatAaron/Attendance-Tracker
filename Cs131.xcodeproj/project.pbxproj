@@ -28,9 +28,12 @@
 		119D853220CAF6D0009F9460 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853020CAF6D0009F9460 /* Student.storyboard */; };
 		119D853520CAF71E009F9460 /* Professor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119D853320CAF71E009F9460 /* Professor.storyboard */; };
 		11B3308E20E3431800A20C06 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3308D20E3431800A20C06 /* Reachability.swift */; };
-		11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7120C839DA0068416D /* NetworkRequest.swift */; };
+		11D7DC7220C839DA0068416D /* StudentNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7120C839DA0068416D /* StudentNetwork.swift */; };
 		11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7DC7320C83E4B0068416D /* RoundButton.swift */; };
 		11F8002F20D422C600F4131D /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8002E20D422C600F4131D /* ShowAlert.swift */; };
+		11FC93CE20E6AA4C0051A8BE /* ProfessorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC93CD20E6AA4C0051A8BE /* ProfessorNetwork.swift */; };
+		11FC93D020E6AB720051A8BE /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC93CF20E6AB720051A8BE /* CellHelper.swift */; };
+		11FC93D520E6AE2C0051A8BE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC93D420E6AE2C0051A8BE /* Date.swift */; };
 		2E772C76B8A3EC37BBC06B01 /* Pods_Cs131UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1EAED1D66A1EEBF7D9F12E /* Pods_Cs131UITests.framework */; };
 		5868B8A3EFBEC2B2834ED6E0 /* Pods_Cs131Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960359A397521D32747FB583 /* Pods_Cs131Tests.framework */; };
 		A526CA3101C5FDFBC58DE3DB /* Pods_Cs131.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698BF8BB2C20CCC796BD980A /* Pods_Cs131.framework */; };
@@ -84,9 +87,12 @@
 		119D853120CAF6D0009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Student.storyboard; sourceTree = "<group>"; };
 		119D853420CAF71E009F9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cs131/Base.lproj/Professor.storyboard; sourceTree = "<group>"; };
 		11B3308D20E3431800A20C06 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		11D7DC7120C839DA0068416D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		11D7DC7120C839DA0068416D /* StudentNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNetwork.swift; sourceTree = "<group>"; };
 		11D7DC7320C83E4B0068416D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		11F8002E20D422C600F4131D /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		11FC93CD20E6AA4C0051A8BE /* ProfessorNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorNetwork.swift; sourceTree = "<group>"; };
+		11FC93CF20E6AB720051A8BE /* CellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHelper.swift; sourceTree = "<group>"; };
+		11FC93D420E6AE2C0051A8BE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4229479A630005073ED43814 /* Pods-Cs131UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cs131UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cs131UITests/Pods-Cs131UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4BBB894D520FC0DBAE2B9349 /* Pods-Cs131Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cs131Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cs131Tests/Pods-Cs131Tests.release.xcconfig"; sourceTree = "<group>"; };
 		50ADC9F6654AB10AB916F790 /* Pods-Cs131Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cs131Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cs131Tests/Pods-Cs131Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 			children = (
 				115D5F9720CB02CB00360D94 /* View.swift */,
 				115D5F9920CB034B00360D94 /* ViewController.swift */,
+				11FC93D420E6AE2C0051A8BE /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,12 +236,22 @@
 		115D65B920C59707009F9BBE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				11FC93D120E6ACFD0051A8BE /* SheetNetwork */,
 				115D65BA20C59719009F9BBE /* MapTracker.swift */,
-				11D7DC7120C839DA0068416D /* NetworkRequest.swift */,
 				11F8002E20D422C600F4131D /* ShowAlert.swift */,
 				11B3308D20E3431800A20C06 /* Reachability.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11FC93D120E6ACFD0051A8BE /* SheetNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				11FC93CF20E6AB720051A8BE /* CellHelper.swift */,
+				11FC93CD20E6AA4C0051A8BE /* ProfessorNetwork.swift */,
+				11D7DC7120C839DA0068416D /* StudentNetwork.swift */,
+			);
+			path = SheetNetwork;
 			sourceTree = "<group>";
 		};
 		AB359A9488E5B5704DEF4624 /* Pods */ = {
@@ -508,19 +525,22 @@
 				11D7DC7420C83E4B0068416D /* RoundButton.swift in Sources */,
 				119D852F20CAF461009F9460 /* StudentReceiptVC.swift in Sources */,
 				115D5F9820CB02CB00360D94 /* View.swift in Sources */,
-				11D7DC7220C839DA0068416D /* NetworkRequest.swift in Sources */,
+				11D7DC7220C839DA0068416D /* StudentNetwork.swift in Sources */,
 				115D5F9A20CB034B00360D94 /* ViewController.swift in Sources */,
 				115400EE20C1AF8F008F6AB2 /* StudentSignInVC.swift in Sources */,
 				114CE52620D37870008F1147 /* ProfessorReceiptVC.swift in Sources */,
 				115400BF20C1A669008F6AB2 /* HomeVC.swift in Sources */,
 				114CE52420D37856008F1147 /* ProfessorSignInVC.swift in Sources */,
+				11FC93CE20E6AA4C0051A8BE /* ProfessorNetwork.swift in Sources */,
 				115D65B820C59635009F9BBE /* GradientView.swift in Sources */,
 				115D65BB20C5971A009F9BBE /* MapTracker.swift in Sources */,
 				11F8002F20D422C600F4131D /* ShowAlert.swift in Sources */,
 				115400C520C1A669008F6AB2 /* Cs131.xcdatamodeld in Sources */,
 				117BC79120DF46C500D1D98D /* CustomObject.m in Sources */,
 				11B3308E20E3431800A20C06 /* Reachability.swift in Sources */,
+				11FC93D520E6AE2C0051A8BE /* Date.swift in Sources */,
 				115400BD20C1A669008F6AB2 /* AppDelegate.swift in Sources */,
+				11FC93D020E6AB720051A8BE /* CellHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
