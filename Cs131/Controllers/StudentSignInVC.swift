@@ -48,11 +48,10 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
                     if self.studIsCorrect() {
                         if true {//CHECK FOR SHEET CORRUPTION
                             if self.studIsOnTime() {
-                            self.studentPostX()
+                            SVProgressHUD.dismiss()
                             UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
                             UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
-                            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
-                            SVProgressHUD.dismiss()
+                            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil) 
                             } else {
                                 self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
                                 self.enableScreen()
@@ -77,6 +76,19 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
         self.studentIdText.isEnabled = true
         self.studentKeyText.isEnabled = true
         self.classPicker.isUserInteractionEnabled = true
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "checkInToReceipt" {
+            let destinationVC = segue.destination as! StudentReceiptVC
+            
+            destinationVC.studRows = self.studRows
+            destinationVC.studColPost = self.studColPost
+            destinationVC.studClassNumber = self.studClassNumber
+        }
+        
+
     }
     
     //delegate for UITextField

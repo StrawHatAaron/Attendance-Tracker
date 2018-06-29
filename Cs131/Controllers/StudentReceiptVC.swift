@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StudentReceiptVC: UIViewController {
+class StudentReceiptVC: StudentNetwork {
     
     @IBOutlet weak var receiptView: UIView!
     @IBOutlet weak var studentIDLabel: UILabel!
@@ -16,18 +16,21 @@ class StudentReceiptVC: UIViewController {
     @IBOutlet weak var classSection: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         print("hmmm1")
         receiptView.dropShadow()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let todayString = formatter.string(from: Date()) // string purpose I add here
         print("hmmm2")
-        //studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
+        studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
         timeSubmittedLabel.text = todayString
-        //classSection.text = UserDefaults.standard.string(forKey: "classSection")
+        classSection.text = UserDefaults.standard.string(forKey: "classSection")
+        
+        
+        self.studentPostX()
         print("hmmm3")
     }
 

@@ -13,6 +13,7 @@ import GoogleToolboxForMac
 import GTMOAuth2
 import SVProgressHUD
 
+
 public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, ShowAlert{
     
     // If modifying these scopes, delete your previously saved credentials by
@@ -20,8 +21,8 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheets, kGTLRAuthScopeSheetsDrive]
     private let service = GTLRSheetsService()
     let signInButton = GIDSignInButton()
-    let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
-    
+
+    var get = false
     var requestType = ""
     var studClassNumber = ""
     var studentId = ""
@@ -34,8 +35,10 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     //GET the key and the time that is valid
     func studentGetSheet(classSection:String, id:String, key:String) {
         requestType = "SGS"
+        get = true
         studentId = id
         studentKey = key
+        
         studClassNumber = classSection.components(separatedBy: .whitespaces).joined()
         gIDPrepare()
     }
@@ -47,24 +50,23 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     func getCells(cellRange:String) {
-        let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range:cellRange)
+        let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
+        let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range:"F17:F17")
         service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
     
     func postCells(range:String){
-        var descriptions: [String: Any]
-            descriptions = ["range" : range,
+        print("FUCK A MOTHER FUCKING POST HOLY FUCK!!!!!!a'sdlkfjasdlk;fjasd;lkfjasdl;kfjasdlk;fjasldk;fjasdl;kfjdsla;f")
+        
+        let spreadsheetId = "1HEkPX-wEowUAOSH3rAzwLOndnAMZ_WsCkxR_aonbyu8"
+        var descriptions: [String: Any] = ["range" : range,
                             "majorDimension" : "COLUMNS",
                             "values" : [ ["X"] ] ]
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"
-        print("legit like WOW")
-        service.executeQuery(query, delegate: self, didFinish: #selector(doNothing))
-        print("fuck this")
+        service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
-    
-    @objc func doNothing(){}
     
     //check if id key
     func studIsCorrect() -> Bool {
@@ -86,6 +88,7 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
             rowNumber += 1
         }
         //check key
+        print(studRows)
         let key = studRows[31][studRows[31].count-1]
         if key == studentKey {
             print("there was a key match!!!")
@@ -119,8 +122,10 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
         //studRows[rows][cols]
         var col = ""
         var ret = ""
-        col = CellHelper.colToPost(num: studRows[0].count - 1)
+        print("the count for the \(studRows[0].count)")
+        col = CellHelper.colToPost(num: studRows[0].count)
         ret = "\(col)\(studRowNumber):\(col)\(studRowNumber)"
+        print(ret)
         print("the cell I want to POST to: \(ret)")
         return ret
     }
@@ -134,12 +139,14 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print(error.localizedDescription)
                 return
             }
-            let rows = result.values!
-            
-            if rows.isEmpty {print("rows were empty")}
-            else {
-                print("student got sheet")
-                self.studRows = rows as! [[String]]
+            if self.get {
+                if let rows = result.values {
+                    if rows.isEmpty {print("rows were empty")}
+                    else {
+                        print("student got sheet")
+                        self.studRows = rows as! [[String]]
+                    }
+                }
             }
         }
     }
@@ -156,6 +163,7 @@ public class StudentNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print("student get cells")
                 getCells(cellRange: "\(studClassNumber)!A1:Z")
             case "SP":
+                print("post the mother fucking cells")
                 postCells(range: "\(studClassNumber)!\(findColumnToPost(user: "student"))")
             default:
                 print("something wrong happened")
