@@ -73,17 +73,9 @@ public class ProfessorNetwork:UIViewController, GIDSignInDelegate, GIDSignInUIDe
         var descriptions: [String: Any]
         
         //professor
-        if requestType == "PP" {
             descriptions = ["range" : range,
                             "majorDimension" : "COLUMNS",
                             "values" : [ colArray ] ]
-        }
-            //student
-        else {
-            descriptions = ["range" : range,
-                            "majorDimension" : "COLUMNS",
-                            "values" : [ ["X"] ] ]
-        }
         let valueRange = GTLRSheets_ValueRange(json: descriptions)
         let query = GTLRSheetsQuery_SpreadsheetsValuesUpdate.query(withObject: valueRange, spreadsheetId: spreadsheetId, range: range)
         query.valueInputOption = "USER_ENTERED"

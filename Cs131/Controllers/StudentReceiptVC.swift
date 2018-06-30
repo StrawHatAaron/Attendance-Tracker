@@ -14,7 +14,8 @@ class StudentReceiptVC: StudentNetwork {
     @IBOutlet weak var studentIDLabel: UILabel!
     @IBOutlet weak var timeSubmittedLabel: UILabel!
     @IBOutlet weak var classSection: UILabel!
-    
+    var studentID: String = ""
+    var classSectionS:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,11 @@ class StudentReceiptVC: StudentNetwork {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let todayString = formatter.string(from: Date()) // string purpose I add here
         print("hmmm2")
-        studentIDLabel.text = UserDefaults.standard.string(forKey: "studentID")
+        studentIDLabel.text = studentID
         timeSubmittedLabel.text = todayString
-        classSection.text = UserDefaults.standard.string(forKey: "classSection")
+        classSection.text = classSectionS
         
         
-        self.studentPostX()
         print("hmmm3")
     }
 

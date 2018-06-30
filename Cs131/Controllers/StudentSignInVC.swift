@@ -34,29 +34,26 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
     
     @IBAction func checkStudentIn(_ sender: Any) {
         SVProgressHUD.show()
+        studentGetSheet(classSection:classNumberLabel.text!, id:studentIdText.text!, key:studentKeyText.text!, comment:studentCommentText.text!)
         if Reachability.isConnectedToNetwork() {
             if studentIdText.text! == "" || studentKeyText.text! == "" {
                 showAlert("Empty Field", message: "At least one of the text fields have not been filled out.", action: "Ok")
                 enableScreen()
                 SVProgressHUD.dismiss()
-            } else {
-                studentGetSheet(classSection:classNumberLabel.text!, id:studentIdText.text!, key:studentKeyText.text!)
+            } else { 
                 studentIdText.isEnabled = false
                 studentKeyText.isEnabled = false
                 classPicker.isUserInteractionEnabled = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
                     if self.studIsCorrect() {
-                        if true {//CHECK FOR SHEET CORRUPTION
-                            if self.studIsOnTime() {
+                        if self.studIsOnTime() {
+                            self.studentPostX()
                             SVProgressHUD.dismiss()
-                            UserDefaults.standard.set(self.studentIdText.text, forKey: "studentID")
-                            UserDefaults.standard.set(self.classNumberLabel.text!, forKey: "classSection")
-                            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil) 
-                            } else {
-                                self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
-                                self.enableScreen()
-                                SVProgressHUD.dismiss()
-                            }
+                            self.performSegue(withIdentifier: "checkInToReceipt", sender: nil)
+                        } else {
+                            self.showAlert("Your late", message: "Check with your teacher for attendance.", action: "Ok")
+                            self.enableScreen()
+                            SVProgressHUD.dismiss()
                         }
                     } else {
                         self.enableScreen()
@@ -82,10 +79,11 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "checkInToReceipt" {
             let destinationVC = segue.destination as! StudentReceiptVC
-            
-            destinationVC.studRows = self.studRows
-            destinationVC.studColPost = self.studColPost
-            destinationVC.studClassNumber = self.studClassNumber
+            destinationVC.studentID = self.studentIdText.text!
+            destinationVC.classSectionS = self.classNumberLabel.text!
+//            destinationVC.studRows = self.studRows
+//            destinationVC.studColPost = self.studColPost
+//            destinationVC.studClassNumber = self.studClassNumber
         }
         
 

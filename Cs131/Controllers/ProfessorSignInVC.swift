@@ -68,7 +68,6 @@ class ProfessorSignInVC: ProfessorNetwork, UITextFieldDelegate, UIPickerViewDele
             SVProgressHUD.show()
             if self.gotSHA {
                 self.professorGetClass(classNumber: self.classNumberLabel.text!)
-                
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
                 self.professorPOST(randomKey: self.key)
