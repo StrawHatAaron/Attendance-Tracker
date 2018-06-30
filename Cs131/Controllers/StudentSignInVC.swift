@@ -22,6 +22,7 @@ class StudentSignInVC: StudentNetwork, UITextFieldDelegate, UIPickerViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         classNumberLabel.text! = classes[0]
         self.hideKeyboardWhenTappedAround()
         self.studentKeyText.delegate = self
