@@ -22,7 +22,7 @@ class HelpVC: UINavigationController {
     @IBOutlet weak var studentComment: UILabel!
     @IBOutlet weak var studentMore: UILabel!
     
-    
+    //TODO -- Figure out why the fonts of these labels are nil
     override func viewDidLoad() {
         super.viewDidLoad()
         topMessage.font = topMessage.font.withSize(self.view.frame.height * 0.03)
