@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FBSDKShareKit
+//import FBSDKShareKit
 
 class DLFilesBackgroundVC: UIViewController, URLSessionDelegate {
 
@@ -36,12 +36,12 @@ class DLFilesBackgroundVC: UIViewController, URLSessionDelegate {
         else {
             // Fallback on earlier versions
         }
-        if FBSDKAccessToken.current() != nil{
-            print("Logged in Facebook")
-        }
-        else {
-            print("Not logged in do not check for DFU -- DLFilesBackgroundVC")
-        }
+//        if FBSDKAccessToken.current() != nil{
+//            print("Logged in Facebook")
+//        }
+//        else {
+//            print("Not logged in do not check for DFU -- DLFilesBackgroundVC")
+//        }
     }
     
 }

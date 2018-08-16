@@ -24,19 +24,19 @@ class ViewController: UIViewController{
     
     func doLogin() -> Void {
         
-        let net = Net(baseUrlString: "http://myhost.com/")
-        
-        let url = "auth/facebook_access_token"
-        
-        let params = ["access_token": myToken]
-        
-        net.GET(url, params: params, successHandler: { responseData in
-            let result = responseData.json(error: nil)
-            // Do something with whatever you got back
-            NSLog("result \(result)")
-        }, failureHandler: { error in
-            NSLog("Error")
-        })
+//        let net = Net(baseUrlString: "http://myhost.com/")
+//
+//        let url = "auth/facebook_access_token"
+//
+//        let params = ["access_token": myToken]
+//
+//        net.GET(url, params: params, successHandler: { responseData in
+//            let result = responseData.json(error: nil)
+//            // Do something with whatever you got back
+//            NSLog("result \(result)")
+//        }, failureHandler: { error in
+//            NSLog("Error")
+//        })
     }
 
     override func didReceiveMemoryWarning() {
